@@ -204,6 +204,51 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Edson__2026-08-21__legs",
+      "person": "Edson",
+      "date": "2026-08-21",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
     }
   ]
 }
