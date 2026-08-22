@@ -397,7 +397,7 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "20",
+          "weight": "",
           "done": false
         },
         {
