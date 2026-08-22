@@ -260,40 +260,40 @@
           "exId": "g1",
           "name": "Prensa de pierna",
           "weight": "130",
-          "done": true
+          "done": false
         },
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "50",
-          "done": true
+          "done": false
         },
         {
           "exId": "g3",
           "name": "Curl femoral",
           "weight": "36",
-          "done": true
+          "done": false
         },
         {
           "exId": "g4",
           "name": "Abducción ",
           "weight": "70",
-          "done": true
+          "done": false
         },
         {
           "exId": "g5",
           "name": "Aducción ",
           "weight": "36",
-          "done": true
+          "done": false
         },
         {
           "exId": "g6",
           "name": "Elevación de talones de pie",
           "weight": "122.5",
-          "done": true
+          "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ]
 }
