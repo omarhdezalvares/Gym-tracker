@@ -310,6 +310,7 @@ function handleLogin(ev) {
   const p = document.getElementById("loginPass").value;
   if (u === APP_USERNAME && p === APP_PASSWORD) {
     state.authed = true; state.loginError = "";
+    localStorage.setItem("gym_authed", "1");
     render();
     loadData();
   } else {
@@ -317,7 +318,7 @@ function handleLogin(ev) {
     render();
   }
 }
-function handleLogout(){ state.authed = false; render(); }
+function handleLogout(){ state.authed = false; localStorage.removeItem("gym_authed"); render(); }
 
 function selectPerson(p) {
   state.person = p;
@@ -654,7 +655,13 @@ function attachMainEvents() { /* todos los handlers están inline vía onclick/o
 /* =========================================================================
    ARRANQUE
    ========================================================================= */
-render();
+if (localStorage.getItem("gym_authed") === "1") {
+  state.authed = true;
+  render();
+  loadData();
+} else {
+  render();
+}
 </script>
 </body>
 </html>
