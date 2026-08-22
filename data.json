@@ -375,6 +375,57 @@
         }
       ],
       "anyDone": false
+    },
+    {
+      "id": "Omar__2026-08-22__push",
+      "person": "Omar",
+      "date": "2026-08-22",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "50",
+          "done": false
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": false
     }
   ]
 }
