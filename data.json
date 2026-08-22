@@ -175,6 +175,26 @@
         "sets": "1",
         "reps": "20"
       }
+    ],
+    "cardio": [
+      {
+        "id": "c1",
+        "name": "Caminadora / trote",
+        "sets": "1",
+        "reps": "20 min"
+      },
+      {
+        "id": "c2",
+        "name": "Bicicleta / eliptica",
+        "sets": "1",
+        "reps": "15 min"
+      },
+      {
+        "id": "c3",
+        "name": "Cuerda / HIIT",
+        "sets": "1",
+        "reps": "10 min"
+      }
     ]
   },
   "logs": [
