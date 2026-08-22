@@ -1,6 +1,6 @@
 {
-  "name": "Bitácora de Gym",
-  "short_name": "Bitácora Gym",
+  "name": "Gymbros.app",
+  "short_name": "Gymbros.app",
   "description": "Seguimiento de rutina y pesos — Omar y Edson",
   "start_url": "./index.html",
   "display": "standalone",
