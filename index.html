@@ -36,9 +36,10 @@
   .btn-primary{background:var(--omar);color:#1B1B1D;}
   .btn-ghost{background:var(--bg);border:1px solid var(--border);color:var(--text);}
   .btn-block{width:100%;}
-  input[type=text],input[type=password],input[type=number],input[type=date]{
+  input[type=text],input[type=password],input[type=number],input[type=date],select{
     background:var(--bg);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:8px 10px;font-size:14px;font-family:inherit;
   }
+  .progress-empty{margin:4px 0 0;}
   .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
   .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
   .pill{border-radius:10px;padding:8px 0;text-align:center;font-weight:700;font-size:12px;border:1px solid var(--border);cursor:pointer;background:var(--bg);color:#D4D4D4;}
@@ -145,6 +146,7 @@ const state = {
   editMode: false,
   editDay: "push",
   celebration: null,
+  progressExercise: null,
 };
 
 let saveTimer = null;
@@ -369,6 +371,8 @@ function goToNextMonth() {
   render();
 }
 
+function selectProgressExercise(name) { state.progressExercise = name; render(); }
+
 function toggleEditMode(){ state.editMode = !state.editMode; render(); }
 function selectEditDay(d){ state.editDay = d; render(); }
 function editExerciseField(exId, field, value) {
@@ -463,6 +467,39 @@ function computeCalendarCells() {
     cells.push({ day, iso, people: doneByDate[iso] ? Array.from(doneByDate[iso]) : [] });
   }
   return cells;
+}
+
+function getExerciseNameList() {
+  const names = new Set();
+  state.logs.forEach(l => l.exercises.forEach(e => { if (e.name) names.add(e.name); }));
+  return Array.from(names).sort((a, b) => a.localeCompare(b, "es"));
+}
+
+// Agrupa por nombre de ejercicio (no por exId): si un ejercicio se borra y se
+// vuelve a crear al actualizar la rutina, le toca un id nuevo, pero el nombre
+// se mantiene, así el historial de avance sigue viéndose junto.
+function computeExerciseProgress(name) {
+  const result = {};
+  PEOPLE.forEach(p => {
+    const pts = [];
+    state.logs.forEach(l => {
+      if (l.person !== p) return;
+      l.exercises.forEach(e => {
+        if (e.name !== name) return;
+        const w = parseFloat(e.weight);
+        if (e.weight === "" || e.weight === undefined || isNaN(w)) return;
+        pts.push({ date: l.date, weight: w });
+      });
+    });
+    pts.sort((a, b) => a.date.localeCompare(b.date));
+    result[p] = pts;
+  });
+  return result;
+}
+
+function formatShortDate(iso) {
+  const [, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTH_LABELS[m - 1].slice(0, 3)}`;
 }
 
 /* =========================================================================
@@ -629,12 +666,77 @@ function renderMain() {
       </div>
     </div>
 
+    ${renderProgressCard()}
+
     <button class="btn btn-ghost btn-block" onclick="toggleEditMode()" style="margin-bottom:16px;">${state.editMode ? "✕ Cerrar edición de rutina" : "✎ Editar rutina"}</button>
 
     ${state.editMode ? renderEditPanel() : ""}
 
     ${state.celebration ? renderCelebration() : ""}
   `;
+}
+
+function renderProgressCard() {
+  const names = getExerciseNameList();
+  if (names.length === 0) {
+    return `
+    <div class="card">
+      <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">PROGRESO POR EJERCICIO</h2>
+      <p class="muted progress-empty">Todavía no hay pesos registrados.</p>
+    </div>`;
+  }
+  const selected = names.includes(state.progressExercise) ? state.progressExercise : names[0];
+  return `
+  <div class="card">
+    <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">PROGRESO POR EJERCICIO</h2>
+    <select onchange="selectProgressExercise(this.value)" style="width:100%;margin-bottom:10px;">
+      ${names.map(n => `<option value="${escapeHtml(n)}" ${n === selected ? "selected" : ""}>${escapeHtml(n)}</option>`).join("")}
+    </select>
+    ${renderProgressChart(selected)}
+    <div class="row" style="gap:16px;margin-top:10px;">
+      ${PEOPLE.map(p => `<div class="row" style="gap:6px;"><span class="dot" style="width:8px;height:8px;background:${PERSON_COLOR[p]}"></span><span class="muted">${p}</span></div>`).join("")}
+    </div>
+  </div>`;
+}
+
+function renderProgressChart(name) {
+  const data = computeExerciseProgress(name);
+  const allPoints = PEOPLE.flatMap(p => data[p]);
+  if (allPoints.length === 0) {
+    return `<p class="muted progress-empty">Sin pesos registrados todavía para este ejercicio.</p>`;
+  }
+
+  const dateKeys = Array.from(new Set(allPoints.map(pt => pt.date))).sort();
+  const weights = allPoints.map(pt => pt.weight);
+  const minW = Math.min(...weights), maxW = Math.max(...weights);
+  const wRange = (maxW - minW) || 1;
+  const minDate = dateKeys[0], maxDate = dateKeys[dateKeys.length - 1];
+  const dRange = (new Date(maxDate) - new Date(minDate)) || 1;
+
+  const W = 400, H = 190, padL = 30, padR = 12, padT = 14, padB = 22;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const xFor = d => padL + ((new Date(d) - new Date(minDate)) / dRange) * plotW;
+  const yFor = w => padT + (1 - (w - minW) / wRange) * plotH;
+
+  const seriesSvg = PEOPLE.map(p => {
+    const pts = data[p];
+    if (!pts.length) return "";
+    const dAttr = pts.map((pt, i) => `${i === 0 ? "M" : "L"}${xFor(pt.date).toFixed(1)},${yFor(pt.weight).toFixed(1)}`).join(" ");
+    const line = pts.length > 1 ? `<path d="${dAttr}" fill="none" stroke="${PERSON_COLOR[p]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>` : "";
+    const dots = pts.map(pt => `<circle cx="${xFor(pt.date).toFixed(1)}" cy="${yFor(pt.weight).toFixed(1)}" r="3.5" fill="${PERSON_COLOR[p]}" stroke="#1B1B1D" stroke-width="1"><title>${p} · ${formatShortDate(pt.date)} · ${pt.weight} kg</title></circle>`).join("");
+    return line + dots;
+  }).join("");
+
+  return `
+  <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;">
+    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#333335" stroke-width="1"/>
+    <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#333335" stroke-width="1"/>
+    <text x="${padL - 6}" y="${padT + 4}" text-anchor="end" font-size="9" fill="#8A8A8D">${maxW}</text>
+    <text x="${padL - 6}" y="${H - padB}" text-anchor="end" font-size="9" fill="#8A8A8D">${minW}</text>
+    <text x="${padL}" y="${H - 6}" text-anchor="start" font-size="9" fill="#8A8A8D">${formatShortDate(minDate)}</text>
+    <text x="${W - padR}" y="${H - 6}" text-anchor="end" font-size="9" fill="#8A8A8D">${formatShortDate(maxDate)}</text>
+    ${seriesSvg}
+  </svg>`;
 }
 
 function renderEditPanel() {
