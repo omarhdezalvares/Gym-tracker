@@ -102,13 +102,19 @@ const APP_PASSWORD = "gymBros$1";
 
 const PEOPLE = ["Omar", "Edson"];
 const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0" };
-const DAY_ORDER = ["push", "pull", "legs", "full"];
+const DAY_ORDER = ["push", "pull", "legs", "full", "cardio"];
 const DAY_META = {
   push: { label: "Push", sub: "Pecho / Hombro / Tríceps" },
   pull: { label: "Pull", sub: "Espalda / Bíceps" },
   legs: { label: "Legs", sub: "Pierna (sin sentadilla/desplantes)" },
   full: { label: "Full Body", sub: "Mezcla + zonas rezagadas" },
+  cardio: { label: "Cardio", sub: "Cardio / acondicionamiento" },
 };
+const DEFAULT_CARDIO_EXERCISES = [
+  { id: "c1", name: "Caminadora / trote", sets: "1", reps: "20 min" },
+  { id: "c2", name: "Bicicleta / elíptica", sets: "1", reps: "15 min" },
+  { id: "c3", name: "Cuerda / HIIT", sets: "1", reps: "10 min" },
+];
 const MONTH_LABELS = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const WEEKDAY_LABELS = ["D","L","M","M","J","V","S"];
 const MOTIVATIONAL_PHRASES = [
@@ -221,6 +227,7 @@ async function loadData() {
   try {
     const { data, sha } = await ghReadFile();
     state.routine = data.routine;
+    if (!state.routine.cardio) state.routine.cardio = DEFAULT_CARDIO_EXERCISES;
     state.logs = data.logs || [];
     state.sha = sha;
   } catch (err) {
@@ -349,6 +356,7 @@ function updateWeight(exId, value) {
 }
 
 function triggerCelebration() {
+  if (state.celebration) return; // ya hay una celebración en pantalla, no apilar otra encima
   const phrase = MOTIVATIONAL_PHRASES[Math.floor(Math.random() * MOTIVATIONAL_PHRASES.length)];
   const confetti = Array.from({ length: 26 }).map((_, i) => ({
     left: Math.random() * 100, color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
@@ -356,7 +364,6 @@ function triggerCelebration() {
   }));
   state.celebration = { phrase, confetti };
   render();
-  setTimeout(() => { state.celebration = null; render(); }, 3400);
 }
 function closeCelebration(){ state.celebration = null; render(); }
 
@@ -595,7 +602,7 @@ function renderMain() {
         <span>📅</span>
         <input type="date" class="mono" value="${state.date}" onchange="changeDate(this.value)" style="background:transparent;border:none;color:var(--text);font-size:14px;" />
       </div>
-      <div class="grid4">
+      <div class="grid4" style="grid-template-columns:repeat(${DAY_ORDER.length},1fr);">
         ${DAY_ORDER.map(d => `<button class="pill ${state.dayKey === d ? "active" : ""}" onclick="selectDay('${d}')">${DAY_META[d].label}</button>`).join("")}
       </div>
       <p class="muted" style="margin-top:8px;margin-bottom:0;">${DAY_META[state.dayKey].sub}</p>
@@ -743,7 +750,7 @@ function renderEditPanel() {
   const list = state.routine[state.editDay] || [];
   return `
   <div class="card">
-    <div class="grid4" style="margin-bottom:12px;">
+    <div class="grid4" style="margin-bottom:12px;grid-template-columns:repeat(${DAY_ORDER.length},1fr);">
       ${DAY_ORDER.map(d => `<button class="pill ${state.editDay === d ? "active" : ""}" onclick="selectEditDay('${d}')">${DAY_META[d].label}</button>`).join("")}
     </div>
     ${list.map(ex => `
