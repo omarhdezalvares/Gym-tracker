@@ -186,13 +186,13 @@
         },
         {
           "exId": "g4",
-          "name": "Peso muerto rumano",
-          "weight": "",
+          "name": "Abducción ",
+          "weight": "70",
           "done": false
         },
         {
           "exId": "g5",
-          "name": "Hip thrust",
+          "name": "Aducción ",
           "weight": "",
           "done": false
         },
