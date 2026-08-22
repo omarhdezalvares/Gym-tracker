@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+<title>Bitácora de Gym — Omar & Edson</title>
+
+<!-- PWA / "Agregar a pantalla de inicio" en iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Bitácora Gym" />
+<meta name="theme-color" content="#1B1B1D" />
+<link rel="apple-touch-icon" href="icon-180.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="icon-152.png" />
+<link rel="apple-touch-icon" sizes="167x167" href="icon-167.png" />
+<link rel="icon" href="icon-192.png" />
+<link rel="manifest" href="manifest.json" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1B1B1D; --card:#242426; --border:#333335; --border2:#3A3A3C;
+    --text:#F5F5F5; --muted:#8A8A8D; --omar:#E7B10A; --edson:#4CC9F0; --green:#4ADE80;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;}
+  .font-display{font-family:'Bebas Neue',system-ui,sans-serif;letter-spacing:.03em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  #app{max-width:480px;margin:0 auto;padding:16px;min-height:100vh;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px;}
+  .row{display:flex;align-items:center;gap:8px;}
+  .between{display:flex;align-items:center;justify-content:space-between;}
+  .btn{cursor:pointer;border:none;border-radius:10px;font-weight:700;font-size:14px;padding:10px 14px;}
+  .btn-primary{background:var(--omar);color:#1B1B1D;}
+  .btn-ghost{background:var(--bg);border:1px solid var(--border);color:var(--text);}
+  .btn-block{width:100%;}
+  input[type=text],input[type=password],input[type=number],input[type=date]{
+    background:var(--bg);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:8px 10px;font-size:14px;font-family:inherit;
+  }
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+  .pill{border-radius:10px;padding:8px 0;text-align:center;font-weight:700;font-size:12px;border:1px solid var(--border);cursor:pointer;background:var(--bg);color:#D4D4D4;}
+  .pill.active{background:var(--omar);color:#1B1B1D;border:none;}
+  .pill2.active{background:var(--edson)!important;}
+  .exrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
+  .exrow:last-child{border-bottom:none;}
+  .check{width:30px;height:30px;flex:none;border-radius:999px;border:2px solid #4B4B4E;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1B1B1D;font-weight:900;}
+  .check.done{background:var(--green);border:none;}
+  .exname{font-weight:600;font-size:14px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .exsub{font-size:11px;color:var(--muted);}
+  .wtinput{width:56px;text-align:right;}
+  .muted{color:var(--muted);font-size:12px;}
+  .center{display:flex;align-items:center;justify-content:center;}
+  .calcell{aspect-ratio:1;border-radius:8px;border:1px solid #2E2E30;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;}
+  .calcell.today{border:1.5px solid var(--omar);}
+  .dot{width:6px;height:6px;border-radius:999px;}
+  .bar-wrap{display:flex;align-items:flex-end;gap:6px;height:160px;padding-top:8px;}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:2px;}
+  .bar{width:100%;border-radius:4px 4px 0 0;min-height:2px;}
+  .barlabel{font-size:9px;color:var(--muted);margin-top:4px;}
+  #loginScreen,#loadingScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;}
+  .loginbox{width:100%;max-width:320px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;}
+  .lockicon{width:56px;height:56px;border-radius:999px;background:var(--omar);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px;}
+  label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px;}
+  .err{color:#F87171;font-size:12px;margin-bottom:8px;}
+  .spinner{width:32px;height:32px;border:3px solid #3A3A3C;border-top-color:var(--omar);border-radius:999px;animation:spin 0.8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes confetti-fall{0%{transform:translateY(-16px) rotate(0);opacity:1;}100%{transform:translateY(260px) rotate(360deg);opacity:0;}}
+  @keyframes pop-in{0%{transform:scale(.6);opacity:0;}60%{transform:scale(1.06);opacity:1;}100%{transform:scale(1);opacity:1;}}
+  @keyframes fade-in{from{opacity:0;}to{opacity:1;}}
+  #celebration{position:fixed;inset:0;background:rgba(10,10,11,.72);z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;animation:fade-in .2s ease-out;}
+  .confetti-piece{position:absolute;top:0;width:8px;height:14px;border-radius:2px;}
+  .celeb-card{position:relative;background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:32px 24px;max-width:320px;text-align:center;animation:pop-in .4s cubic-bezier(.34,1.56,.64,1);}
+  .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border2);padding:8px 16px;border-radius:10px;font-size:12px;color:var(--muted);z-index:60;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* =========================================================================
+   CONFIGURACIÓN — edita estas 3 líneas con los datos de tu repo de GitHub
+   ========================================================================= */
+const GH_OWNER   = "omarhdezalvares";   // tu usuario de GitHub
+const GH_REPO    = "gym-tracker";       // nombre del repo
+const GH_BRANCH  = "main";              // rama (usualmente "main")
+const GH_PATH    = "data.json";         // archivo de datos en la raíz del repo
+
+// ⚠️ Pega tu GitHub Personal Access Token aquí, entre las comillas, si quieres
+// que funcione para cualquiera sin configurar nada por su lado. Con esto
+// puesto, CUALQUIERA que vea el código fuente de la página puede leerlo y
+// escribir en tu repo con los permisos que le hayas dado a ese token.
+// Usa un fine-grained token limitado SOLO a este repo y SOLO con permiso
+// de "Contents: Read and write" para acotar el riesgo.
+const HARDCODED_TOKEN = "";   // <- AQUÍ, ej: "github_pat_xxxxxxxxxxxx"
+
+const APP_USERNAME = "gymbro";
+const APP_PASSWORD = "gymBros$1";
+
+const PEOPLE = ["Omar", "Edson"];
+const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0" };
+const DAY_ORDER = ["push", "pull", "legs", "full"];
+const DAY_META = {
+  push: { label: "Push", sub: "Pecho / Hombro / Tríceps" },
+  pull: { label: "Pull", sub: "Espalda / Bíceps" },
+  legs: { label: "Legs", sub: "Pierna (sin sentadilla/desplantes)" },
+  full: { label: "Full Body", sub: "Mezcla + zonas rezagadas" },
+};
+const MONTH_LABELS = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const WEEKDAY_LABELS = ["D","L","M","M","J","V","S"];
+const MOTIVATIONAL_PHRASES = [
+  "¡Día completado! Un paso más cerca de tu mejor versión 💪",
+  "Rutina terminada. Así se construye la disciplina, un día a la vez.",
+  "¡Excelente! Constancia gana, no la intensidad de un solo día.",
+  "Sesión en el bolsillo. Tu cuerpo de mañana te lo agradece.",
+  "¡Rutina completa! Cada repetición cuenta.",
+  "Hecho. Esto es lo que separa a los que empiezan de los que terminan.",
+  "¡Vamos con todo! Otra rutina más en la bitácora.",
+  "Terminaste fuerte. Así se ganan las semanas.",
+  "Sin excusas hoy. Lo lograste de principio a fin.",
+  "Otro día, otro ladrillo en la construcción de tu meta.",
+];
+const CONFETTI_COLORS = ["#E7B10A","#4CC9F0","#4ADE80","#F87171","#C084FC"];
+
+/* =========================================================================
+   ESTADO GLOBAL
+   ========================================================================= */
+const state = {
+  authed: false,
+  loginError: "",
+  loading: true,
+  saving: false,
+  statusMsg: "",
+  routine: null,
+  logs: [],
+  sha: null,          // sha del archivo data.json en GitHub, necesario para escribir
+  hasLoaded: false,   // se pone true solo cuando la carga inicial terminó de verdad
+  person: "Omar",
+  date: todayISO(),
+  dayKey: "push",
+  draft: {},
+  calendarMonth: (() => { const d = new Date(); return { year: d.getFullYear(), month: d.getMonth() }; })(),
+  editMode: false,
+  editDay: "push",
+  celebration: null,
+};
+
+let saveTimer = null;
+
+function todayISO() {
+  const d = new Date();
+  const off = d.getTimezoneOffset();
+  return new Date(d.getTime() - off * 60000).toISOString().slice(0, 10);
+}
+
+function getISOWeekKey(dateStr) {
+  const d = new Date(dateStr + "T00:00:00");
+  const target = new Date(d.valueOf());
+  const dayNr = (d.getDay() + 6) % 7;
+  target.setDate(target.getDate() - dayNr + 3);
+  const firstThursday = target.valueOf();
+  target.setMonth(0, 1);
+  if (target.getDay() !== 4) target.setMonth(0, 1 + ((4 - target.getDay() + 7) % 7));
+  const week = 1 + Math.round((firstThursday - target.valueOf()) / (7 * 86400000));
+  const year = new Date(d.valueOf());
+  year.setDate(year.getDate() - dayNr + 3);
+  return `${year.getFullYear()}-S${String(week).padStart(2, "0")}`;
+}
+function weekLabelShort(k){ return k.split("-")[1]; }
+function entryId(){ return `${state.person}__${state.date}__${state.dayKey}`; }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* =========================================================================
+   GITHUB CONTENTS API — leer y escribir data.json en el mismo repo
+   ========================================================================= */
+function getToken() {
+  if (HARDCODED_TOKEN && HARDCODED_TOKEN.trim()) return HARDCODED_TOKEN.trim();
+  return localStorage.getItem("gh_token") || "";
+}
+
+async function ghReadFile() {
+  const token = getToken();
+  const res = await fetch(
+    `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}&_=${Date.now()}`,
+    { headers: token ? { Authorization: `token ${token}`, Accept: "application/vnd.github+json" } : { Accept: "application/vnd.github+json" } }
+  );
+  if (!res.ok) throw new Error("No se pudo leer data.json (HTTP " + res.status + ")");
+  const json = await res.json();
+  const content = decodeURIComponent(escape(atob(json.content.replace(/\n/g, ""))));
+  return { data: JSON.parse(content), sha: json.sha };
+}
+
+async function ghWriteFile(dataObj, message) {
+  const token = getToken();
+  if (!token) throw new Error("Falta configurar tu GitHub Token para poder guardar.");
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))));
+  const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}`, {
+    method: "PUT",
+    headers: { Authorization: `token ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+    body: JSON.stringify({ message, content, sha: state.sha, branch: GH_BRANCH }),
+  });
+  if (!res.ok) {
+    if (res.status === 409) throw new Error("conflict"); // alguien más escribió primero
+    const errBody = await res.json().catch(() => ({}));
+    throw new Error(errBody.message || ("No se pudo guardar (HTTP " + res.status + ")"));
+  }
+  const json = await res.json();
+  state.sha = json.content.sha;
+  return json;
+}
+
+/* =========================================================================
+   CARGA INICIAL
+   ========================================================================= */
+async function loadData() {
+  state.loading = true; render();
+  try {
+    const { data, sha } = await ghReadFile();
+    state.routine = data.routine;
+    state.logs = data.logs || [];
+    state.sha = sha;
+  } catch (err) {
+    console.error(err);
+    state.statusMsg = "No se pudo cargar data.json: " + err.message;
+  }
+  state.hasLoaded = true;
+  state.loading = false;
+  const active = findActiveDayFor(state.person, todayISO());
+  if (active) state.dayKey = active;
+  rebuildDraft();
+  render();
+}
+
+function findActiveDayFor(person, dateStr) {
+  const match = state.logs.find(l => l.person === person && l.date === dateStr && l.anyDone);
+  return match ? match.dayKey : null;
+}
+
+function rebuildDraft() {
+  const existing = state.logs.find(l => l.id === entryId());
+  const dayExercises = (state.routine && state.routine[state.dayKey]) || [];
+  const map = {};
+  dayExercises.forEach(ex => {
+    const found = existing ? existing.exercises.find(e => e.exId === ex.id) : null;
+    map[ex.id] = found ? { weight: found.weight ?? "", done: !!found.done } : { weight: "", done: false };
+  });
+  state.draft = map;
+}
+
+/* =========================================================================
+   GUARDADO (con protección contra condición de carrera)
+   ========================================================================= */
+async function persist() {
+  if (!state.hasLoaded) return; // nunca guardar antes de terminar de cargar de verdad
+  state.saving = true; render();
+
+  const dayExercises = (state.routine && state.routine[state.dayKey]) || [];
+  const exercisesOut = dayExercises.map(ex => ({
+    exId: ex.id, name: ex.name,
+    weight: state.draft[ex.id]?.weight ?? "",
+    done: !!state.draft[ex.id]?.done,
+  }));
+  const anyDone = exercisesOut.some(e => e.done);
+  const newEntry = { id: entryId(), person: state.person, date: state.date, dayKey: state.dayKey, exercises: exercisesOut, anyDone };
+  const others = state.logs.filter(l => l.id !== newEntry.id);
+  const updatedLogs = [...others, newEntry];
+  const payload = { routine: state.routine, logs: updatedLogs };
+
+  try {
+    await ghWriteFile(payload, `Actualiza sesión de ${state.person} — ${state.date} (${state.dayKey})`);
+    state.logs = updatedLogs;
+    state.statusMsg = "Guardado en GitHub ✓";
+  } catch (err) {
+    if (err.message === "conflict") {
+      // alguien más (Edson probablemente) guardó justo antes: releer y reintentar una vez
+      try {
+        const fresh = await ghReadFile();
+        state.sha = fresh.sha;
+        const freshOthers = (fresh.data.logs || []).filter(l => l.id !== newEntry.id);
+        const retryLogs = [...freshOthers, newEntry];
+        await ghWriteFile({ routine: fresh.data.routine, logs: retryLogs }, `Actualiza sesión de ${state.person} — ${state.date} (${state.dayKey}) [retry]`);
+        state.routine = fresh.data.routine;
+        state.logs = retryLogs;
+        state.statusMsg = "Guardado en GitHub ✓";
+      } catch (err2) {
+        state.statusMsg = "⚠ No se pudo guardar tras reintentar: " + err2.message;
+      }
+    } else {
+      state.statusMsg = "⚠ No se pudo guardar: " + err.message;
+    }
+  }
+  state.saving = false;
+  render();
+  setTimeout(() => { state.statusMsg = ""; render(); }, 3200);
+}
+
+function scheduleAutosave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(persist, 500);
+}
+
+/* =========================================================================
+   ACCIONES DE UI
+   ========================================================================= */
+function handleLogin(ev) {
+  ev.preventDefault();
+  const u = document.getElementById("loginUser").value.trim();
+  const p = document.getElementById("loginPass").value;
+  if (u === APP_USERNAME && p === APP_PASSWORD) {
+    state.authed = true; state.loginError = "";
+    render();
+    loadData();
+  } else {
+    state.loginError = "Usuario o contraseña incorrectos";
+    render();
+  }
+}
+function handleLogout(){ state.authed = false; render(); }
+
+function selectPerson(p) {
+  state.person = p;
+  if (state.date === todayISO()) {
+    const active = findActiveDayFor(p, todayISO());
+    if (active) state.dayKey = active;
+  }
+  rebuildDraft();
+  render();
+}
+function selectDay(d){ state.dayKey = d; rebuildDraft(); render(); }
+function changeDate(v){ state.date = v; rebuildDraft(); render(); }
+
+function toggleDone(exId) {
+  const dayExercises = (state.routine[state.dayKey] || []);
+  const wasAllDone = dayExercises.length > 0 && dayExercises.every(ex => state.draft[ex.id]?.done);
+  state.draft[exId] = { ...state.draft[exId], done: !state.draft[exId]?.done };
+  const isAllDoneNow = dayExercises.length > 0 && dayExercises.every(ex => state.draft[ex.id]?.done);
+  if (!wasAllDone && isAllDoneNow) triggerCelebration();
+  render();
+  scheduleAutosave();
+}
+function updateWeight(exId, value) {
+  state.draft[exId] = { ...state.draft[exId], weight: value };
+  scheduleAutosave(); // no render() aquí para no perder el foco del input mientras se escribe
+}
+
+function triggerCelebration() {
+  const phrase = MOTIVATIONAL_PHRASES[Math.floor(Math.random() * MOTIVATIONAL_PHRASES.length)];
+  const confetti = Array.from({ length: 26 }).map((_, i) => ({
+    left: Math.random() * 100, color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    delay: Math.random() * 0.35, duration: 1.1 + Math.random() * 0.9, rotate: Math.random() * 360,
+  }));
+  state.celebration = { phrase, confetti };
+  render();
+  setTimeout(() => { state.celebration = null; render(); }, 3400);
+}
+function closeCelebration(){ state.celebration = null; render(); }
+
+function goToPrevMonth() {
+  const cm = state.calendarMonth;
+  state.calendarMonth = cm.month === 0 ? { year: cm.year - 1, month: 11 } : { year: cm.year, month: cm.month - 1 };
+  render();
+}
+function goToNextMonth() {
+  const cm = state.calendarMonth;
+  state.calendarMonth = cm.month === 11 ? { year: cm.year + 1, month: 0 } : { year: cm.year, month: cm.month + 1 };
+  render();
+}
+
+function toggleEditMode(){ state.editMode = !state.editMode; render(); }
+function selectEditDay(d){ state.editDay = d; render(); }
+function editExerciseField(exId, field, value) {
+  const list = state.routine[state.editDay];
+  const idx = list.findIndex(ex => ex.id === exId);
+  if (idx >= 0) list[idx] = { ...list[idx], [field]: value };
+}
+function addExercise() {
+  state.routine[state.editDay].push({ id: "ex" + Date.now().toString(36), name: "Nuevo ejercicio", sets: 3, reps: "12" });
+  render();
+}
+function removeExercise(exId) {
+  state.routine[state.editDay] = state.routine[state.editDay].filter(ex => ex.id !== exId);
+  render();
+}
+async function saveRoutineNow() {
+  state.saving = true; render();
+  try {
+    await ghWriteFile({ routine: state.routine, logs: state.logs }, "Actualiza rutina");
+    state.statusMsg = "Rutina actualizada en GitHub ✓";
+  } catch (err) {
+    state.statusMsg = "⚠ No se pudo guardar la rutina: " + err.message;
+  }
+  state.saving = false; render();
+  setTimeout(() => { state.statusMsg = ""; render(); }, 3200);
+}
+
+function saveTokenPrompt() {
+  const t = prompt("Pega tu GitHub Personal Access Token (con permiso de escritura sobre este repo).\\nSe guarda solo en este navegador, nunca se sube al repo.");
+  if (t) { localStorage.setItem("gh_token", t.trim()); state.statusMsg = "Token guardado en este navegador ✓"; render(); setTimeout(()=>{state.statusMsg="";render();},2500); }
+}
+
+/* =========================================================================
+   CÁLCULOS DERIVADOS
+   ========================================================================= */
+function computeWeeklyChart() {
+  const weeksBack = 10, now = new Date(), keys = [];
+  for (let i = weeksBack - 1; i >= 0; i--) {
+    const d = new Date(now); d.setDate(d.getDate() - i * 7);
+    const iso = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const wk = getISOWeekKey(iso);
+    if (!keys.includes(wk)) keys.push(wk);
+  }
+  return keys.map(wk => {
+    const row = { week: weekLabelShort(wk) };
+    PEOPLE.forEach(p => {
+      const days = new Set(state.logs.filter(l => l.person === p && l.anyDone && getISOWeekKey(l.date) === wk).map(l => l.date));
+      row[p] = days.size;
+    });
+    return row;
+  });
+}
+
+function computeStreaks() {
+  const result = {};
+  PEOPLE.forEach(p => {
+    const weeksSet = new Set(state.logs.filter(l => l.person === p && l.anyDone).map(l => getISOWeekKey(l.date)));
+    const nowKey = getISOWeekKey(todayISO());
+    const lastWeekDate = new Date(); lastWeekDate.setDate(lastWeekDate.getDate() - 7);
+    const lastKey = getISOWeekKey(new Date(lastWeekDate.getTime() - lastWeekDate.getTimezoneOffset() * 60000).toISOString().slice(0, 10));
+    let cursorKey = weeksSet.has(nowKey) ? nowKey : (weeksSet.has(lastKey) ? lastKey : null);
+    let streak = 0;
+    if (cursorKey) {
+      let d = new Date();
+      if (cursorKey === lastKey) d.setDate(d.getDate() - 7);
+      while (true) {
+        const iso = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+        const wk = getISOWeekKey(iso);
+        if (weeksSet.has(wk)) { streak += 1; d.setDate(d.getDate() - 7); } else break;
+      }
+    }
+    result[p] = streak;
+  });
+  return result;
+}
+
+function computeCalendarCells() {
+  const { year, month } = state.calendarMonth;
+  const firstDay = new Date(year, month, 1);
+  const startWeekday = firstDay.getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const doneByDate = {};
+  state.logs.forEach(l => {
+    if (!l.anyDone) return;
+    if (!doneByDate[l.date]) doneByDate[l.date] = new Set();
+    doneByDate[l.date].add(l.person);
+  });
+  const cells = [];
+  for (let i = 0; i < startWeekday; i++) cells.push(null);
+  for (let day = 1; day <= daysInMonth; day++) {
+    const iso = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    cells.push({ day, iso, people: doneByDate[iso] ? Array.from(doneByDate[iso]) : [] });
+  }
+  return cells;
+}
+
+/* =========================================================================
+   RENDER
+   ========================================================================= */
+function render() {
+  const app = document.getElementById("app");
+  if (!state.authed) { app.innerHTML = renderLogin(); attachLoginEvents(); return; }
+  if (state.loading || !state.routine) { app.innerHTML = renderLoading(); return; }
+  app.innerHTML = renderMain();
+  attachMainEvents();
+}
+
+function renderLoading() {
+  return `<div id="loadingScreen"><div class="spinner"></div></div>`;
+}
+
+function renderLogin() {
+  return `
+  <div id="loginScreen">
+    <form class="loginbox" id="loginForm">
+      <img src="icon-192.png" alt="Bitácora de Gym" style="width:88px;height:88px;border-radius:22px;display:block;margin:0 auto 12px;box-shadow:0 4px 16px rgba(0,0,0,.4);" />
+      <h1 class="font-display" style="font-size:26px;text-align:center;margin:0;">BITÁCORA DE GYM</h1>
+      <p class="muted" style="text-align:center;margin-top:4px;">Acceso privado</p>
+      <div style="margin-top:16px;">
+        <label>Usuario</label>
+        <input type="text" id="loginUser" style="width:100%;margin-bottom:12px;" autocapitalize="none" />
+        <label>Contraseña</label>
+        <input type="password" id="loginPass" style="width:100%;margin-bottom:12px;" />
+        ${state.loginError ? `<div class="err">${escapeHtml(state.loginError)}</div>` : ""}
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </div>
+    </form>
+  </div>`;
+}
+function attachLoginEvents() {
+  const f = document.getElementById("loginForm");
+  if (f) f.addEventListener("submit", handleLogin);
+}
+
+function renderMain() {
+  const dayExercises = state.routine[state.dayKey] || [];
+  const weekly = computeWeeklyChart();
+  const streaks = computeStreaks();
+  const calCells = computeCalendarCells();
+  const maxWeekly = Math.max(1, ...weekly.flatMap(r => PEOPLE.map(p => r[p])));
+
+  return `
+    <div class="between" style="margin-bottom:20px;">
+      <div class="row">
+        <div style="background:var(--omar);border-radius:10px;padding:8px;font-size:20px;">🏋️</div>
+        <div>
+          <h1 class="font-display" style="font-size:28px;line-height:1;margin:0;">BITÁCORA DE GYM</h1>
+          <p class="muted" style="margin:4px 0 0;">Repo compartido · ${state.logs.length === 0 ? "sin historial cargado" : state.logs.length + " sesiones cargadas"}</p>
+        </div>
+      </div>
+      <div class="row">
+        ${HARDCODED_TOKEN && HARDCODED_TOKEN.trim() ? "" : `<button class="btn btn-ghost" onclick="saveTokenPrompt()" title="Configurar token de GitHub">🔑</button>`}
+        <button class="btn btn-ghost" onclick="handleLogout()" title="Cerrar sesión">⎋</button>
+      </div>
+    </div>
+
+    <div class="grid4" style="margin-bottom:12px;">
+      ${PEOPLE.map(p => `
+        <button class="pill ${state.person === p ? "active" + (p === "Edson" ? " pill2" : "") : ""}" style="grid-column: span 2;" onclick="selectPerson('${p}')">${p}</button>
+      `).join("")}
+    </div>
+
+    <div class="card">
+      <div class="row" style="margin-bottom:10px;">
+        <span>📅</span>
+        <input type="date" class="mono" value="${state.date}" onchange="changeDate(this.value)" style="background:transparent;border:none;color:var(--text);font-size:14px;" />
+      </div>
+      <div class="grid4">
+        ${DAY_ORDER.map(d => `<button class="pill ${state.dayKey === d ? "active" : ""}" onclick="selectDay('${d}')">${DAY_META[d].label}</button>`).join("")}
+      </div>
+      <p class="muted" style="margin-top:8px;margin-bottom:0;">${DAY_META[state.dayKey].sub}</p>
+    </div>
+
+    <div class="card" style="padding:4px 16px;">
+      ${dayExercises.length === 0 ? `<p class="muted">Sin ejercicios para este día.</p>` : dayExercises.map(ex => {
+        const d = state.draft[ex.id] || { weight: "", done: false };
+        return `
+        <div class="exrow">
+          <button class="check ${d.done ? "done" : ""}" onclick="toggleDone('${ex.id}')">${d.done ? "✓" : ""}</button>
+          <div style="flex:1;min-width:0;">
+            <div class="exname">${escapeHtml(ex.name)}</div>
+            <div class="exsub mono">${ex.sets} x ${ex.reps}</div>
+          </div>
+          <input type="number" inputmode="decimal" placeholder="kg" class="wtinput mono" value="${escapeHtml(d.weight)}" oninput="updateWeight('${ex.id}', this.value)" />
+          <span class="muted">kg</span>
+        </div>`;
+      }).join("")}
+    </div>
+
+    <div class="center" style="height:20px;margin-bottom:20px;">
+      <span class="muted">${state.saving ? "Guardando…" : (state.statusMsg || "Tu progreso se guarda automáticamente")}</span>
+    </div>
+
+    <div class="card">
+      <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">ASISTENCIA SEMANAL</h2>
+      <div class="row" style="gap:16px;margin-bottom:6px;">
+        ${PEOPLE.map(p => `<div class="row"><span>🔥</span><span class="muted">${p}:</span><span class="mono" style="font-weight:700;color:${PERSON_COLOR[p]};">${streaks[p]} ${streaks[p] === 1 ? "semana" : "semanas"}</span></div>`).join("")}
+      </div>
+      <div class="bar-wrap">
+        ${weekly.map(row => `
+          <div class="bar-col">
+            <div style="display:flex;gap:2px;align-items:flex-end;height:100%;width:100%;">
+              <div class="bar" style="height:${(row.Omar / maxWeekly) * 100}%;background:${PERSON_COLOR.Omar};flex:1;"></div>
+              <div class="bar" style="height:${(row.Edson / maxWeekly) * 100}%;background:${PERSON_COLOR.Edson};flex:1;"></div>
+            </div>
+            <div class="barlabel">${row.week}</div>
+          </div>
+        `).join("")}
+      </div>
+      <p class="muted" style="margin-top:6px;margin-bottom:0;">Meta mínima: 1 visita por semana.</p>
+    </div>
+
+    <div class="card">
+      <div class="between" style="margin-bottom:10px;">
+        <button class="btn btn-ghost" onclick="goToPrevMonth()">‹</button>
+        <h2 class="font-display" style="font-size:20px;margin:0;">${MONTH_LABELS[state.calendarMonth.month].toUpperCase()} ${state.calendarMonth.year}</h2>
+        <button class="btn btn-ghost" onclick="goToNextMonth()">›</button>
+      </div>
+      <div class="grid7" style="margin-bottom:4px;">
+        ${WEEKDAY_LABELS.map(w => `<div class="muted" style="text-align:center;font-size:10px;font-weight:700;">${w}</div>`).join("")}
+      </div>
+      <div class="grid7">
+        ${calCells.map(cell => {
+          if (!cell) return `<div></div>`;
+          const isToday = cell.iso === todayISO();
+          return `<div class="calcell ${isToday ? "today" : ""}">
+            <span class="mono" style="font-size:11px;">${cell.day}</span>
+            <div class="row" style="gap:2px;">
+              ${cell.people.map(p => `<span class="dot" style="background:${PERSON_COLOR[p]}"></span>`).join("")}
+            </div>
+          </div>`;
+        }).join("")}
+      </div>
+      <div class="row" style="gap:16px;margin-top:10px;">
+        ${PEOPLE.map(p => `<div class="row" style="gap:6px;"><span class="dot" style="width:8px;height:8px;background:${PERSON_COLOR[p]}"></span><span class="muted">${p}</span></div>`).join("")}
+      </div>
+    </div>
+
+    <button class="btn btn-ghost btn-block" onclick="toggleEditMode()" style="margin-bottom:16px;">${state.editMode ? "✕ Cerrar edición de rutina" : "✎ Editar rutina"}</button>
+
+    ${state.editMode ? renderEditPanel() : ""}
+
+    ${state.celebration ? renderCelebration() : ""}
+  `;
+}
+
+function renderEditPanel() {
+  const list = state.routine[state.editDay] || [];
+  return `
+  <div class="card">
+    <div class="grid4" style="margin-bottom:12px;">
+      ${DAY_ORDER.map(d => `<button class="pill ${state.editDay === d ? "active" : ""}" onclick="selectEditDay('${d}')">${DAY_META[d].label}</button>`).join("")}
+    </div>
+    ${list.map(ex => `
+      <div class="row" style="margin-bottom:8px;">
+        <input type="text" value="${escapeHtml(ex.name)}" style="flex:1;min-width:0;" onchange="editExerciseField('${ex.id}','name',this.value)" />
+        <input type="text" value="${escapeHtml(ex.sets)}" style="width:44px;text-align:center;" onchange="editExerciseField('${ex.id}','sets',this.value)" />
+        <span class="muted">x</span>
+        <input type="text" value="${escapeHtml(ex.reps)}" style="width:56px;text-align:center;" onchange="editExerciseField('${ex.id}','reps',this.value)" />
+        <button class="btn btn-ghost" onclick="removeExercise('${ex.id}')" style="color:#F87171;">🗑</button>
+      </div>
+    `).join("")}
+    <button class="btn btn-ghost btn-block" onclick="addExercise()" style="border-style:dashed;margin-bottom:12px;">+ Agregar ejercicio</button>
+    <button class="btn btn-primary btn-block" onclick="saveRoutineNow()" style="background:var(--edson);">Guardar cambios de rutina</button>
+  </div>`;
+}
+
+function renderCelebration() {
+  const c = state.celebration;
+  return `
+  <div id="celebration" onclick="closeCelebration()">
+    ${c.confetti.map(p => `<span class="confetti-piece" style="left:${p.left}%;background:${p.color};animation:confetti-fall ${p.duration}s ease-in ${p.delay}s forwards;transform:rotate(${p.rotate}deg);"></span>`).join("")}
+    <div class="celeb-card" onclick="event.stopPropagation()">
+      <div class="lockicon" style="font-size:26px;">🎉</div>
+      <p class="font-display" style="font-size:24px;margin:8px 0;">¡RUTINA COMPLETA!</p>
+      <p style="font-size:14px;color:#D4D4D4;">${escapeHtml(c.phrase)}</p>
+      <button class="btn btn-ghost" style="margin-top:16px;" onclick="closeCelebration()">Cerrar</button>
+    </div>
+  </div>`;
+}
+
+function attachMainEvents() { /* todos los handlers están inline vía onclick/oninput/onchange */ }
+
+/* =========================================================================
+   ARRANQUE
+   ========================================================================= */
+render();
+</script>
+</body>
+</html>

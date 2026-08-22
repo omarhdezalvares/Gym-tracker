@@ -1,0 +1,38 @@
+{
+  "routine": {
+    "push": [
+      { "id": "p1", "name": "Press de banca plano", "sets": 4, "reps": "10" },
+      { "id": "p2", "name": "Press inclinado con mancuerna", "sets": 3, "reps": "12" },
+      { "id": "p3", "name": "Press militar", "sets": 3, "reps": "10" },
+      { "id": "p4", "name": "Elevaciones laterales", "sets": 3, "reps": "15" },
+      { "id": "p5", "name": "Fondos en máquina / press francés", "sets": 3, "reps": "12" },
+      { "id": "p6", "name": "Extensión de tríceps en polea", "sets": 3, "reps": "15" }
+    ],
+    "pull": [
+      { "id": "l1", "name": "Jalón al pecho", "sets": 4, "reps": "12" },
+      { "id": "l2", "name": "Remo en máquina o barra", "sets": 4, "reps": "10" },
+      { "id": "l3", "name": "Remo bajo en polea", "sets": 3, "reps": "12" },
+      { "id": "l4", "name": "Face pull", "sets": 3, "reps": "15" },
+      { "id": "l5", "name": "Curl de bíceps con barra/mancuerna", "sets": 3, "reps": "12" },
+      { "id": "l6", "name": "Curl martillo", "sets": 3, "reps": "12" }
+    ],
+    "legs": [
+      { "id": "g1", "name": "Prensa de pierna", "sets": 4, "reps": "12" },
+      { "id": "g2", "name": "Extensión de cuádriceps", "sets": 4, "reps": "15" },
+      { "id": "g3", "name": "Curl femoral", "sets": 4, "reps": "14" },
+      { "id": "g4", "name": "Peso muerto rumano", "sets": 3, "reps": "10" },
+      { "id": "g5", "name": "Hip thrust", "sets": 3, "reps": "12" },
+      { "id": "g6", "name": "Elevación de talones de pie", "sets": 4, "reps": "18" }
+    ],
+    "full": [
+      { "id": "f1", "name": "Press de banca / inclinado (ligero)", "sets": 3, "reps": "10" },
+      { "id": "f2", "name": "Jalón al pecho / dominadas asistidas", "sets": 3, "reps": "12" },
+      { "id": "f3", "name": "Abducción de cadera", "sets": 3, "reps": "15" },
+      { "id": "f4", "name": "Aducción de cadera", "sets": 3, "reps": "15" },
+      { "id": "f5", "name": "Plancha (core)", "sets": 3, "reps": "30-45s" },
+      { "id": "f6", "name": "Elevación de piernas / crunch polea", "sets": 3, "reps": "15" },
+      { "id": "f7", "name": "Elevaciones laterales (hombro rezagado)", "sets": 2, "reps": "15" }
+    ]
+  },
+  "logs": []
+}
