@@ -470,10 +470,32 @@ function computeCalendarCells() {
    ========================================================================= */
 function render() {
   const app = document.getElementById("app");
+
+  // Preserva el foco y la posición del cursor del input activo, porque
+  // reconstruimos todo el HTML con innerHTML en cada render (incluyendo los
+  // que dispara el autoguardado mientras el usuario sigue escribiendo el
+  // peso), y eso normalmente le hace perder el foco al campo y cierra el
+  // teclado en móvil a mitad de la escritura.
+  const active = document.activeElement;
+  let focusInfo = null;
+  if (active && active.id && app.contains(active)) {
+    focusInfo = { id: active.id, start: active.selectionStart, end: active.selectionEnd };
+  }
+
   if (!state.authed) { app.innerHTML = renderLogin(); attachLoginEvents(); return; }
   if (state.loading || !state.routine) { app.innerHTML = renderLoading(); return; }
   app.innerHTML = renderMain();
   attachMainEvents();
+
+  if (focusInfo) {
+    const el = document.getElementById(focusInfo.id);
+    if (el) {
+      el.focus();
+      if (typeof focusInfo.start === "number" && el.setSelectionRange) {
+        try { el.setSelectionRange(focusInfo.start, focusInfo.end); } catch (e) {}
+      }
+    }
+  }
 }
 
 function renderLoading() {
@@ -552,7 +574,7 @@ function renderMain() {
             <div class="exname">${escapeHtml(ex.name)}</div>
             <div class="exsub mono">${ex.sets} x ${ex.reps}</div>
           </div>
-          <input type="number" inputmode="decimal" placeholder="kg" class="wtinput mono" value="${escapeHtml(d.weight)}" oninput="updateWeight('${ex.id}', this.value)" />
+          <input type="text" inputmode="decimal" id="wt-${ex.id}" placeholder="kg" class="wtinput mono" value="${escapeHtml(d.weight)}" oninput="updateWeight('${ex.id}', this.value)" />
           <span class="muted">kg</span>
         </div>`;
       }).join("")}
