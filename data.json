@@ -448,7 +448,7 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "2.20",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
