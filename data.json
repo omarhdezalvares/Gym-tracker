@@ -411,7 +411,7 @@
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "",
+          "weight": "30",
           "done": false
         },
         {
@@ -448,10 +448,10 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "2.20",
-          "done": true
+          "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ]
 }
