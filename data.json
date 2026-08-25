@@ -418,7 +418,7 @@
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
           "weight": "30",
-          "done": false
+          "done": true
         },
         {
           "exId": "p3",
