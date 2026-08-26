@@ -577,13 +577,13 @@
           "exId": "l2",
           "name": "Remo en máquina o barra",
           "weight": "23",
-          "done": true
+          "done": false
         },
         {
           "exId": "l3",
           "name": "Remo bajo en polea",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "l4",
