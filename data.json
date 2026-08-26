@@ -555,11 +555,11 @@
         {
           "exId": "exmt3za6wb",
           "name": "Cardio 20 min.",
-          "weight": "2.5",
-          "done": true
+          "weight": "1.75",
+          "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ]
 }
