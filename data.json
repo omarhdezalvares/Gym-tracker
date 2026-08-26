@@ -505,7 +505,7 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "0",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmt9drlmj",
@@ -514,7 +514,7 @@
           "done": false
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
