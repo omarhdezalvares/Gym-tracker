@@ -520,7 +520,7 @@
           "exId": "l1",
           "name": "Jalón al pecho",
           "weight": "52",
-          "done": true
+          "done": false
         },
         {
           "exId": "l2",
@@ -555,7 +555,7 @@
         {
           "exId": "exmt3za6wb",
           "name": "Cardio 20 min.",
-          "weight": "1.75",
+          "weight": "2.5",
           "done": true
         }
       ],
