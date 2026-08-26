@@ -511,7 +511,7 @@
           "exId": "exmt9drlmj",
           "name": "Bici",
           "weight": "1.6",
-          "done": true
+          "done": false
         }
       ],
       "anyDone": true
