@@ -42,6 +42,12 @@
         "name": "Cardio 20 min.",
         "sets": "1",
         "reps": "20"
+      },
+      {
+        "id": "exmt9drlmj",
+        "name": "Bici",
+        "sets": "1",
+        "reps": "20"
       }
     ],
     "pull": [
