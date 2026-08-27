@@ -673,7 +673,7 @@
           "exId": "g1",
           "name": "Prensa de pierna",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "g2",
