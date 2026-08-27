@@ -640,7 +640,7 @@
           "exId": "g4",
           "name": "Abducción ",
           "weight": "70",
-          "done": true
+          "done": false
         },
         {
           "exId": "g5",
@@ -661,7 +661,7 @@
           "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ]
 }
