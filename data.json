@@ -763,7 +763,7 @@
           "exId": "c3",
           "name": "Cuerda / HIIT",
           "weight": "",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
