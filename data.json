@@ -740,6 +740,33 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-01__cardio",
+      "person": "Edson",
+      "date": "2026-09-01",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
     }
   ]
 }
