@@ -769,8 +769,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-02__push",
-      "person": "Edson",
+      "id": "Omar__2026-09-02__push",
+      "person": "Omar",
       "date": "2026-09-02",
       "dayKey": "push",
       "exercises": [
@@ -820,15 +820,15 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-02__push",
-      "person": "Omar",
+      "id": "Edson__2026-09-02__push",
+      "person": "Edson",
       "date": "2026-09-02",
       "dayKey": "push",
       "exercises": [
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "",
+          "weight": "28",
           "done": false
         },
         {
