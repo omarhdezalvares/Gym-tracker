@@ -853,7 +853,7 @@
           "exId": "p5",
           "name": "Fondos en máquina / press francés",
           "weight": "1",
-          "done": false
+          "done": true
         },
         {
           "exId": "p6",
