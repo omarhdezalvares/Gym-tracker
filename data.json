@@ -769,57 +769,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-02__push",
-      "person": "Edson",
-      "date": "2026-09-02",
-      "dayKey": "push",
-      "exercises": [
-        {
-          "exId": "p1",
-          "name": "Press de banca plano",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p2",
-          "name": "Press inclinado con mancuerna",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p3",
-          "name": "Press militar",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p4",
-          "name": "Elevaciones laterales",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p5",
-          "name": "Fondos en máquina / press francés",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p6",
-          "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3z9cx6",
-          "name": "Cardio 20 min.",
-          "weight": "5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Omar__2026-09-02__push",
       "person": "Omar",
       "date": "2026-09-02",
@@ -848,6 +797,57 @@
           "name": "Elevaciones laterales",
           "weight": "7",
           "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-02__push",
+      "person": "Edson",
+      "date": "2026-09-02",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "28",
+          "done": false
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "",
+          "done": false
         },
         {
           "exId": "p5",
