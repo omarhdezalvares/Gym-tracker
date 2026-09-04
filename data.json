@@ -920,6 +920,57 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-03__pull",
+      "person": "Edson",
+      "date": "2026-09-03",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
     }
   ]
 }
