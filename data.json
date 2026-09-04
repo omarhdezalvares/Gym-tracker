@@ -916,10 +916,10 @@
           "exId": "exmt3za6wb",
           "name": "Cardio 20 min.",
           "weight": "2.20",
-          "done": false
+          "done": true
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
