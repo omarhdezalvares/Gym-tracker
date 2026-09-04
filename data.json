@@ -937,7 +937,7 @@
           "exId": "l2",
           "name": "Remo en máquina o barra",
           "weight": "23",
-          "done": false
+          "done": true
         },
         {
           "exId": "l3",
