@@ -943,7 +943,7 @@
           "exId": "l3",
           "name": "Remo bajo en polea",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "l4",
