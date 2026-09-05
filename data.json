@@ -973,8 +973,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-04__legs",
-      "person": "Edson",
+      "id": "Omar__2026-09-04__legs",
+      "person": "Omar",
       "date": "2026-09-04",
       "dayKey": "legs",
       "exercises": [
@@ -987,14 +987,14 @@
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
-          "weight": "65.5",
-          "done": false
+          "weight": "57",
+          "done": true
         },
         {
           "exId": "g3",
           "name": "Curl femoral",
-          "weight": "",
-          "done": false
+          "weight": "41",
+          "done": true
         },
         {
           "exId": "g4",
@@ -1021,11 +1021,11 @@
           "done": false
         }
       ],
-      "anyDone": false
+      "anyDone": true
     },
     {
-      "id": "Omar__2026-09-04__legs",
-      "person": "Omar",
+      "id": "Edson__2026-09-04__legs",
+      "person": "Edson",
       "date": "2026-09-04",
       "dayKey": "legs",
       "exercises": [
@@ -1033,19 +1033,19 @@
           "exId": "g1",
           "name": "Prensa de pierna",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
-          "weight": "57",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "g3",
           "name": "Curl femoral",
-          "weight": "41",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "g4",
