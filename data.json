@@ -1057,7 +1057,7 @@
           "exId": "g5",
           "name": "Aducción ",
           "weight": "36",
-          "done": false
+          "done": true
         },
         {
           "exId": "g6",
