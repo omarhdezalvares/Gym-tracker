@@ -973,57 +973,6 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-04__legs",
-      "person": "Omar",
-      "date": "2026-09-04",
-      "dayKey": "legs",
-      "exercises": [
-        {
-          "exId": "g1",
-          "name": "Prensa de pierna",
-          "weight": "131",
-          "done": true
-        },
-        {
-          "exId": "g2",
-          "name": "Extensión de cuádriceps",
-          "weight": "57",
-          "done": true
-        },
-        {
-          "exId": "g3",
-          "name": "Curl femoral",
-          "weight": "41",
-          "done": true
-        },
-        {
-          "exId": "g4",
-          "name": "Abducción ",
-          "weight": "36",
-          "done": true
-        },
-        {
-          "exId": "g5",
-          "name": "Aducción ",
-          "weight": "70",
-          "done": true
-        },
-        {
-          "exId": "g6",
-          "name": "Elevación de talones de pie",
-          "weight": "20",
-          "done": true
-        },
-        {
-          "exId": "exmt3zapgy",
-          "name": "Cardio 20 min.",
-          "weight": "1.5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-09-04__legs",
       "person": "Edson",
       "date": "2026-09-04",
@@ -1069,6 +1018,57 @@
           "exId": "exmt3zapgy",
           "name": "Cardio 20 min.",
           "weight": "2",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-04__legs",
+      "person": "Omar",
+      "date": "2026-09-04",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "57",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "41",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "1.5",
           "done": true
         }
       ],
