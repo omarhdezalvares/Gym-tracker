@@ -152,6 +152,40 @@ const MOTIVATIONAL_PHRASES = [
 ];
 const CONFETTI_COLORS = ["#E7B10A","#4CC9F0","#4ADE80","#F87171","#C084FC"];
 
+// Videos de ejemplo de TikTok, elegidos a mano para cada ejercicio de la rutina.
+// Se busca por nombre (sin espacios sobrantes) para que sirva sin importar en qué día aparezca.
+const EXERCISE_TIKTOK_LINKS = {
+  "Press de banca plano": "https://www.tiktok.com/@borjayus/video/7680263708911717664",
+  "Press de banca / inclinado (ligero)": "https://www.tiktok.com/@borjayus/video/7680263708911717664",
+  "Press inclinado con mancuerna": "https://www.tiktok.com/@annadiaz.fit/video/7656555075048836374",
+  "Press militar": "https://www.tiktok.com/@yoshiosport/video/7596002715923238164",
+  "Elevaciones laterales": "https://www.tiktok.com/@pipecalisteniafit/video/7646865293184093473",
+  "Elevaciones laterales (hombro rezagado)": "https://www.tiktok.com/@pipecalisteniafit/video/7646865293184093473",
+  "Fondos en máquina / press francés": "https://www.tiktok.com/@yoshiosport/video/7594474560943050004",
+  "Extensión de tríceps en polea": "https://www.tiktok.com/@pipecalisteniafit/video/7680319859992890657",
+  "Cardio 20 min.": "https://www.tiktok.com/@raul_ibrfit/video/7608759214764346655",
+  "Jalón al pecho": "https://www.tiktok.com/@sofiaperezrod/video/7650285604294479105",
+  "Jalón al pecho / dominadas asistidas": "https://www.tiktok.com/@sofiaperezrod/video/7650285604294479105",
+  "Remo en máquina o barra": "https://www.tiktok.com/@crstianberdugo/video/7463296820056296710",
+  "Remo bajo en polea": "https://www.tiktok.com/@eduandreu94/video/7627934644591136022",
+  "Face pull": "https://www.tiktok.com/@yoshiosport/video/7594885036143299861",
+  "Curl de bíceps con barra/mancuerna": "https://www.tiktok.com/@uopak.fitness/video/7114048203485416709",
+  "Curl martillo": "https://www.tiktok.com/@emilioborn/video/7309283824830123295",
+  "Prensa de pierna": "https://www.tiktok.com/@emilioborn/video/7332120713630960939",
+  "Extensión de cuádriceps": "https://www.tiktok.com/@pipecalisteniafit/video/7656894071830596896",
+  "Curl femoral": "https://www.tiktok.com/@davidespaa32/video/7658013649813900562",
+  "Abducción": "https://www.tiktok.com/@araceligargut/video/7656908892445691156",
+  "Aducción": "https://www.tiktok.com/@maferlazo99/video/7490336241985244471",
+  "Elevación de talones de pie": "https://www.tiktok.com/@imsamueldelgado/video/7584813721239751958",
+  "Patada de gluteo": "https://www.tiktok.com/@andreachimirri_/video/7664033377648921863",
+  "Plancha (core)": "https://www.tiktok.com/@pipecalisteniafit/video/7646109182462020886",
+  "Elevación de piernas / crunch polea": "https://www.tiktok.com/@isaacmartinez.f/video/7618409027768405269",
+  "Caminadora / trote": "https://www.tiktok.com/@raul_ibrfit/video/7608759214764346655",
+  "Bicicleta / eliptica": "https://www.tiktok.com/@elnatioficial/video/7647207806520593684",
+  "Bicicleta / elíptica": "https://www.tiktok.com/@elnatioficial/video/7647207806520593684",
+  "Cuerda / HIIT": "https://www.tiktok.com/@lili.jumps/video/7555614639971814667",
+};
+
 const ATTENDANCE_GOAL_DAYS_PER_WEEK = 5;
 const HISTORICAL_ATTENDANCE = {
   year: 2026,
@@ -210,6 +244,14 @@ function getISOWeekKey(dateStr) {
 function weekLabelShort(k){ return k.split("-")[1]; }
 function entryId(){ return `${state.person}__${state.date}__${state.dayKey}`; }
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function getYoutubeSearchUrl(name) {
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(`${name} ejercicio técnica correcta`)}`;
+}
+function getTiktokUrl(name) {
+  const key = String(name || "").trim();
+  return EXERCISE_TIKTOK_LINKS[key] || `https://www.tiktok.com/search?q=${encodeURIComponent(key)}`;
+}
 
 /* =========================================================================
    GITHUB CONTENTS API — leer y escribir data.json en el mismo repo
@@ -882,7 +924,15 @@ function renderExerciseModal() {
       <div class="row" style="gap:16px;margin-top:10px;">
         ${PEOPLE.map(p => `<div class="row" style="gap:6px;"><span class="dot" style="width:8px;height:8px;background:${PERSON_COLOR[p]}"></span><span class="muted">${p}</span></div>`).join("")}
       </div>
-      <button class="btn btn-ghost btn-block" style="margin-top:16px;" onclick="closeExerciseProgress()">Cerrar</button>
+      <div class="row" style="margin-top:16px;gap:8px;">
+        <button class="btn btn-ghost" style="flex:1;" onclick="closeExerciseProgress()">Cerrar</button>
+        <a href="${getYoutubeSearchUrl(name)}" target="_blank" rel="noopener noreferrer" title="Ver cómo se hace en YouTube" style="flex:none;width:38px;height:38px;border-radius:10px;background:#FF0000;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+        <a href="${getTiktokUrl(name)}" target="_blank" rel="noopener noreferrer" title="Ver video de ejemplo en TikTok" style="flex:none;width:38px;height:38px;border-radius:10px;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.14-3.06h-3.14v13.6a2.6 2.6 0 1 1-1.84-2.49v-3.2a5.8 5.8 0 1 0 5.02 5.75V9.4a7.4 7.4 0 0 0 4.6 1.6V7.86a4.28 4.28 0 0 1-1.5-2.04z"/></svg>
+        </a>
+      </div>
     </div>
   </div>`;
 }
