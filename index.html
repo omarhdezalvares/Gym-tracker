@@ -10,7 +10,7 @@
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Gymbros.app" />
-<meta name="theme-color" content="#1B1B1D" />
+<meta name="theme-color" content="#0B0B0F" />
 <link rel="apple-touch-icon" href="icon-180.png" />
 <link rel="apple-touch-icon" sizes="152x152" href="icon-152.png" />
 <link rel="apple-touch-icon" sizes="167x167" href="icon-167.png" />
@@ -25,11 +25,15 @@
     --text:#F5F5F5; --muted:#8A8A8D; --omar:#E7B10A; --edson:#4CC9F0; --green:#4ADE80;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;}
+  body{margin:0;background:#0B0B0F;color:var(--text);font-family:'Inter',system-ui,sans-serif;position:relative;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:-15%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.35;background:
+    radial-gradient(circle at 20% 15%, #7C6CF0 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, #E7B10A 0%, transparent 40%),
+    radial-gradient(circle at 30% 85%, #37D6C4 0%, transparent 45%);}
   .font-display{font-family:'Bebas Neue',system-ui,sans-serif;letter-spacing:.03em;}
   .mono{font-family:'JetBrains Mono',monospace;}
-  #app{max-width:480px;margin:0 auto;padding:16px;padding-top:calc(env(safe-area-inset-top, 0px) + 28px);min-height:100vh;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px;}
+  #app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px;padding-top:calc(env(safe-area-inset-top, 0px) + 28px);padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 84px);min-height:100vh;}
+  .card{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px;margin-bottom:16px;}
   .row{display:flex;align-items:center;gap:8px;}
   .between{display:flex;align-items:center;justify-content:space-between;}
   .btn{cursor:pointer;border:none;border-radius:10px;font-weight:700;font-size:14px;padding:10px 14px;}
@@ -45,6 +49,23 @@
   .pill{border-radius:10px;padding:8px 0;text-align:center;font-weight:700;font-size:12px;border:1px solid var(--border);cursor:pointer;background:var(--bg);color:#D4D4D4;}
   .pill.active{background:var(--omar);color:#1B1B1D;border:none;}
   .pill2.active{background:var(--edson)!important;}
+  .bottom-nav{position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));max-width:452px;margin:0 auto;display:flex;background:rgba(30,30,34,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:8px 6px;z-index:40;}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px 0 6px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:11px;font-weight:600;font-family:inherit;}
+  .nav-item .nav-icon{display:flex;position:relative;}
+  .nav-item .nav-icon svg{width:22px;height:22px;position:relative;z-index:1;}
+  .nav-item.active .nav-icon::before{content:"";position:absolute;inset:-8px;border-radius:999px;background:radial-gradient(circle, currentColor, transparent 70%);opacity:.4;filter:blur(3px);}
+  .nav-item.active.nav-omar{color:var(--omar);}
+  .nav-item.active.nav-edson{color:var(--edson);}
+  .person-switch{display:flex;gap:8px;margin-bottom:12px;}
+  .person-chip{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
+  .person-avatar{width:24px;height:24px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex:none;}
+  .day-scroll{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .day-scroll::-webkit-scrollbar{display:none;}
+  .day-chip{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:64px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:#D4D4D4;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit;}
+  .day-chip .day-icon{display:flex;}
+  .day-chip .day-icon svg{width:20px;height:20px;}
+  .day-chip{background:rgba(255,255,255,.05);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+  .day-chip.active{background:rgba(231,177,10,.22);color:var(--text);border-color:rgba(231,177,10,.5);}
   .exrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
   .exrow:last-child{border-bottom:none;}
   .check{width:30px;height:30px;flex:none;border-radius:999px;border:2px solid #4B4B4E;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1B1B1D;font-weight:900;}
@@ -73,7 +94,7 @@
   @keyframes fade-in{from{opacity:0;}to{opacity:1;}}
   #celebration{position:fixed;inset:0;background:rgba(10,10,11,.72);z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;animation:fade-in .2s ease-out;}
   .confetti-piece{position:absolute;top:0;width:8px;height:14px;border-radius:2px;}
-  .celeb-card{position:relative;background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:32px 24px;max-width:320px;text-align:center;animation:pop-in .4s cubic-bezier(.34,1.56,.64,1);}
+  .celeb-card{position:relative;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:32px 24px;max-width:320px;text-align:center;animation:pop-in .4s cubic-bezier(.34,1.56,.64,1);}
   .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--border2);padding:8px 16px;border-radius:10px;font-size:12px;color:var(--muted);z-index:60;}
 </style>
 </head>
@@ -104,11 +125,11 @@ const PEOPLE = ["Omar", "Edson"];
 const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0" };
 const DAY_ORDER = ["push", "pull", "legs", "full", "cardio"];
 const DAY_META = {
-  push: { label: "Push", sub: "Pecho / Hombro / Tríceps" },
-  pull: { label: "Pull", sub: "Espalda / Bíceps" },
-  legs: { label: "Legs", sub: "Pierna (sin sentadilla/desplantes)" },
-  full: { label: "Full", sub: "Mezcla + zonas rezagadas" },
-  cardio: { label: "Cardio", sub: "Cardio / acondicionamiento" },
+  push: { label: "Push", sub: "Pecho / Hombro / Tríceps", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>` },
+  pull: { label: "Pull", sub: "Espalda / Bíceps", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>` },
+  legs: { label: "Legs", sub: "Pierna (sin sentadilla/desplantes)", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg>` },
+  full: { label: "Full", sub: "Mezcla + zonas rezagadas", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>` },
+  cardio: { label: "Cardio", sub: "Cardio / acondicionamiento", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>` },
 };
 const DEFAULT_CARDIO_EXERCISES = [
   { id: "c1", name: "Caminadora / trote", sets: "1", reps: "20 min" },
@@ -130,6 +151,14 @@ const MOTIVATIONAL_PHRASES = [
   "Otro día, otro ladrillo en la construcción de tu meta.",
 ];
 const CONFETTI_COLORS = ["#E7B10A","#4CC9F0","#4ADE80","#F87171","#C084FC"];
+
+const ATTENDANCE_GOAL_DAYS_PER_WEEK = 5;
+const HISTORICAL_ATTENDANCE = {
+  year: 2026,
+  weeksCovered: 34,
+  weeksAttended: 28,
+  avgDaysPerAttendedWeek: 2.5,
+};
 
 /* =========================================================================
    ESTADO GLOBAL
@@ -153,6 +182,8 @@ const state = {
   editDay: "push",
   celebration: null,
   progressExercise: null,
+  progressModalOpen: false,
+  section: "operativa",
 };
 
 let saveTimer = null;
@@ -339,6 +370,7 @@ function selectPerson(p) {
   render();
 }
 function selectDay(d){ state.dayKey = d; rebuildDraft(); render(); }
+function selectSection(s){ state.section = s; render(); }
 function changeDate(v){ state.date = v; rebuildDraft(); render(); }
 
 function toggleDone(exId) {
@@ -379,6 +411,8 @@ function goToNextMonth() {
 }
 
 function selectProgressExercise(name) { state.progressExercise = name; render(); }
+function openExerciseProgress(name) { state.progressExercise = name; state.progressModalOpen = true; render(); }
+function closeExerciseProgress() { state.progressModalOpen = false; render(); }
 
 function toggleEditMode(){ state.editMode = !state.editMode; render(); }
 function selectEditDay(d){ state.editDay = d; render(); }
@@ -454,6 +488,34 @@ function computeStreaks() {
     result[p] = streak;
   });
   return result;
+}
+
+function computeYearAttendance() {
+  const year = HISTORICAL_ATTENDANCE.year;
+  const todayWeek = Number(getISOWeekKey(todayISO()).split("-S")[1]);
+
+  const realDates = new Set(
+    state.logs
+      .filter(l => l.anyDone && l.date.startsWith(String(year)))
+      .filter(l => Number(getISOWeekKey(l.date).split("-S")[1]) > HISTORICAL_ATTENDANCE.weeksCovered)
+      .map(l => l.date)
+  );
+  const realWeeks = new Set(Array.from(realDates).map(getISOWeekKey));
+
+  const totalDaysAttended = HISTORICAL_ATTENDANCE.weeksAttended * HISTORICAL_ATTENDANCE.avgDaysPerAttendedWeek + realDates.size;
+  const totalWeeksAttended = HISTORICAL_ATTENDANCE.weeksAttended + realWeeks.size;
+
+  const weeksElapsed = todayWeek;
+  const goalDays = weeksElapsed * ATTENDANCE_GOAL_DAYS_PER_WEEK;
+
+  return {
+    daysPct: Math.min(100, Math.round((totalDaysAttended / goalDays) * 100)),
+    weeksPct: Math.min(100, Math.round((totalWeeksAttended / weeksElapsed) * 100)),
+    totalDaysAttended: Math.round(totalDaysAttended * 10) / 10,
+    goalDays,
+    totalWeeksAttended,
+    weeksElapsed,
+  };
 }
 
 function computeCalendarCells() {
@@ -576,25 +638,16 @@ function renderMain() {
   const calCells = computeCalendarCells();
   const maxWeekly = Math.max(1, ...weekly.flatMap(r => PEOPLE.map(p => r[p])));
 
-  return `
-    <div class="between" style="margin-bottom:20px;">
-      <div class="row">
-        <img src="icon-192.png" alt="" style="width:40px;height:40px;border-radius:10px;flex:none;" />
-        <div>
-          <h1 class="font-display" style="font-size:28px;line-height:1;margin:0;">GYMBROS.APP</h1>
-          <p class="muted" style="margin:4px 0 0;">Repo compartido · ${state.logs.length === 0 ? "sin historial cargado" : state.logs.length + " sesiones cargadas"}</p>
-        </div>
-      </div>
-      <div class="row">
-        ${HARDCODED_TOKEN && HARDCODED_TOKEN.trim() ? "" : `<button class="btn btn-ghost" onclick="saveTokenPrompt()" title="Configurar token de GitHub">🔑</button>`}
-        <button class="btn btn-ghost" onclick="handleLogout()" title="Cerrar sesión">⎋</button>
-      </div>
-    </div>
-
-    <div class="grid4" style="margin-bottom:12px;">
-      ${PEOPLE.map(p => `
-        <button class="pill ${state.person === p ? "active" + (p === "Edson" ? " pill2" : "") : ""}" style="grid-column: span 2;" onclick="selectPerson('${p}')">${p}</button>
-      `).join("")}
+  const operativaHtml = `
+    <div class="person-switch">
+      ${PEOPLE.map(p => {
+        const active = state.person === p;
+        return `
+        <button class="person-chip" style="background:${active ? "rgba(255,255,255,.1)" : "rgba(255,255,255,.05)"};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid ${active ? PERSON_COLOR[p] : "rgba(255,255,255,.12)"};color:${active ? "var(--text)" : "#9C9CA1"};" onclick="selectPerson('${p}')">
+          <span class="person-avatar" style="background:${PERSON_COLOR[p]};color:#1B1B1D;">${p.charAt(0)}</span>
+          ${p}
+        </button>`;
+      }).join("")}
     </div>
 
     <div class="card">
@@ -602,8 +655,8 @@ function renderMain() {
         <span>📅</span>
         <input type="date" class="mono" value="${state.date}" onchange="changeDate(this.value)" style="background:transparent;border:none;color:var(--text);font-size:14px;" />
       </div>
-      <div class="grid4" style="grid-template-columns:repeat(${DAY_ORDER.length},1fr);">
-        ${DAY_ORDER.map(d => `<button class="pill ${state.dayKey === d ? "active" : ""}" onclick="selectDay('${d}')">${DAY_META[d].label}</button>`).join("")}
+      <div class="day-scroll">
+        ${DAY_ORDER.map(d => `<button class="day-chip ${state.dayKey === d ? "active" : ""}" onclick="selectDay('${d}')"><span class="day-icon">${DAY_META[d].icon}</span>${DAY_META[d].label}</button>`).join("")}
       </div>
       <p class="muted" style="margin-top:8px;margin-bottom:0;">${DAY_META[state.dayKey].sub}</p>
     </div>
@@ -614,8 +667,8 @@ function renderMain() {
         return `
         <div class="exrow">
           <button class="check ${d.done ? "done" : ""}" onclick="toggleDone('${ex.id}')">${d.done ? "✓" : ""}</button>
-          <div style="flex:1;min-width:0;">
-            <div class="exname">${escapeHtml(ex.name)}</div>
+          <div style="flex:1;min-width:0;cursor:pointer;" data-exname="${escapeHtml(ex.name)}" onclick="openExerciseProgress(this.dataset.exname)">
+            <div class="exname">${escapeHtml(ex.name)} <span class="muted" style="font-weight:400;">›</span></div>
             <div class="exsub mono">${ex.sets} x ${ex.reps}</div>
           </div>
           <input type="text" inputmode="decimal" id="wt-${ex.id}" placeholder="kg" class="wtinput mono" value="${escapeHtml(d.weight)}" oninput="updateWeight('${ex.id}', this.value)" />
@@ -628,6 +681,12 @@ function renderMain() {
       <span class="muted">${state.saving ? "Guardando…" : (state.statusMsg || "Tu progreso se guarda automáticamente")}</span>
     </div>
 
+    <button class="btn btn-ghost btn-block" onclick="toggleEditMode()" style="margin-bottom:16px;">${state.editMode ? "✕ Cerrar edición de rutina" : "✎ Editar rutina"}</button>
+
+    ${state.editMode ? renderEditPanel() : ""}
+  `;
+
+  const indicadoresHtml = `
     <div class="card">
       <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">ASISTENCIA SEMANAL</h2>
       <div class="row" style="gap:16px;margin-bottom:6px;">
@@ -646,6 +705,8 @@ function renderMain() {
       </div>
       <p class="muted" style="margin-top:6px;margin-bottom:0;">Meta mínima: 1 visita por semana.</p>
     </div>
+
+    ${renderYearAttendanceCard()}
 
     <div class="card">
       <div class="between" style="margin-bottom:10px;">
@@ -674,12 +735,38 @@ function renderMain() {
     </div>
 
     ${renderProgressCard()}
+  `;
 
-    <button class="btn btn-ghost btn-block" onclick="toggleEditMode()" style="margin-bottom:16px;">${state.editMode ? "✕ Cerrar edición de rutina" : "✎ Editar rutina"}</button>
+  return `
+    <div class="between" style="margin-bottom:20px;">
+      <div class="row">
+        <img src="icon-192.png" alt="" style="width:40px;height:40px;border-radius:10px;flex:none;" />
+        <div>
+          <h1 class="font-display" style="font-size:28px;line-height:1;margin:0;">GYMBROS.APP</h1>
+          <p class="muted" style="margin:4px 0 0;">Repo compartido · ${state.logs.length === 0 ? "sin historial cargado" : state.logs.length + " sesiones cargadas"}</p>
+        </div>
+      </div>
+      <div class="row">
+        ${HARDCODED_TOKEN && HARDCODED_TOKEN.trim() ? "" : `<button class="btn btn-ghost" onclick="saveTokenPrompt()" title="Configurar token de GitHub">🔑</button>`}
+        <button class="btn btn-ghost" onclick="handleLogout()" title="Cerrar sesión">⎋</button>
+      </div>
+    </div>
 
-    ${state.editMode ? renderEditPanel() : ""}
+    ${state.section === "indicadores" ? indicadoresHtml : operativaHtml}
 
     ${state.celebration ? renderCelebration() : ""}
+    ${state.progressModalOpen ? renderExerciseModal() : ""}
+
+    <nav class="bottom-nav">
+      <button class="nav-item ${state.section === "operativa" ? "active nav-omar" : ""}" onclick="selectSection('operativa')">
+        <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8" width="4" height="8" rx="1"/><rect x="19" y="8" width="4" height="8" rx="1"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        <span>Operativa</span>
+      </button>
+      <button class="nav-item ${state.section === "indicadores" ? "active nav-edson" : ""}" onclick="selectSection('indicadores')">
+        <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+        <span>Indicadores</span>
+      </button>
+    </nav>
   `;
 }
 
@@ -703,6 +790,24 @@ function renderProgressCard() {
     <div class="row" style="gap:16px;margin-top:10px;">
       ${PEOPLE.map(p => `<div class="row" style="gap:6px;"><span class="dot" style="width:8px;height:8px;background:${PERSON_COLOR[p]}"></span><span class="muted">${p}</span></div>`).join("")}
     </div>
+  </div>`;
+}
+
+function renderYearAttendanceCard() {
+  const ya = computeYearAttendance();
+  return `
+  <div class="card">
+    <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">ASISTENCIA DEL AÑO</h2>
+    <p class="muted" style="margin:0 0 4px;">Días asistidos <span class="mono" style="float:right;font-weight:700;background:linear-gradient(90deg,var(--omar),var(--edson));-webkit-background-clip:text;background-clip:text;color:transparent;">${ya.daysPct}%</span></p>
+    <div style="background:rgba(255,255,255,.08);border-radius:6px;height:10px;overflow:hidden;margin-bottom:4px;">
+      <div style="height:100%;width:${ya.daysPct}%;background:linear-gradient(90deg,var(--omar),var(--edson));"></div>
+    </div>
+    <p class="muted" style="margin:0 0 14px;font-size:12px;">${ya.totalDaysAttended} / ${ya.goalDays} días · meta ${ATTENDANCE_GOAL_DAYS_PER_WEEK} días/semana</p>
+    <p class="muted" style="margin:0 0 4px;">Semanas con ≥1 día <span class="mono" style="float:right;font-weight:700;background:linear-gradient(90deg,var(--omar),var(--edson));-webkit-background-clip:text;background-clip:text;color:transparent;">${ya.weeksPct}%</span></p>
+    <div style="background:rgba(255,255,255,.08);border-radius:6px;height:10px;overflow:hidden;margin-bottom:4px;">
+      <div style="height:100%;width:${ya.weeksPct}%;background:linear-gradient(90deg,var(--omar),var(--edson));"></div>
+    </div>
+    <p class="muted" style="margin:0;font-size:12px;">${ya.totalWeeksAttended} / ${ya.weeksElapsed} semanas</p>
   </div>`;
 }
 
@@ -764,6 +869,21 @@ function renderEditPanel() {
     `).join("")}
     <button class="btn btn-ghost btn-block" onclick="addExercise()" style="border-style:dashed;margin-bottom:12px;">+ Agregar ejercicio</button>
     <button class="btn btn-primary btn-block" onclick="saveRoutineNow()" style="background:var(--edson);">Guardar cambios de rutina</button>
+  </div>`;
+}
+
+function renderExerciseModal() {
+  const name = state.progressExercise;
+  return `
+  <div id="exercise-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px;" onclick="closeExerciseProgress()">
+    <div class="card" style="max-width:480px;width:100%;max-height:85vh;overflow-y:auto;" onclick="event.stopPropagation()">
+      <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">${escapeHtml(name)}</h2>
+      ${renderProgressChart(name)}
+      <div class="row" style="gap:16px;margin-top:10px;">
+        ${PEOPLE.map(p => `<div class="row" style="gap:6px;"><span class="dot" style="width:8px;height:8px;background:${PERSON_COLOR[p]}"></span><span class="muted">${p}</span></div>`).join("")}
+      </div>
+      <button class="btn btn-ghost btn-block" style="margin-top:16px;" onclick="closeExerciseProgress()">Cerrar</button>
+    </div>
   </div>`;
 }
 
