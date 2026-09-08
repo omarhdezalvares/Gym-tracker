@@ -1180,8 +1180,8 @@
       "anyDone": false
     },
     {
-      "id": "Omar__2026-09-07__push",
-      "person": "Omar",
+      "id": "Edson__2026-09-07__push",
+      "person": "Edson",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
@@ -1200,8 +1200,8 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
-          "done": false
+          "weight": "20",
+          "done": true
         },
         {
           "exId": "p4",
@@ -1237,8 +1237,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-07__push",
-      "person": "Edson",
+      "id": "Omar__2026-09-07__push",
+      "person": "Omar",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
@@ -1258,7 +1258,7 @@
           "exId": "p3",
           "name": "Press militar",
           "weight": "20",
-          "done": true
+          "done": false
         },
         {
           "exId": "p4",
