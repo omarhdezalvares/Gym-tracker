@@ -1180,8 +1180,8 @@
       "anyDone": false
     },
     {
-      "id": "Omar__2026-09-07__push",
-      "person": "Omar",
+      "id": "Edson__2026-09-07__push",
+      "person": "Edson",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
@@ -1231,14 +1231,14 @@
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
           "weight": "9.56",
-          "done": false
+          "done": true
         }
       ],
-      "anyDone": false
+      "anyDone": true
     },
     {
-      "id": "Edson__2026-09-07__push",
-      "person": "Edson",
+      "id": "Omar__2026-09-07__push",
+      "person": "Omar",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
@@ -1282,7 +1282,7 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmtryu73t",
