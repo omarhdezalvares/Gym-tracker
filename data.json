@@ -793,57 +793,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-03__pull",
-      "person": "Edson",
-      "date": "2026-09-03",
-      "dayKey": "pull",
-      "exercises": [
-        {
-          "exId": "l1",
-          "name": "Jalón al pecho",
-          "weight": "52",
-          "done": true
-        },
-        {
-          "exId": "l2",
-          "name": "Remo en máquina o barra",
-          "weight": "20",
-          "done": true
-        },
-        {
-          "exId": "l3",
-          "name": "Remo bajo en polea",
-          "weight": "23",
-          "done": true
-        },
-        {
-          "exId": "l4",
-          "name": "Face pull",
-          "weight": "0",
-          "done": true
-        },
-        {
-          "exId": "l5",
-          "name": "Curl de bíceps con barra/mancuerna",
-          "weight": "20",
-          "done": true
-        },
-        {
-          "exId": "l6",
-          "name": "Curl martillo",
-          "weight": "10",
-          "done": true
-        },
-        {
-          "exId": "exmt3za6wb",
-          "name": "Cardio 20 min.",
-          "weight": "2.75",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-08-26__legs",
       "person": "Edson",
       "date": "2026-08-26",
@@ -1105,6 +1054,63 @@
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
           "weight": "5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-03__pull",
+      "person": "Edson",
+      "date": "2026-09-03",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "23",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "0",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.75",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
           "done": true
         }
       ],
