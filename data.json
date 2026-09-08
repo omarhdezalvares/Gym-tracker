@@ -1099,7 +1099,7 @@
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
           "weight": "5",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
