@@ -1180,22 +1180,22 @@
       "anyDone": false
     },
     {
-      "id": "Omar__2026-09-07__push",
-      "person": "Omar",
+      "id": "Edson__2026-09-07__push",
+      "person": "Edson",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "32",
+          "weight": "16",
           "done": true
         },
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "",
-          "done": false
+          "weight": "14",
+          "done": true
         },
         {
           "exId": "p3",
@@ -1237,22 +1237,22 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-07__push",
-      "person": "Edson",
+      "id": "Omar__2026-09-07__push",
+      "person": "Omar",
       "date": "2026-09-07",
       "dayKey": "push",
       "exercises": [
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "16",
+          "weight": "32",
           "done": true
         },
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "14",
-          "done": true
+          "weight": "28",
+          "done": false
         },
         {
           "exId": "p3",
