@@ -217,6 +217,7 @@ const state = {
   celebration: null,
   progressExercise: null,
   progressModalOpen: false,
+  chartTooltip: null,
   section: "operativa",
 };
 
@@ -452,9 +453,13 @@ function goToNextMonth() {
   render();
 }
 
-function selectProgressExercise(name) { state.progressExercise = name; render(); }
-function openExerciseProgress(name) { state.progressExercise = name; state.progressModalOpen = true; render(); }
-function closeExerciseProgress() { state.progressModalOpen = false; render(); }
+function selectProgressExercise(name) { state.progressExercise = name; state.chartTooltip = null; render(); }
+function openExerciseProgress(name) { state.progressExercise = name; state.progressModalOpen = true; state.chartTooltip = null; render(); }
+function closeExerciseProgress() { state.progressModalOpen = false; state.chartTooltip = null; render(); }
+function selectChartPoint(person, date, weight) {
+  state.chartTooltip = { person, date, weight };
+  render();
+}
 
 function toggleEditMode(){ state.editMode = !state.editMode; render(); }
 function selectEditDay(d){ state.editDay = d; render(); }
@@ -862,7 +867,7 @@ function renderProgressChart(name) {
 
   const dateKeys = Array.from(new Set(allPoints.map(pt => pt.date))).sort();
   const weights = allPoints.map(pt => pt.weight);
-  const minW = Math.min(...weights), maxW = Math.max(...weights);
+  const minW = 0, maxW = Math.max(...weights);
   const wRange = (maxW - minW) || 1;
   const minDate = dateKeys[0], maxDate = dateKeys[dateKeys.length - 1];
   const dRange = (new Date(maxDate) - new Date(minDate)) || 1;
@@ -872,25 +877,35 @@ function renderProgressChart(name) {
   const xFor = d => padL + ((new Date(d) - new Date(minDate)) / dRange) * plotW;
   const yFor = w => padT + (1 - (w - minW) / wRange) * plotH;
 
+  const tt = state.chartTooltip;
   const seriesSvg = PEOPLE.map(p => {
     const pts = data[p];
     if (!pts.length) return "";
     const dAttr = pts.map((pt, i) => `${i === 0 ? "M" : "L"}${xFor(pt.date).toFixed(1)},${yFor(pt.weight).toFixed(1)}`).join(" ");
     const line = pts.length > 1 ? `<path d="${dAttr}" fill="none" stroke="${PERSON_COLOR[p]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>` : "";
-    const dots = pts.map(pt => `<circle cx="${xFor(pt.date).toFixed(1)}" cy="${yFor(pt.weight).toFixed(1)}" r="3.5" fill="${PERSON_COLOR[p]}" stroke="#1B1B1D" stroke-width="1"><title>${p} · ${formatShortDate(pt.date)} · ${pt.weight} kg</title></circle>`).join("");
+    const dots = pts.map(pt => {
+      const isSelected = tt && tt.person === p && tt.date === pt.date;
+      const r = isSelected ? 5.5 : 3.5;
+      return `<circle cx="${xFor(pt.date).toFixed(1)}" cy="${yFor(pt.weight).toFixed(1)}" r="${r}" fill="${PERSON_COLOR[p]}" stroke="${isSelected ? "#fff" : "#1B1B1D"}" stroke-width="${isSelected ? 2 : 1}" style="cursor:pointer;" onclick="event.stopPropagation();selectChartPoint('${p}','${pt.date}',${pt.weight})"><title>${p} · ${formatShortDate(pt.date)} · ${pt.weight} kg</title></circle>`;
+    }).join("");
     return line + dots;
   }).join("");
+
+  const tooltipHtml = tt
+    ? `<p class="mono" style="margin:6px 0 0;font-size:12px;"><span style="color:${PERSON_COLOR[tt.person]};font-weight:700;">${escapeHtml(tt.person)}</span> · ${formatShortDate(tt.date)} · ${tt.weight} kg</p>`
+    : `<p class="muted" style="margin:6px 0 0;font-size:11px;">Toca un punto para ver el día.</p>`;
 
   return `
   <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;">
     <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="#333335" stroke-width="1"/>
     <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="#333335" stroke-width="1"/>
     <text x="${padL - 6}" y="${padT + 4}" text-anchor="end" font-size="9" fill="#8A8A8D">${maxW}</text>
-    <text x="${padL - 6}" y="${H - padB}" text-anchor="end" font-size="9" fill="#8A8A8D">${minW}</text>
+    <text x="${padL - 6}" y="${H - padB}" text-anchor="end" font-size="9" fill="#8A8A8D">0</text>
     <text x="${padL}" y="${H - 6}" text-anchor="start" font-size="9" fill="#8A8A8D">${formatShortDate(minDate)}</text>
     <text x="${W - padR}" y="${H - 6}" text-anchor="end" font-size="9" fill="#8A8A8D">${formatShortDate(maxDate)}</text>
     ${seriesSvg}
-  </svg>`;
+  </svg>
+  ${tooltipHtml}`;
 }
 
 function renderEditPanel() {
