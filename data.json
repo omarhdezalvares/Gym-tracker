@@ -1390,7 +1390,7 @@
           "exId": "l4",
           "name": "Face pull",
           "weight": "14.7",
-          "done": false
+          "done": true
         },
         {
           "exId": "l5",
