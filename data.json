@@ -153,13 +153,13 @@
     "full": [
       {
         "id": "f1",
-        "name": "Press de banca / inclinado (ligero)",
+        "name": "Press de banca declinado",
         "sets": 3,
         "reps": "10"
       },
       {
         "id": "f2",
-        "name": "Jalón al pecho / dominadas asistidas",
+        "name": " Dominadas asistidas",
         "sets": 3,
         "reps": "12"
       },
@@ -183,7 +183,7 @@
       },
       {
         "id": "f7",
-        "name": "Elevaciones laterales (hombro rezagado)",
+        "name": "Desplantes",
         "sets": 2,
         "reps": "15"
       },
