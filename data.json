@@ -1306,8 +1306,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-09__pull",
-      "person": "Omar",
+      "id": "Edson__2026-09-09__pull",
+      "person": "Edson",
       "date": "2026-09-09",
       "dayKey": "pull",
       "exercises": [
@@ -1363,8 +1363,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-09__pull",
-      "person": "Edson",
+      "id": "Omar__2026-09-09__pull",
+      "person": "Omar",
       "date": "2026-09-09",
       "dayKey": "pull",
       "exercises": [
@@ -1414,7 +1414,7 @@
           "exId": "exmtryv650",
           "name": "Bicicleta / eliptica",
           "weight": "",
-          "done": true
+          "done": false
         }
       ],
       "anyDone": true
