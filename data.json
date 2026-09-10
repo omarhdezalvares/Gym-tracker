@@ -1306,8 +1306,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-09__pull",
-      "person": "Edson",
+      "id": "Omar__2026-09-09__pull",
+      "person": "Omar",
       "date": "2026-09-09",
       "dayKey": "pull",
       "exercises": [
@@ -1363,8 +1363,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-09__pull",
-      "person": "Omar",
+      "id": "Edson__2026-09-09__pull",
+      "person": "Edson",
       "date": "2026-09-09",
       "dayKey": "pull",
       "exercises": [
@@ -1408,7 +1408,7 @@
           "exId": "exmt3za6wb",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmtryv650",
