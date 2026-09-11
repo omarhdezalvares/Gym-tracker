@@ -1420,8 +1420,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-10__legs",
-      "person": "Omar",
+      "id": "Edson__2026-09-10__legs",
+      "person": "Edson",
       "date": "2026-09-10",
       "dayKey": "legs",
       "exercises": [
@@ -1477,8 +1477,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-10__legs",
-      "person": "Edson",
+      "id": "Omar__2026-09-10__legs",
+      "person": "Omar",
       "date": "2026-09-10",
       "dayKey": "legs",
       "exercises": [
@@ -1491,7 +1491,7 @@
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
-          "weight": "63",
+          "weight": "",
           "done": true
         },
         {
@@ -1522,7 +1522,7 @@
           "exId": "exmt3zapgy",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": true
+          "done": false
         },
         {
           "exId": "exmtryvlyn",
