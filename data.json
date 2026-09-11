@@ -1369,63 +1369,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-10__legs",
-      "person": "Edson",
-      "date": "2026-09-10",
-      "dayKey": "legs",
-      "exercises": [
-        {
-          "exId": "g1",
-          "name": "Prensa de pierna",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "g2",
-          "name": "Extensión de cuádriceps",
-          "weight": "63",
-          "done": true
-        },
-        {
-          "exId": "g3",
-          "name": "Curl femoral",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "g4",
-          "name": "Abducción ",
-          "weight": "70",
-          "done": true
-        },
-        {
-          "exId": "g5",
-          "name": "Aducción ",
-          "weight": "43",
-          "done": true
-        },
-        {
-          "exId": "g6",
-          "name": "Elevación de talones de pie",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3zapgy",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true
-        },
-        {
-          "exId": "exmtryvlyn",
-          "name": "Bicicleta / eliptica",
-          "weight": "8.5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-09-04__legs",
       "person": "Edson",
       "date": "2026-09-04",
@@ -1535,6 +1478,63 @@
           "name": "Bicicleta / eliptica",
           "weight": "",
           "done": false
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-10__legs",
+      "person": "Edson",
+      "date": "2026-09-10",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "42",
+          "done": false
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "8.5",
+          "done": true
         }
       ],
       "anyDone": true
