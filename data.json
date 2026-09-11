@@ -1420,22 +1420,22 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-10__legs",
-      "person": "Edson",
+      "id": "Omar__2026-09-10__legs",
+      "person": "Omar",
       "date": "2026-09-10",
       "dayKey": "legs",
       "exercises": [
         {
           "exId": "g1",
           "name": "Prensa de pierna",
-          "weight": "63",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
-          "weight": "",
-          "done": false
+          "weight": "63",
+          "done": true
         },
         {
           "exId": "g3",
@@ -1477,22 +1477,22 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-10__legs",
-      "person": "Omar",
+      "id": "Edson__2026-09-10__legs",
+      "person": "Edson",
       "date": "2026-09-10",
       "dayKey": "legs",
       "exercises": [
         {
           "exId": "g1",
           "name": "Prensa de pierna",
-          "weight": "",
-          "done": false
+          "weight": "63",
+          "done": true
         },
         {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "63",
-          "done": true
+          "done": false
         },
         {
           "exId": "g3",
