@@ -1471,10 +1471,10 @@
           "exId": "exmtryvlyn",
           "name": "Bicicleta / eliptica",
           "weight": "8.5",
-          "done": false
+          "done": true
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
