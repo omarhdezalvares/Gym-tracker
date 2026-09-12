@@ -1540,8 +1540,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-11__full",
-      "person": "Edson",
+      "id": "Omar__2026-09-11__full",
+      "person": "Omar",
       "date": "2026-09-11",
       "dayKey": "full",
       "exercises": [
@@ -1554,8 +1554,8 @@
         {
           "exId": "f2",
           "name": " Dominadas asistidas",
-          "weight": "",
-          "done": false
+          "weight": "16",
+          "done": true
         },
         {
           "exId": "f3",
@@ -1597,8 +1597,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-11__full",
-      "person": "Omar",
+      "id": "Edson__2026-09-11__full",
+      "person": "Edson",
       "date": "2026-09-11",
       "dayKey": "full",
       "exercises": [
@@ -1611,8 +1611,8 @@
         {
           "exId": "f2",
           "name": " Dominadas asistidas",
-          "weight": "16",
-          "done": true
+          "weight": "1",
+          "done": false
         },
         {
           "exId": "f3",
