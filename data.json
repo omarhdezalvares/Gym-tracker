@@ -1612,7 +1612,7 @@
           "exId": "f2",
           "name": " Dominadas asistidas",
           "weight": "16",
-          "done": false
+          "done": true
         },
         {
           "exId": "f3",
