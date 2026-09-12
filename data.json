@@ -1540,8 +1540,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-11__full",
-      "person": "Omar",
+      "id": "Edson__2026-09-11__full",
+      "person": "Edson",
       "date": "2026-09-11",
       "dayKey": "full",
       "exercises": [
@@ -1597,8 +1597,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-11__full",
-      "person": "Edson",
+      "id": "Omar__2026-09-11__full",
+      "person": "Omar",
       "date": "2026-09-11",
       "dayKey": "full",
       "exercises": [
@@ -1617,7 +1617,7 @@
         {
           "exId": "f3",
           "name": "Patada de gluteo",
-          "weight": "",
+          "weight": "2",
           "done": false
         },
         {
