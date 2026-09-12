@@ -1635,7 +1635,7 @@
         {
           "exId": "f7",
           "name": "Desplantes",
-          "weight": "",
+          "weight": "20",
           "done": true
         },
         {
