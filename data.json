@@ -1662,7 +1662,7 @@
         {
           "exId": "c1",
           "name": "Caminadora / trote",
-          "weight": "",
+          "weight": "3",
           "done": true
         },
         {
