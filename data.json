@@ -1540,63 +1540,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-11__full",
-      "person": "Edson",
-      "date": "2026-09-11",
-      "dayKey": "full",
-      "exercises": [
-        {
-          "exId": "f1",
-          "name": "Press de banca declinado",
-          "weight": "30",
-          "done": true
-        },
-        {
-          "exId": "f2",
-          "name": " Dominadas asistidas",
-          "weight": "16",
-          "done": true
-        },
-        {
-          "exId": "f3",
-          "name": "Patada de gluteo",
-          "weight": "2",
-          "done": true
-        },
-        {
-          "exId": "f5",
-          "name": "Plancha (core)",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "f6",
-          "name": "Elevación de piernas / crunch polea",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "f7",
-          "name": "Desplantes",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3zb6h5",
-          "name": "Cardio 20 min.",
-          "weight": "1.85",
-          "done": true
-        },
-        {
-          "exId": "exmtryw3sg",
-          "name": "Bicicleta / eliptica",
-          "weight": "",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Omar__2026-09-11__full",
       "person": "Omar",
       "date": "2026-09-11",
@@ -1637,6 +1580,63 @@
           "name": "Desplantes",
           "weight": "20",
           "done": true
+        },
+        {
+          "exId": "exmt3zb6h5",
+          "name": "Cardio 20 min.",
+          "weight": "1.85",
+          "done": true
+        },
+        {
+          "exId": "exmtryw3sg",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-11__full",
+      "person": "Edson",
+      "date": "2026-09-11",
+      "dayKey": "full",
+      "exercises": [
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "16",
+          "done": true
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "27",
+          "done": true
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "60",
+          "done": false
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "f7",
+          "name": "Desplantes",
+          "weight": "",
+          "done": false
         },
         {
           "exId": "exmt3zb6h5",
