@@ -1690,18 +1690,18 @@
           "exId": "p1",
           "name": "Press de banca plano",
           "weight": "16",
-          "done": true
+          "done": false
         },
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "",
+          "weight": "28",
           "done": false
         },
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
+          "weight": "10",
           "done": false
         },
         {
@@ -1735,7 +1735,7 @@
           "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ]
 }
