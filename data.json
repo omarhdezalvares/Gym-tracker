@@ -1759,7 +1759,7 @@
           "exId": "p3",
           "name": "Press militar",
           "weight": "10",
-          "done": false
+          "done": true
         },
         {
           "exId": "p4",
