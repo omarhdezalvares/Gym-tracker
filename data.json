@@ -1701,13 +1701,13 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "10",
+          "weight": "12",
           "done": false
         },
         {
           "exId": "p4",
           "name": "Elevaciones laterales",
-          "weight": "7",
+          "weight": "",
           "done": false
         },
         {
