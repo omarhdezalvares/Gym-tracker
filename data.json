@@ -1701,13 +1701,13 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "12",
+          "weight": "10",
           "done": false
         },
         {
           "exId": "p4",
           "name": "Elevaciones laterales",
-          "weight": "",
+          "weight": "7",
           "done": false
         },
         {
@@ -1731,7 +1731,7 @@
         {
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
-          "weight": "",
+          "weight": "7",
           "done": false
         }
       ],
