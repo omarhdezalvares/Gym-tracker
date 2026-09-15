@@ -1783,13 +1783,13 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
           "weight": "6.5",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
