@@ -1707,7 +1707,7 @@
         {
           "exId": "p4",
           "name": "Elevaciones laterales",
-          "weight": "",
+          "weight": "7",
           "done": false
         },
         {
