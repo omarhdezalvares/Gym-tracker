@@ -66,7 +66,6 @@
   .rank-btn{width:36px;height:36px;margin-left:4px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;cursor:pointer;}
   .rank-btn:disabled{opacity:.3;cursor:default;}
   .rank-del{color:#F87171;}
-  .rank-add{width:100%;}
   .person-switch{display:flex;gap:8px;margin-bottom:12px;}
   .person-chip{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
   .person-avatar{width:24px;height:24px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex:none;}
@@ -571,13 +570,6 @@ function toggleRankingEdit() { state.rankingEdit = !state.rankingEdit; render();
 
 function rankName(id) { const p = state.ranking.people.find(x => x.id === id); return p ? p.name : ""; }
 
-function addToBoard(catId, personId) {
-  if (!personId) return;
-  const board = state.ranking.boards[catId];
-  if (!board || board.includes(personId)) return;
-  board.push(personId);
-  touchRanking(); render();
-}
 // Agrega por nombre escrito: si ya está en el catálogo lo reutiliza; si no, lo crea y lo agrega al tablero.
 function addNameToBoard(catId) {
   const input = document.getElementById("add-" + catId);
@@ -675,12 +667,9 @@ function renderRankingSection() {
           </td>
         </tr>`).join("")}
       </table>`}
-      ${available.length === 0 ? "" : `<select class="rank-add" onchange="addToBoard('${cat.id}', this.value)">
-             <option value="">+ Elegir del catálogo…</option>
-             ${available.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join("")}
-           </select>`}
       <div class="row" style="margin-top:8px;">
-        <input type="text" id="add-${cat.id}" data-keepdraft placeholder="…o escribe un nombre" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addNameToBoard('${cat.id}');}" />
+        <input type="text" id="add-${cat.id}" data-keepdraft list="dl-${cat.id}" autocomplete="off" placeholder="Elige o escribe un nombre" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addNameToBoard('${cat.id}');}" />
+        <datalist id="dl-${cat.id}">${available.map(p => `<option value="${escapeHtml(p.name)}"></option>`).join("")}</datalist>
         <button class="btn btn-primary" onclick="addNameToBoard('${cat.id}')">+</button>
       </div>
     </div>`;
