@@ -66,6 +66,9 @@
   .rank-btn{width:36px;height:36px;margin-left:4px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;cursor:pointer;}
   .rank-btn:disabled{opacity:.3;cursor:default;}
   .rank-del{color:#F87171;}
+  .sug-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .sug-wrap:empty{display:none;}
+  .sug-chip{padding:7px 14px;border-radius:999px;border:1px solid var(--border2);background:var(--bg);color:var(--text);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
   .person-switch{display:flex;gap:8px;margin-bottom:12px;}
   .person-chip{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
   .person-avatar{width:24px;height:24px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex:none;}
@@ -570,13 +573,40 @@ function toggleRankingEdit() { state.rankingEdit = !state.rankingEdit; render();
 
 function rankName(id) { const p = state.ranking.people.find(x => x.id === id); return p ? p.name : ""; }
 
+const normName = t => String(t).normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase();
+
+// Sugerencias del catálogo mientras se escribe; son opcionales, lo escrito se acepta tal cual.
+function updateSuggestions(catId) {
+  const input = document.getElementById("add-" + catId);
+  const box = document.getElementById("sug-" + catId);
+  if (!input || !box) return;
+  const board = state.ranking.boards[catId] || [];
+  const q = normName(input.value);
+  const matches = state.ranking.people.filter(p => !board.includes(p.id) && (!q || normName(p.name).includes(q)));
+  const exact = q && state.ranking.people.some(p => normName(p.name) === q);
+  box.innerHTML =
+    matches.slice(0, 8).map(p => `<button class="sug-chip" onmousedown="event.preventDefault()" onclick="addPersonToBoard('${catId}','${p.id}')">${escapeHtml(p.name)}</button>`).join("") +
+    (q && !exact ? `<span class="muted" style="width:100%;">Se creará "${escapeHtml(input.value.trim())}" en el catálogo al tocar +</span>` : "");
+}
+
+function addPersonToBoard(catId, personId) {
+  const board = state.ranking.boards[catId];
+  if (!board || board.includes(personId)) return;
+  board.push(personId);
+  const input = document.getElementById("add-" + catId);
+  if (input) input.value = "";
+  touchRanking(); render();
+  const again = document.getElementById("add-" + catId);
+  if (again) again.focus();
+}
+
 // Agrega por nombre escrito: si ya está en el catálogo lo reutiliza; si no, lo crea y lo agrega al tablero.
 function addNameToBoard(catId) {
   const input = document.getElementById("add-" + catId);
   const name = (input.value || "").trim();
   const board = state.ranking.boards[catId];
   if (!name || !board) return;
-  let person = state.ranking.people.find(p => p.name.toLowerCase() === name.toLowerCase());
+  let person = state.ranking.people.find(p => normName(p.name) === normName(name));
   if (!person) {
     person = { id: newRankId("n"), name };
     state.ranking.people.push(person);
@@ -668,10 +698,10 @@ function renderRankingSection() {
         </tr>`).join("")}
       </table>`}
       <div class="row" style="margin-top:8px;">
-        <input type="text" id="add-${cat.id}" data-keepdraft list="dl-${cat.id}" autocomplete="off" placeholder="Elige o escribe un nombre" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addNameToBoard('${cat.id}');}" />
-        <datalist id="dl-${cat.id}">${available.map(p => `<option value="${escapeHtml(p.name)}"></option>`).join("")}</datalist>
+        <input type="text" id="add-${cat.id}" data-keepdraft autocomplete="off" autocapitalize="words" placeholder="Escribe un nombre" style="flex:1;min-width:0;" oninput="updateSuggestions('${cat.id}')" onfocus="updateSuggestions('${cat.id}')" onkeydown="if(event.key==='Enter'){addNameToBoard('${cat.id}');}" />
         <button class="btn btn-primary" onclick="addNameToBoard('${cat.id}')">+</button>
       </div>
+      <div class="sug-wrap" id="sug-${cat.id}"></div>
     </div>`;
   }).join("");
 }
@@ -861,6 +891,7 @@ function render() {
       }
     }
   }
+  if (focusInfo && focusInfo.id.startsWith("add-")) updateSuggestions(focusInfo.id.slice(4));
   if (window.scrollY !== scrollY) window.scrollTo(0, scrollY);
 }
 
