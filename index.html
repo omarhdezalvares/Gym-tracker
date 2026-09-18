@@ -596,6 +596,7 @@ function addCatalogItem(kind) { // kind: "categories" | "people"
   const input = document.getElementById(kind === "categories" ? "newCategory" : "newPerson");
   const name = (input.value || "").trim();
   if (!name) return;
+  input.value = "";
   const item = { id: newRankId(kind === "categories" ? "c" : "n"), name };
   state.ranking[kind].push(item);
   if (kind === "categories") state.ranking.boards[item.id] = [];
@@ -675,11 +676,11 @@ function renderRankingCatalogs() {
       <div style="margin-top:10px;">
         ${r[kind].map(it => `
         <div class="row" style="margin-bottom:8px;">
-          <input type="text" value="${escapeHtml(it.name)}" style="flex:1;min-width:0;" onchange="renameCatalogItem('${kind}','${it.id}',this.value)" />
+          <input type="text" id="ren-${it.id}" data-keepdraft value="${escapeHtml(it.name)}" style="flex:1;min-width:0;" onchange="renameCatalogItem('${kind}','${it.id}',this.value)" />
           <button class="btn btn-ghost" onclick="deleteCatalogItem('${kind}','${it.id}')" style="color:#F87171;">🗑</button>
         </div>`).join("")}
         <div class="row">
-          <input type="text" id="${inputId}" placeholder="${placeholder}" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addCatalogItem('${kind}');}" />
+          <input type="text" id="${inputId}" data-keepdraft placeholder="${placeholder}" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addCatalogItem('${kind}');}" />
           <button class="btn btn-primary" onclick="addCatalogItem('${kind}')">+</button>
         </div>
       </div>
@@ -832,8 +833,9 @@ function render() {
   const active = document.activeElement;
   let focusInfo = null;
   if (active && active.id && app.contains(active)) {
-    focusInfo = { id: active.id, start: active.selectionStart, end: active.selectionEnd };
+    focusInfo = { id: active.id, start: active.selectionStart, end: active.selectionEnd, value: active.value };
   }
+  const scrollY = window.scrollY;
 
   if (!state.authed) { app.innerHTML = renderLogin(); attachLoginEvents(); return; }
   if (state.loading || !state.routine) { app.innerHTML = renderLoading(); return; }
@@ -843,12 +845,15 @@ function render() {
   if (focusInfo) {
     const el = document.getElementById(focusInfo.id);
     if (el) {
+      // lo escrito y aún no confirmado (p. ej. un nombre a medias) se pierde al reconstruir el HTML: se repone
+      if (typeof focusInfo.value === "string" && el.value !== focusInfo.value && el.tagName === "INPUT" && el.type === "text" && el.dataset.keepdraft !== undefined) el.value = focusInfo.value;
       el.focus();
       if (typeof focusInfo.start === "number" && el.setSelectionRange) {
         try { el.setSelectionRange(focusInfo.start, focusInfo.end); } catch (e) {}
       }
     }
   }
+  if (window.scrollY !== scrollY) window.scrollTo(0, scrollY);
 }
 
 function renderLoading() {
