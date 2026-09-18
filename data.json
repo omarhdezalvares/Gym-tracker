@@ -1857,7 +1857,9 @@
       }
     ],
     "boards": {
-      "cmu75jeq4qm6": [],
+      "cmu75jeq4qm6": [
+        "nmu75n9tpb2b"
+      ],
       "cmu75jhdz58b": [],
       "cmu75jpai2yn": [],
       "cmu75jxgdluy": [],
