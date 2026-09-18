@@ -1822,7 +1822,12 @@
         "name": "Sabrosas"
       }
     ],
-    "people": [],
+    "people": [
+      {
+        "id": "nmu75lcbfghd",
+        "name": "Mi ruka la guerita"
+      }
+    ],
     "boards": {
       "cmu75jeq4qm6": [],
       "cmu75jhdz58b": [],
