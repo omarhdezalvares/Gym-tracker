@@ -578,6 +578,23 @@ function addToBoard(catId, personId) {
   board.push(personId);
   touchRanking(); render();
 }
+// Agrega por nombre escrito: si ya está en el catálogo lo reutiliza; si no, lo crea y lo agrega al tablero.
+function addNameToBoard(catId) {
+  const input = document.getElementById("add-" + catId);
+  const name = (input.value || "").trim();
+  const board = state.ranking.boards[catId];
+  if (!name || !board) return;
+  let person = state.ranking.people.find(p => p.name.toLowerCase() === name.toLowerCase());
+  if (!person) {
+    person = { id: newRankId("n"), name };
+    state.ranking.people.push(person);
+  }
+  if (!board.includes(person.id)) board.push(person.id);
+  input.value = "";
+  touchRanking(); render();
+  const again = document.getElementById("add-" + catId);
+  if (again) again.focus();
+}
 function moveInBoard(catId, idx, dir) {
   const board = state.ranking.boards[catId];
   const to = idx + dir;
@@ -658,12 +675,14 @@ function renderRankingSection() {
           </td>
         </tr>`).join("")}
       </table>`}
-      ${available.length === 0
-        ? (r.people.length === 0 ? `<p class="muted" style="margin:0;">Agrega nombres en ⚙ Catálogos.</p>` : "")
-        : `<select class="rank-add" onchange="addToBoard('${cat.id}', this.value)">
-             <option value="">+ Agregar a esta categoría…</option>
+      ${available.length === 0 ? "" : `<select class="rank-add" onchange="addToBoard('${cat.id}', this.value)">
+             <option value="">+ Elegir del catálogo…</option>
              ${available.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join("")}
            </select>`}
+      <div class="row" style="margin-top:8px;">
+        <input type="text" id="add-${cat.id}" data-keepdraft placeholder="…o escribe un nombre" style="flex:1;min-width:0;" onkeydown="if(event.key==='Enter'){addNameToBoard('${cat.id}');}" />
+        <button class="btn btn-primary" onclick="addNameToBoard('${cat.id}')">+</button>
+      </div>
     </div>`;
   }).join("");
 }
