@@ -1804,12 +1804,17 @@
       {
         "id": "cmu75jhdz58b",
         "name": "Omar"
+      },
+      {
+        "id": "cmu75jpai2yn",
+        "name": "Edson"
       }
     ],
     "people": [],
     "boards": {
       "cmu75jeq4qm6": [],
-      "cmu75jhdz58b": []
+      "cmu75jhdz58b": [],
+      "cmu75jpai2yn": []
     }
   }
 }
