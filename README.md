@@ -48,7 +48,12 @@ Si más adelante prefieres quitar el token del código fuente, deja `HARDCODED_T
 ## Archivos
 
 - `index.html` — toda la app (HTML + CSS + JS puro, sin frameworks ni build step).
-- `data.json` — rutina + historial de sesiones. No lo edites a mano mientras la app esté en uso; ella lo mantiene actualizado.
+- `data.json` — rutina + historial de sesiones + ranking (`routine`, `logs`, `ranking`). No lo edites a mano mientras la app esté en uso; ella lo mantiene actualizado.
+- `backups/` — copias de seguridad de `data.json` tomadas antes de cambios grandes.
+
+## Ranking
+
+Pestaña **Ranking** en la barra inferior. Cada categoría tiene su propia tabla con el orden manual de las personas: ▲▼ para mover, ✕ para quitar y el selector inferior para agregar. El botón **⚙ Catálogos** administra las categorías y los nombres (libres); borrar un nombre lo quita de todas las categorías. Se guarda solo, en la clave `ranking` de `data.json`.
 - `manifest.json`, `icon-152.png`, `icon-167.png`, `icon-180.png`, `icon-192.png`, `icon-512.png` — para que se pueda instalar como app (ver abajo).
 
 ## Instalarla como app en iPhone (PWA)
