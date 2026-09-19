@@ -1903,7 +1903,7 @@
           "exId": "exmtryv650",
           "name": "Bicicleta / eliptica",
           "weight": "",
-          "done": true
+          "done": false
         }
       ],
       "anyDone": true
