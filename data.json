@@ -1878,6 +1878,10 @@
       {
         "id": "nmu7ml0hqqd3",
         "name": "La Mama Del Hijo"
+      },
+      {
+        "id": "nmu7o116cyzn",
+        "name": "Mi Ex"
       }
     ],
     "boards": {
@@ -1893,7 +1897,8 @@
       ],
       "cmu75jpai2yn": [
         "nmu75og4og6g",
-        "nmu75t0fct0o"
+        "nmu75t0fct0o",
+        "nmu7o116cyzn"
       ],
       "cmu75jxgdluy": [
         "nmu75mwq3gdq"
