@@ -1840,7 +1840,7 @@
           "exId": "exmt3za6wb",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": true
+          "done": false
         },
         {
           "exId": "exmtryv650",
@@ -1849,7 +1849,7 @@
           "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ],
   "ranking": {
