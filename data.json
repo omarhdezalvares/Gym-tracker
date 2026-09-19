@@ -1804,19 +1804,19 @@
           "exId": "l1",
           "name": "Jalón al pecho",
           "weight": "53",
-          "done": false
+          "done": true
         },
         {
           "exId": "l2",
           "name": "Remo en máquina o barra",
-          "weight": "",
-          "done": false
+          "weight": "25",
+          "done": true
         },
         {
           "exId": "l3",
           "name": "Remo bajo en polea",
-          "weight": "",
-          "done": false
+          "weight": "38.5",
+          "done": true
         },
         {
           "exId": "l4",
