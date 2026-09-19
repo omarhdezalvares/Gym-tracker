@@ -1882,6 +1882,10 @@
       {
         "id": "nmu7o116cyzn",
         "name": "Mi Ex"
+      },
+      {
+        "id": "nmu7omi73inp",
+        "name": "Chaparrita Culona"
       }
     ],
     "boards": {
@@ -1907,7 +1911,8 @@
         "nmu7ml0hqqd3"
       ],
       "cmu75kbjtfms": [
-        "nmu75mwq3gdq"
+        "nmu75mwq3gdq",
+        "nmu7omi73inp"
       ],
       "cmu75m4zptty": [],
       "cmu78qbpeiz2": []
