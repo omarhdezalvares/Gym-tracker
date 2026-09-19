@@ -1874,6 +1874,10 @@
       {
         "id": "nmu79ie4c7a8",
         "name": "Ya Me Entere Que Eres Un Alien"
+      },
+      {
+        "id": "nmu7ml0hqqd3",
+        "name": "La Mama Del Hijo"
       }
     ],
     "boards": {
@@ -1894,7 +1898,9 @@
       "cmu75jxgdluy": [
         "nmu75mwq3gdq"
       ],
-      "cmu75k0omaie": [],
+      "cmu75k0omaie": [
+        "nmu7ml0hqqd3"
+      ],
       "cmu75kbjtfms": [],
       "cmu75m4zptty": [],
       "cmu78qbpeiz2": []
