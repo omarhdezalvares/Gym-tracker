@@ -1918,25 +1918,25 @@
           "exId": "p1",
           "name": "Press de banca plano",
           "weight": "35",
-          "done": true
+          "done": false
         },
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "28",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "12",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "p4",
           "name": "Elevaciones laterales",
-          "weight": "14",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "p5",
@@ -1954,16 +1954,16 @@
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": true
+          "done": false
         },
         {
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
-          "weight": "7.5",
-          "done": true
+          "weight": "",
+          "done": false
         }
       ],
-      "anyDone": true
+      "anyDone": false
     }
   ],
   "ranking": {
