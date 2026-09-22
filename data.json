@@ -1993,13 +1993,13 @@
           "exId": "p4",
           "name": "Elevaciones laterales",
           "weight": "14",
-          "done": false
+          "done": true
         },
         {
           "exId": "p5",
           "name": "Fondos en máquina / press francés",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "p6",
