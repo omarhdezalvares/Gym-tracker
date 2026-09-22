@@ -1929,7 +1929,7 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
+          "weight": "14",
           "done": false
         },
         {
