@@ -1981,43 +1981,43 @@
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
           "weight": "28",
-          "done": false
+          "done": true
         },
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
-          "done": false
+          "weight": "24",
+          "done": true
         },
         {
           "exId": "p4",
           "name": "Elevaciones laterales",
-          "weight": "",
-          "done": false
+          "weight": "14",
+          "done": true
         },
         {
           "exId": "p5",
           "name": "Fondos en máquina / press francés",
-          "weight": "",
-          "done": false
+          "weight": "8",
+          "done": true
         },
         {
           "exId": "p6",
           "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false
+          "weight": "14.7",
+          "done": true
         },
         {
           "exId": "exmt3z9cx6",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
-          "weight": "",
-          "done": false
+          "weight": "7.5",
+          "done": true
         }
       ],
       "anyDone": true
