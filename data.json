@@ -1923,14 +1923,14 @@
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "14",
+          "weight": "28",
           "done": true
         },
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
-          "done": false
+          "weight": "24",
+          "done": true
         },
         {
           "exId": "p4",
@@ -1959,7 +1959,7 @@
         {
           "exId": "exmtryu73t",
           "name": "Bicicleta / eliptica",
-          "weight": "",
+          "weight": "7.5",
           "done": true
         }
       ],
