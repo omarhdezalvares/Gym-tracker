@@ -1923,7 +1923,7 @@
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "14",
+          "weight": "28",
           "done": true
         },
         {
@@ -1941,14 +1941,14 @@
         {
           "exId": "p5",
           "name": "Fondos en máquina / press francés",
-          "weight": "",
+          "weight": "8",
           "done": false
         },
         {
           "exId": "p6",
           "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false
+          "weight": "19.5",
+          "done": true
         },
         {
           "exId": "exmt3z9cx6",
