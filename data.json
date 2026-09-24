@@ -2329,6 +2329,10 @@
       {
         "id": "nmuevepdzdxy",
         "name": "Güera Audífonos Blancos"
+      },
+      {
+        "id": "nmuewa6jcepy",
+        "name": "Rosita Fresita"
       }
     ],
     "boards": {
@@ -2347,7 +2351,8 @@
       "cmu75jpai2yn": [
         "nmu75og4og6g",
         "nmu75t0fct0o",
-        "nmu7o116cyzn"
+        "nmu7o116cyzn",
+        "nmuewa6jcepy"
       ],
       "cmu75jxgdluy": [
         "nmu75mwq3gdq",
