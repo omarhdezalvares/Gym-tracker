@@ -2080,63 +2080,6 @@
       "anyDone": false
     },
     {
-      "id": "Edson__2026-09-23__pull",
-      "person": "Edson",
-      "date": "2026-09-23",
-      "dayKey": "pull",
-      "exercises": [
-        {
-          "exId": "l1",
-          "name": "Jalón al pecho",
-          "weight": "59",
-          "done": true
-        },
-        {
-          "exId": "l2",
-          "name": "Remo en máquina o barra",
-          "weight": "25",
-          "done": true
-        },
-        {
-          "exId": "l3",
-          "name": "Remo bajo en polea",
-          "weight": "38.5",
-          "done": true
-        },
-        {
-          "exId": "l4",
-          "name": "Face pull",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "l5",
-          "name": "Curl de bíceps con barra/mancuerna",
-          "weight": "20",
-          "done": true
-        },
-        {
-          "exId": "l6",
-          "name": "Curl martillo",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3za6wb",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true
-        },
-        {
-          "exId": "exmtryv650",
-          "name": "Bicicleta / eliptica",
-          "weight": "7.5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Omar__2026-09-23__pull",
       "person": "Omar",
       "date": "2026-09-23",
@@ -2177,6 +2120,63 @@
           "name": "Curl martillo",
           "weight": "20",
           "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-23__pull",
+      "person": "Edson",
+      "date": "2026-09-23",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "59",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "",
+          "done": false
         },
         {
           "exId": "exmt3za6wb",
