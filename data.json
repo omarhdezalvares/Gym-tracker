@@ -2163,7 +2163,7 @@
         {
           "exId": "l4",
           "name": "Face pull",
-          "weight": "17",
+          "weight": "",
           "done": true
         },
         {
@@ -2175,7 +2175,7 @@
         {
           "exId": "l6",
           "name": "Curl martillo",
-          "weight": "10",
+          "weight": "20",
           "done": true
         },
         {
