@@ -2289,8 +2289,8 @@
         {
           "exId": "g6",
           "name": "Elevación de talones de pie",
-          "weight": "1",
-          "done": false
+          "weight": "122.5",
+          "done": true
         },
         {
           "exId": "exmt3zapgy",
