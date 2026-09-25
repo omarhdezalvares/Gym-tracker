@@ -2271,7 +2271,7 @@
         {
           "exId": "g3",
           "name": "Curl femoral",
-          "weight": "",
+          "weight": "42",
           "done": true
         },
         {
