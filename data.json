@@ -2302,7 +2302,7 @@
           "exId": "exmtryvlyn",
           "name": "Bicicleta / eliptica",
           "weight": "",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
