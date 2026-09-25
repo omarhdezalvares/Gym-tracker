@@ -2209,7 +2209,7 @@
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "63",
-          "done": false
+          "done": true
         },
         {
           "exId": "g3",
