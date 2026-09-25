@@ -2194,63 +2194,6 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-24__legs",
-      "person": "Omar",
-      "date": "2026-09-24",
-      "dayKey": "legs",
-      "exercises": [
-        {
-          "exId": "g1",
-          "name": "Prensa de pierna",
-          "weight": "131",
-          "done": true
-        },
-        {
-          "exId": "g2",
-          "name": "Extensión de cuádriceps",
-          "weight": "63",
-          "done": true
-        },
-        {
-          "exId": "g3",
-          "name": "Curl femoral",
-          "weight": "45",
-          "done": true
-        },
-        {
-          "exId": "g4",
-          "name": "Abducción ",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "g5",
-          "name": "Aducción ",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "g6",
-          "name": "Elevación de talones de pie",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3zapgy",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true
-        },
-        {
-          "exId": "exmtryvlyn",
-          "name": "Bicicleta / eliptica",
-          "weight": "7.5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-09-24__legs",
       "person": "Edson",
       "date": "2026-09-24",
@@ -2291,6 +2234,63 @@
           "name": "Elevación de talones de pie",
           "weight": "122.5",
           "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-24__legs",
+      "person": "Omar",
+      "date": "2026-09-24",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "45",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "1",
+          "done": false
         },
         {
           "exId": "exmt3zapgy",
