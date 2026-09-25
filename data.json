@@ -2272,7 +2272,7 @@
           "exId": "g3",
           "name": "Curl femoral",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "g4",
@@ -2296,7 +2296,7 @@
           "exId": "exmt3zapgy",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmtryvlyn",
