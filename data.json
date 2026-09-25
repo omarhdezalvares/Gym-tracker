@@ -2215,7 +2215,7 @@
           "exId": "g3",
           "name": "Curl femoral",
           "weight": "45",
-          "done": false
+          "done": true
         },
         {
           "exId": "g4",
@@ -2248,7 +2248,7 @@
           "done": false
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ],
   "ranking": {
