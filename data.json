@@ -2245,7 +2245,7 @@
           "exId": "exmtryvlyn",
           "name": "Bicicleta / eliptica",
           "weight": "7.5",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
