@@ -2587,6 +2587,10 @@
       {
         "id": "nmuho5mzlq4g",
         "name": "Fake Little Water Globes"
+      },
+      {
+        "id": "nmuhoopxa5z6",
+        "name": "Short Azul Bonito"
       }
     ],
     "boards": {
@@ -2623,7 +2627,8 @@
         "nmuho47td8pb"
       ],
       "cmu75m4zptty": [
-        "nmuevepdzdxy"
+        "nmuevepdzdxy",
+        "nmuhoopxa5z6"
       ],
       "cmu78qbpeiz2": [
         "nmu7prudql71"
