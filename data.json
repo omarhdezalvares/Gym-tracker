@@ -2403,7 +2403,7 @@
         {
           "exId": "f5",
           "name": "Plancha (core)",
-          "weight": "",
+          "weight": "60",
           "done": true
         },
         {
