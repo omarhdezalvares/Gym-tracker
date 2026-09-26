@@ -2371,7 +2371,7 @@
           "exId": "exmuhng2hb",
           "name": "Escaladora",
           "weight": "625",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
