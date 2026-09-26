@@ -2397,8 +2397,8 @@
         {
           "exId": "f3",
           "name": "Patada de gluteo",
-          "weight": "17",
-          "done": true
+          "weight": "",
+          "done": false
         },
         {
           "exId": "f5",
