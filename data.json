@@ -2428,13 +2428,13 @@
           "exId": "exmtryw3sg",
           "name": "Bicicleta / eliptica",
           "weight": "",
-          "done": false
+          "done": true
         },
         {
           "exId": "exmuhng2hb",
           "name": "Escaladora",
           "weight": "",
-          "done": false
+          "done": true
         }
       ],
       "anyDone": true
