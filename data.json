@@ -2440,63 +2440,6 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-30__push",
-      "person": "Omar",
-      "date": "2026-09-30",
-      "dayKey": "push",
-      "exercises": [
-        {
-          "exId": "p1",
-          "name": "Press de banca plano",
-          "weight": "45",
-          "done": true
-        },
-        {
-          "exId": "p2",
-          "name": "Press inclinado con mancuerna",
-          "weight": "3",
-          "done": true
-        },
-        {
-          "exId": "p3",
-          "name": "Press militar",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p4",
-          "name": "Elevaciones laterales",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p5",
-          "name": "Fondos en máquina / press francés",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "p6",
-          "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false
-        },
-        {
-          "exId": "exmt3z9cx6",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true
-        },
-        {
-          "exId": "exmtryu73t",
-          "name": "Bicicleta / eliptica",
-          "weight": "7.5",
-          "done": true
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-09-30__push",
       "person": "Edson",
       "date": "2026-09-30",
@@ -2549,6 +2492,63 @@
           "name": "Bicicleta / eliptica",
           "weight": "",
           "done": false
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-30__push",
+      "person": "Omar",
+      "date": "2026-09-30",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "45",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "3",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
         }
       ],
       "anyDone": true
