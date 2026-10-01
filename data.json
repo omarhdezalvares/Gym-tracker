@@ -2440,8 +2440,8 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-09-30__push",
-      "person": "Omar",
+      "id": "Edson__2026-09-30__push",
+      "person": "Edson",
       "date": "2026-09-30",
       "dayKey": "push",
       "exercises": [
@@ -2497,8 +2497,8 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-09-30__push",
-      "person": "Edson",
+      "id": "Omar__2026-09-30__push",
+      "person": "Omar",
       "date": "2026-09-30",
       "dayKey": "push",
       "exercises": [
@@ -2517,7 +2517,7 @@
         {
           "exId": "p3",
           "name": "Press militar",
-          "weight": "",
+          "weight": "24",
           "done": false
         },
         {
