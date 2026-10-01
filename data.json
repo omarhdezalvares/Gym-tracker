@@ -2529,14 +2529,14 @@
         {
           "exId": "p5",
           "name": "Fondos en máquina / press francés",
-          "weight": "",
+          "weight": "8",
           "done": true
         },
         {
           "exId": "p6",
           "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false
+          "weight": "19.",
+          "done": true
         },
         {
           "exId": "exmt3z9cx6",
