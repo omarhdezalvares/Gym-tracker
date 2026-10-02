@@ -2609,6 +2609,63 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-01__pull",
+      "person": "Omar",
+      "date": "2026-10-01",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "66",
+          "done": false
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": false
     }
   ],
   "ranking": {
