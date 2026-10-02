@@ -136,12 +136,16 @@ const APP_PASSWORD = "gymBros$1";
 
 const PEOPLE = ["Omar", "Edson"];
 const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0" };
-const DAY_ORDER = ["push", "pull", "legs", "full", "cardio"];
+// Rutina Torso/Pierna en rotación: se hace siempre el siguiente día de ROTATION,
+// sin importar el día de la semana. Los registros viejos (push/pull/legs/full)
+// se conservan en logs y siguen contando para asistencia y progreso.
+const ROTATION = ["torso1", "pierna1", "torso2", "pierna2"];
+const DAY_ORDER = [...ROTATION, "cardio"];
 const DAY_META = {
-  push: { label: "Push", sub: "Pecho / Hombro / Tríceps", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>` },
-  pull: { label: "Pull", sub: "Espalda / Bíceps", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>` },
-  legs: { label: "Legs", sub: "Pierna (sin sentadilla/desplantes)", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg>` },
-  full: { label: "Full", sub: "Mezcla + zonas rezagadas", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>` },
+  torso1: { label: "Torso 1", sub: "Pecho / Espalda / Brazos — énfasis en press y remo", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>` },
+  pierna1: { label: "Pierna 1", sub: "Cuádriceps / Femoral (lesión LCA: sin sentadilla/desplantes)", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg>` },
+  torso2: { label: "Torso 2", sub: "Espalda / Hombro / Brazos — énfasis en tirón y vertical", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>` },
+  pierna2: { label: "Pierna 2", sub: "Glúteo / Aductores / Core (lesión LCA: sin sentadilla/desplantes)", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg>` },
   cardio: { label: "Cardio", sub: "Cardio / acondicionamiento", icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>` },
 };
 const DEFAULT_CARDIO_EXERCISES = [
@@ -175,6 +179,7 @@ const EXERCISE_TIKTOK_LINKS = {
   "Elevaciones laterales": "https://www.tiktok.com/@pipecalisteniafit/video/7646865293184093473",
   "Elevaciones laterales (hombro rezagado)": "https://www.tiktok.com/@pipecalisteniafit/video/7646865293184093473",
   "Fondos en máquina / press francés": "https://www.tiktok.com/@yoshiosport/video/7594474560943050004",
+  "Fondos en máquina": "https://www.tiktok.com/@yoshiosport/video/7594474560943050004",
   "Extensión de tríceps en polea": "https://www.tiktok.com/@pipecalisteniafit/video/7680319859992890657",
   "Cardio 20 min.": "https://www.tiktok.com/@raul_ibrfit/video/7608759214764346655",
   "Jalón al pecho": "https://www.tiktok.com/@sofiaperezrod/video/7650285604294479105",
@@ -199,7 +204,7 @@ const EXERCISE_TIKTOK_LINKS = {
   "Cuerda / HIIT": "https://www.tiktok.com/@lili.jumps/video/7555614639971814667",
 };
 
-const ATTENDANCE_GOAL_DAYS_PER_WEEK = 5;
+const ATTENDANCE_GOAL_DAYS_PER_WEEK = 4;
 const HISTORICAL_ATTENDANCE = {
   year: 2026,
   weeksCovered: 34,
@@ -222,11 +227,11 @@ const state = {
   hasLoaded: false,   // se pone true solo cuando la carga inicial terminó de verdad
   person: "Omar",
   date: todayISO(),
-  dayKey: "push",
+  dayKey: "torso1",
   draft: {},
   calendarMonth: (() => { const d = new Date(); return { year: d.getFullYear(), month: d.getMonth() }; })(),
   editMode: false,
-  editDay: "push",
+  editDay: "torso1",
   celebration: null,
   progressExercise: null,
   progressModalOpen: false,
@@ -327,8 +332,7 @@ async function loadData() {
   }
   state.hasLoaded = true;
   state.loading = false;
-  const active = findActiveDayFor(state.person, todayISO());
-  if (active) state.dayKey = active;
+  state.dayKey = findActiveDayFor(state.person, todayISO()) || nextRotationDay(state.person);
   rebuildDraft();
   render();
 }
@@ -355,8 +359,17 @@ function normalizeRanking(r) {
 }
 
 function findActiveDayFor(person, dateStr) {
-  const match = state.logs.find(l => l.person === person && l.date === dateStr && l.anyDone);
+  const match = state.logs.find(l => l.person === person && l.date === dateStr && l.anyDone && DAY_ORDER.includes(l.dayKey));
   return match ? match.dayKey : null;
+}
+
+// Día que le toca a la persona: el siguiente de ROTATION después de su último día completado.
+function nextRotationDay(person) {
+  const last = state.logs
+    .filter(l => l.person === person && l.anyDone && ROTATION.includes(l.dayKey))
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .pop();
+  return last ? ROTATION[(ROTATION.indexOf(last.dayKey) + 1) % ROTATION.length] : ROTATION[0];
 }
 
 function rebuildDraft() {
@@ -447,8 +460,7 @@ function handleLogout(){ state.authed = false; localStorage.removeItem("gym_auth
 function selectPerson(p) {
   state.person = p;
   if (state.date === todayISO()) {
-    const active = findActiveDayFor(p, todayISO());
-    if (active) state.dayKey = active;
+    state.dayKey = findActiveDayFor(p, todayISO()) || nextRotationDay(p);
   }
   rebuildDraft();
   render();
