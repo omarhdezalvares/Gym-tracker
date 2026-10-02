@@ -86,6 +86,15 @@
   .exname{font-weight:600;font-size:14px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .exsub{font-size:11px;color:var(--muted);}
   .wtinput{width:56px;text-align:right;}
+  .exrow{flex-wrap:wrap;}
+  .repsrow{flex-basis:100%;display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding-left:40px;margin-top:-2px;}
+  .repinput{width:38px;padding:5px 0;text-align:center;font-size:13px;}
+  .repstatus{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap;}
+  .repstatus.up{background:rgba(74,222,128,.15);color:var(--green);}
+  .repstatus.ok{background:rgba(231,177,10,.15);color:var(--omar);}
+  .repstatus.low{background:rgba(248,113,113,.15);color:#F87171;}
+  .repstatus.partial{background:rgba(255,255,255,.06);color:var(--muted);}
+  .repprev{flex-basis:100%;font-size:11px;color:var(--muted);}
   .muted{color:var(--muted);font-size:12px;}
   .center{display:flex;align-items:center;justify-content:center;}
   .calcell{aspect-ratio:1;border-radius:8px;border:1px solid #2E2E30;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;}
@@ -378,7 +387,9 @@ function rebuildDraft() {
   const map = {};
   dayExercises.forEach(ex => {
     const found = existing ? existing.exercises.find(e => e.exId === ex.id) : null;
-    map[ex.id] = found ? { weight: found.weight ?? "", done: !!found.done } : { weight: "", done: false };
+    map[ex.id] = found
+      ? { weight: found.weight ?? "", done: !!found.done, repsDone: Array.isArray(found.repsDone) ? [...found.repsDone] : [] }
+      : { weight: "", done: false, repsDone: [] };
   });
   state.draft = map;
 }
@@ -395,6 +406,9 @@ async function persist() {
     exId: ex.id, name: ex.name,
     weight: state.draft[ex.id]?.weight ?? "",
     done: !!state.draft[ex.id]?.done,
+    // repeticiones hechas por serie + objetivo de ese momento, para poder evaluar aunque la rutina cambie
+    repsDone: (state.draft[ex.id]?.repsDone || []).slice(0, setCount(ex)),
+    target: `${ex.sets} x ${ex.reps}`,
   }));
   const anyDone = exercisesOut.some(e => e.done);
   const newEntry = { id: entryId(), person: state.person, date: state.date, dayKey: state.dayKey, exercises: exercisesOut, anyDone };
@@ -481,6 +495,57 @@ function toggleDone(exId) {
 function updateWeight(exId, value) {
   state.draft[exId] = { ...state.draft[exId], weight: value };
   scheduleAutosave(); // no render() aquí para no perder el foco del input mientras se escribe
+}
+
+function updateReps(exId, setIdx, value) {
+  const repsDone = [...(state.draft[exId]?.repsDone || [])];
+  repsDone[setIdx] = value.trim();
+  for (let i = 0; i < repsDone.length; i++) if (repsDone[i] === undefined) repsDone[i] = "";
+  state.draft[exId] = { ...state.draft[exId], repsDone };
+  // igual que con el peso: sin render(), solo se actualiza la etiqueta de estado
+  const ex = (state.routine[state.dayKey] || []).find(e => e.id === exId);
+  const el = document.getElementById(`st-${exId}`);
+  if (ex && el) el.outerHTML = renderRepStatus(ex, repsDone);
+  scheduleAutosave();
+}
+
+/* ---- Repeticiones: objetivo vs. hecho (doble progresión) ---- */
+function setCount(ex) { return Math.max(1, parseInt(ex.sets, 10) || 1); }
+
+// "6-10" -> {min:6,max:10}; "12" -> {min:12,max:12}; "45-60s" -> {min:45,max:60}
+function parseRepRange(reps) {
+  const nums = String(reps ?? "").match(/\d+(\.\d+)?/g);
+  if (!nums) return null;
+  return { min: parseFloat(nums[0]), max: parseFloat(nums[nums.length - 1]) };
+}
+
+// up: todas las series en el tope del rango (toca subir peso) · ok: todas dentro del rango
+// low: alguna serie por debajo del mínimo · partial: faltan series por anotar
+function evaluateReps(ex, repsDone) {
+  const range = parseRepRange(ex.reps);
+  const vals = (repsDone || []).slice(0, setCount(ex)).map(v => parseFloat(v)).filter(v => !isNaN(v));
+  if (!range || vals.length === 0) return null;
+  if (vals.some(v => v < range.min)) return { cls: "low", text: "⚠ Bajo el rango" };
+  if (vals.length < setCount(ex)) return { cls: "partial", text: `${vals.length}/${setCount(ex)} series` };
+  if (vals.every(v => v >= range.max)) return { cls: "up", text: "⬆ Sube peso" };
+  return { cls: "ok", text: "✓ Cumplió" };
+}
+
+function renderRepStatus(ex, repsDone) {
+  const r = evaluateReps(ex, repsDone);
+  return `<span id="st-${ex.id}" class="repstatus ${r ? r.cls : ""}">${r ? r.text : ""}</span>`;
+}
+
+// Última sesión anterior de la persona con ese ejercicio (por nombre), para tener referencia.
+function previousExerciseEntry(name) {
+  const logs = state.logs
+    .filter(l => l.person === state.person && l.date < state.date)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  for (const l of logs) {
+    const e = l.exercises.find(x => x.name === name && (x.weight || (x.repsDone || []).some(v => v)));
+    if (e) return { date: l.date, weight: e.weight, repsDone: (e.repsDone || []).filter(v => v) };
+  }
+  return null;
 }
 
 function triggerCelebration() {
@@ -976,6 +1041,12 @@ function renderMain() {
           </div>
           <input type="text" inputmode="decimal" id="wt-${ex.id}" placeholder="kg" class="wtinput mono" value="${escapeHtml(d.weight)}" oninput="updateWeight('${ex.id}', this.value)" />
           <span class="muted">kg</span>
+          <div class="repsrow">
+            <span class="muted">Reps</span>
+            ${Array.from({ length: setCount(ex) }).map((_, i) => `<input type="text" inputmode="numeric" class="repinput mono" placeholder="${i + 1}" value="${escapeHtml((d.repsDone || [])[i] ?? "")}" oninput="updateReps('${ex.id}', ${i}, this.value)" />`).join("")}
+            ${renderRepStatus(ex, d.repsDone)}
+            ${(() => { const prev = previousExerciseEntry(ex.name); return prev ? `<div class="repprev mono">Anterior (${formatShortDate(prev.date)}): ${prev.weight ? escapeHtml(prev.weight) + " kg" : "—"}${prev.repsDone.length ? " · " + prev.repsDone.map(escapeHtml).join("/") : ""}</div>` : ""; })()}
+          </div>
         </div>`;
       }).join("")}
     </div>
