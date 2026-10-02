@@ -2823,6 +2823,10 @@
       {
         "id": "nmuhoth4djhv",
         "name": "Mandarina Number 1"
+      },
+      {
+        "id": "nmuq9wtnds7e",
+        "name": "Fake Alien"
       }
     ],
     "boards": {
@@ -2866,7 +2870,8 @@
       ],
       "cmubz8hhv4th": [
         "nmubzard5kv6",
-        "nmuho5mzlq4g"
+        "nmuho5mzlq4g",
+        "nmuq9wtnds7e"
       ],
       "cmubzdoqk5gf": [
         "nmubzgbvfe11"
