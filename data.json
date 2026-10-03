@@ -2488,6 +2488,71 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-02__pierna1",
+      "person": "Edson",
+      "date": "2026-10-02",
+      "dayKey": "pierna1",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "140",
+          "done": false,
+          "repsDone": [],
+          "target": "4 x 8-10"
+        },
+        {
+          "exId": "g7",
+          "name": "Peso muerto rumano con mancuernas",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 10-14"
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "4 x 10-15"
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 45-60s"
+        },
+        {
+          "exId": "p1c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": false
     }
   ],
   "ranking": {
