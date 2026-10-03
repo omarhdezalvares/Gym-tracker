@@ -2435,7 +2435,9 @@
           "name": "Peso muerto rumano con mancuernas",
           "weight": "63",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 8-12"
         },
         {
