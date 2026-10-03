@@ -1043,7 +1043,7 @@ function renderMain() {
           <span class="muted">kg</span>
           <div class="repsrow">
             <span class="muted">Reps</span>
-            ${Array.from({ length: setCount(ex) }).map((_, i) => `<input type="text" inputmode="numeric" class="repinput mono" placeholder="${i + 1}" value="${escapeHtml((d.repsDone || [])[i] ?? "")}" oninput="updateReps('${ex.id}', ${i}, this.value)" />`).join("")}
+            ${Array.from({ length: setCount(ex) }).map((_, i) => `<input type="text" inputmode="numeric" id="rp-${ex.id}-${i}" class="repinput mono" placeholder="${i + 1}" value="${escapeHtml((d.repsDone || [])[i] ?? "")}" oninput="updateReps('${ex.id}', ${i}, this.value)" />`).join("")}
             ${renderRepStatus(ex, d.repsDone)}
             ${(() => { const prev = previousExerciseEntry(ex.name); return prev ? `<div class="repprev mono">Anterior (${formatShortDate(prev.date)}): ${prev.weight ? escapeHtml(prev.weight) + " kg" : "—"}${prev.repsDone.length ? " · " + prev.repsDone.map(escapeHtml).join("/") : ""}</div>` : ""; })()}
           </div>
