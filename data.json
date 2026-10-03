@@ -2556,7 +2556,9 @@
           "name": "Elevación de talones de pie",
           "weight": "40",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "4 x 10-15"
         },
         {
