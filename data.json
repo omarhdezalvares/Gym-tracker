@@ -2572,6 +2572,7 @@
           "weight": "0",
           "done": false,
           "repsDone": [
+            "60",
             "60"
           ],
           "target": "3 x 45-60s"
