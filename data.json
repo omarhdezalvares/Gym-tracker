@@ -2551,7 +2551,7 @@
         {
           "exId": "g6",
           "name": "Elevación de talones de pie",
-          "weight": "",
+          "weight": "40",
           "done": false,
           "repsDone": [
             "12"
