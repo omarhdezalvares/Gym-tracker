@@ -2570,7 +2570,7 @@
           "exId": "f5",
           "name": "Plancha (core)",
           "weight": "0",
-          "done": false,
+          "done": true,
           "repsDone": [
             "60",
             "60",
