@@ -2423,6 +2423,7 @@
           "weight": "140",
           "done": false,
           "repsDone": [
+            "10",
             "10"
           ],
           "target": "4 x 8-10"
