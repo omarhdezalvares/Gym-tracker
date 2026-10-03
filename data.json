@@ -2571,7 +2571,9 @@
           "name": "Plancha (core)",
           "weight": "0",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "60"
+          ],
           "target": "3 x 45-60s"
         },
         {
