@@ -2422,7 +2422,9 @@
           "name": "Prensa de pierna",
           "weight": "140",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "4 x 8-10"
         },
         {
