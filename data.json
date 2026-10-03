@@ -2386,7 +2386,7 @@
           "exId": "c1",
           "name": "Caminadora / trote",
           "weight": "730",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10"
           ],
@@ -2409,7 +2409,7 @@
           "target": "1 x 10 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ],
   "ranking": {
