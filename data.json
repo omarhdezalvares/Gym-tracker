@@ -2836,7 +2836,7 @@
           "exId": "c1",
           "name": "Caminadora / trote",
           "weight": "",
-          "done": true,
+          "done": false,
           "repsDone": [],
           "target": "1 x 20 min"
         },
@@ -2854,7 +2854,7 @@
           "exId": "c3",
           "name": "Cuerda / HIIT",
           "weight": "",
-          "done": true,
+          "done": false,
           "repsDone": [],
           "target": "1 x 10 min"
         }
