@@ -2802,7 +2802,7 @@
         {
           "exId": "t1c",
           "name": "Cardio 20 min.",
-          "weight": "7.5",
+          "weight": "0",
           "done": false,
           "repsDone": [
             ""
