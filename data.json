@@ -2741,8 +2741,10 @@
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
           "weight": "30",
-          "done": false,
-          "repsDone": [],
+          "done": true,
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 8-12"
         },
         {
