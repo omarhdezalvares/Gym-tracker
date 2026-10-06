@@ -2825,7 +2825,9 @@
           "name": "Elevaciones laterales",
           "weight": "5",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "3 x 12-20"
         },
         {
