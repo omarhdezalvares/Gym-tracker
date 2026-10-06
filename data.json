@@ -2629,93 +2629,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-10-05__torso1",
-      "person": "Edson",
-      "date": "2026-10-05",
-      "dayKey": "torso1",
-      "exercises": [
-        {
-          "exId": "p1",
-          "name": "Press de banca plano",
-          "weight": "35",
-          "done": true,
-          "repsDone": [
-            "10",
-            "10",
-            "10",
-            "7"
-          ],
-          "target": "4 x 6-10"
-        },
-        {
-          "exId": "l2",
-          "name": "Remo en máquina o barra",
-          "weight": "41",
-          "done": true,
-          "repsDone": [
-            "12",
-            "12",
-            "12",
-            "12"
-          ],
-          "target": "4 x 8-12"
-        },
-        {
-          "exId": "p2",
-          "name": "Press inclinado con mancuerna",
-          "weight": "30",
-          "done": true,
-          "repsDone": [
-            "12",
-            "12",
-            "12"
-          ],
-          "target": "3 x 8-12"
-        },
-        {
-          "exId": "l1",
-          "name": "Jalón al pecho",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 10-12"
-        },
-        {
-          "exId": "p4",
-          "name": "Elevaciones laterales",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 12-20"
-        },
-        {
-          "exId": "p6",
-          "name": "Extensión de tríceps en polea",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 10-15"
-        },
-        {
-          "exId": "l5",
-          "name": "Curl de bíceps con barra/mancuerna",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 10-12"
-        },
-        {
-          "exId": "t1c",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "1 x 15-20 min"
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Omar__2026-10-05__torso1",
       "person": "Omar",
       "date": "2026-10-05",
@@ -2800,6 +2713,95 @@
           "name": "Cardio 20 min.",
           "weight": "",
           "done": true,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-05__torso1",
+      "person": "Edson",
+      "date": "2026-10-05",
+      "dayKey": "torso1",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "35",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10",
+            "7"
+          ],
+          "target": "4 x 6-10"
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "41",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "4 x 8-12"
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "30",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "",
+          "done": true,
+          "repsDone": [
+            "45"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-20"
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 10-15"
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "t1c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false,
           "repsDone": [],
           "target": "1 x 15-20 min"
         }
