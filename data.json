@@ -2845,9 +2845,7 @@
           "name": "Bicicleta / eliptica",
           "weight": "5.5",
           "done": true,
-          "repsDone": [
-            "10"
-          ],
+          "repsDone": [],
           "target": "1 x 15 min"
         },
         {
