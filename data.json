@@ -2807,7 +2807,8 @@
           "weight": "25",
           "done": true,
           "repsDone": [
-            "10"
+            "10",
+            "12"
           ],
           "target": "3 x 10-12"
         },
