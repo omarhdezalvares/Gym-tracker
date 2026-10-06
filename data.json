@@ -2629,21 +2629,21 @@
       "anyDone": true
     },
     {
-      "id": "Omar__2026-10-05__torso1",
-      "person": "Omar",
+      "id": "Edson__2026-10-05__torso1",
+      "person": "Edson",
       "date": "2026-10-05",
       "dayKey": "torso1",
       "exercises": [
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "50",
+          "weight": "35",
           "done": true,
           "repsDone": [
             "10",
             "10",
-            "7",
-            "6"
+            "10",
+            "7"
           ],
           "target": "4 x 6-10"
         },
@@ -2711,28 +2711,28 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-10-05__torso1",
-      "person": "Edson",
+      "id": "Omar__2026-10-05__torso1",
+      "person": "Omar",
       "date": "2026-10-05",
       "dayKey": "torso1",
       "exercises": [
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "35",
+          "weight": "50",
           "done": true,
           "repsDone": [
             "10",
             "10",
-            "10",
-            "7"
+            "7",
+            "6"
           ],
           "target": "4 x 6-10"
         },
         {
           "exId": "l2",
           "name": "Remo en máquina o barra",
-          "weight": "",
+          "weight": "3",
           "done": false,
           "repsDone": [],
           "target": "4 x 8-12"
