@@ -2790,7 +2790,7 @@
         {
           "exId": "p6",
           "name": "Extensión de tríceps en polea",
-          "weight": "",
+          "weight": "19",
           "done": true,
           "repsDone": [],
           "target": "3 x 10-15"
