@@ -25,15 +25,21 @@
     --text:#F5F5F5; --muted:#8A8A8D; --omar:#E7B10A; --edson:#4CC9F0; --green:#4ADE80;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:#0B0B0F;color:var(--text);font-family:'Inter',system-ui,sans-serif;position:relative;overflow-x:hidden;}
-  body::before{content:"";position:fixed;inset:-15%;z-index:0;pointer-events:none;filter:blur(60px);opacity:.35;background:
-    radial-gradient(circle at 20% 15%, #7C6CF0 0%, transparent 45%),
-    radial-gradient(circle at 85% 25%, #E7B10A 0%, transparent 40%),
-    radial-gradient(circle at 30% 85%, #37D6C4 0%, transparent 45%);}
+  body{margin:0;background:linear-gradient(165deg,#10131A 0%,#0A0B0E 55%,#0C0D11 100%) fixed;color:var(--text);font-family:'Inter',system-ui,sans-serif;position:relative;overflow-x:hidden;}
+  /* Fondo sobrio: luces grafito/acero desaturadas (y un toque ámbar de marca) para que el vidrio de las tarjetas tenga qué difuminar */
+  body::before{content:"";position:fixed;inset:-15%;z-index:0;pointer-events:none;filter:blur(70px);opacity:.6;background:
+    radial-gradient(ellipse 55% 40% at 15% 10%, #34506B 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 92% 38%, #2B3646 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 70% 92%, #6B5420 0%, transparent 70%),
+    radial-gradient(ellipse 35% 30% at 10% 70%, #1F2A36 0%, transparent 70%);}
+  /* grano fino + viñeta para dar textura y profundidad */
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+    radial-gradient(ellipse at 50% 40%, transparent 55%, rgba(0,0,0,.45) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");}
   .font-display{font-family:'Bebas Neue',system-ui,sans-serif;letter-spacing:.03em;}
   .mono{font-family:'JetBrains Mono',monospace;}
   #app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px;padding-top:calc(env(safe-area-inset-top, 0px) + 28px);padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 84px);min-height:100vh;}
-  .card{background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px;margin-bottom:16px;}
+  .card{background:linear-gradient(155deg,rgba(255,255,255,.085) 0%,rgba(255,255,255,.035) 100%);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(0,0,0,.35);}
   .row{display:flex;align-items:center;gap:8px;}
   .between{display:flex;align-items:center;justify-content:space-between;}
   .btn{cursor:pointer;border:none;border-radius:10px;font-weight:700;font-size:14px;padding:10px 14px;}
@@ -49,7 +55,7 @@
   .pill{border-radius:10px;padding:8px 0;text-align:center;font-weight:700;font-size:12px;border:1px solid var(--border);cursor:pointer;background:var(--bg);color:#D4D4D4;}
   .pill.active{background:var(--omar);color:#1B1B1D;border:none;}
   .pill2.active{background:var(--edson)!important;}
-  .bottom-nav{position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));max-width:452px;margin:0 auto;display:flex;background:rgba(30,30,34,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:8px 6px;z-index:40;}
+  .bottom-nav{position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom, 0px));max-width:452px;margin:0 auto;display:flex;background:rgba(22,25,31,.55);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(0,0,0,.45);border-radius:22px;padding:8px 6px;z-index:40;}
   .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px 0 6px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:11px;font-weight:600;font-family:inherit;}
   .nav-item .nav-icon{display:flex;position:relative;}
   .nav-item .nav-icon svg{width:22px;height:22px;position:relative;z-index:1;}
