@@ -1,10 +1,10 @@
-# Bitácora de Gym — Omar & Edson
+# Bitácora de Gym — Omar, Edson & Edgar
 
-Versión para GitHub Pages: un solo archivo `index.html` (front) + `data.json` (almacenamiento), en la misma carpeta del repo.
+Versión para GitHub Pages: un solo archivo `index.html` (front) + `data.json` y `logs/*.json` (almacenamiento), en la misma carpeta del repo.
 
 ## Cómo funciona el guardado
 
-No hay backend externo. El propio `index.html` lee y escribe `data.json` **dentro de este mismo repo** usando la API de contenidos de GitHub (`api.github.com/repos/.../contents/data.json`). Es decir, cada vez que marcas un ejercicio o escribes un peso, la app hace un commit automático a `data.json` con los datos actualizados.
+No hay backend externo. El propio `index.html` lee y escribe `data.json` y `logs/<persona>.json` **dentro de este mismo repo** usando la API de contenidos de GitHub (`api.github.com/repos/.../contents/data.json`). Es decir, cada vez que marcas un ejercicio o escribes un peso, la app hace un commit automático al archivo de esa persona (`logs/omar.json`, etc.).
 
 ## Pasos para dejarlo funcionando (configuración única, sin que cada quien haga nada)
 
@@ -24,7 +24,7 @@ No hay backend externo. El propio `index.html` lee y escribe `data.json` **dentr
    - Genera y copia el token.
 4. **Pega el token** en `HARDCODED_TOKEN` (línea señalada arriba) y sube el archivo.
 5. **Activa GitHub Pages**: Settings → Pages → Source: "Deploy from a branch" → rama `main`, carpeta `/root`.
-6. Listo — cualquiera que abra el link ya puede usarlo con solo el login (`gymbro` / `gymBros$1`), sin configurar nada por su lado.
+6. Listo — cada quien entra con su usuario (`omar`, `edson` o `edgar`, contraseña `gymBros$1`; se cambian en `USERS` dentro de `index.html`) y ve solo su rutina. Indicadores, gráficas y calendario muestran a los tres; Edgar no cuenta en "Asistencia del año" (`EXCLUDED_FROM_YEAR_ATTENDANCE`).
 
 ### ⚠️ Compromiso de seguridad de esta opción
 
@@ -41,14 +41,16 @@ Si más adelante prefieres quitar el token del código fuente, deja `HARDCODED_T
 
 - **El token da acceso de escritura a tu repo.** Trátalo como una contraseña: no lo compartas fuera de este uso, y si lo pierdes o quieres revocarlo, bórralo desde GitHub → Settings → Developer settings.
 - **Sin token, la app puede leer pero no guardar.** Verás un aviso claro (`⚠ No se pudo guardar...`) si falta configurarlo.
-- **Concurrencia:** si Omar y Edson guardan casi al mismo tiempo, la app detecta el conflicto de versión (`sha` desactualizado) y reintenta automáticamente una vez, releyendo antes de reescribir.
+- **Concurrencia:** cada persona guarda sus sesiones en su propio archivo, así que no chocan entre sí. Si aun así hay conflicto de versión (`sha` desactualizado, p. ej. la misma persona desde dos dispositivos, o dos editando rutina/ranking), la app relee y reintenta automáticamente una vez.
+- **Prueba local:** `python -m http.server 8420` y abrir `http://localhost:8420`; en localhost lee los archivos de la carpeta y no guarda nada.
 - **El login es una cortina simple**, no seguridad real — cualquiera que vea el código fuente puede ver usuario/contraseña. El token de GitHub sí es lo que realmente protege la escritura de datos.
 - Cada guardado genera un commit visible en el historial del repo — es normal, así es como persiste la información.
 
 ## Archivos
 
 - `index.html` — toda la app (HTML + CSS + JS puro, sin frameworks ni build step).
-- `data.json` — rutina + historial de sesiones + ranking (`routine`, `logs`, `ranking`). No lo edites a mano mientras la app esté en uso; ella lo mantiene actualizado.
+- `data.json` — rutina + ranking (`routine`, `ranking`), compartidos.
+- `logs/omar.json`, `logs/edson.json`, `logs/edgar.json` — historial de sesiones de cada persona (`logs`). No lo edites a mano mientras la app esté en uso; ella lo mantiene actualizado.
 - `backups/` — copias de seguridad de `data.json` tomadas antes de cambios grandes.
 
 ## Ranking

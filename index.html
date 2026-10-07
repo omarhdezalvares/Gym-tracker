@@ -69,9 +69,6 @@
   .sug-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
   .sug-wrap:empty{display:none;}
   .sug-chip{padding:7px 14px;border-radius:999px;border:1px solid var(--border2);background:var(--bg);color:var(--text);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;}
-  .person-switch{display:flex;gap:8px;margin-bottom:12px;}
-  .person-chip{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
-  .person-avatar{width:24px;height:24px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex:none;}
   .day-scroll{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .day-scroll::-webkit-scrollbar{display:none;}
   .day-chip{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:64px;padding:10px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:#D4D4D4;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit;}
@@ -130,7 +127,8 @@
 const GH_OWNER   = "omarhdezalvares";   // tu usuario de GitHub
 const GH_REPO    = "gym-tracker";       // nombre del repo
 const GH_BRANCH  = "main";              // rama (usualmente "main")
-const GH_PATH    = "data.json";         // archivo de datos en la raíz del repo
+const GH_PATH    = "data.json";         // rutina + ranking (compartidos), en la raíz del repo
+const LOGS_DIR   = "logs";              // sesiones: un archivo por persona (logs/omar.json, ...) para no pisarse al guardar
 
 // ⚠️ Pega tu GitHub Personal Access Token aquí, entre las comillas, si quieres
 // que funcione para cualquiera sin configurar nada por su lado. Con esto
@@ -140,11 +138,18 @@ const GH_PATH    = "data.json";         // archivo de datos en la raíz del repo
 // de "Contents: Read and write" para acotar el riesgo.
 const HARDCODED_TOKEN = "";   // <- AQUÍ, ej: "github_pat_xxxxxxxxxxxx"
 
-const APP_USERNAME = "gymbro";
-const APP_PASSWORD = "gymBros$1";
+// Un usuario por persona: al entrar, cada quien ve y registra solo su rutina.
+// Es una cortina simple (se ve en el código fuente), no seguridad real.
+const USERS = {
+  omar:  { password: "gymBros$1", person: "Omar" },
+  edson: { password: "gymBros$1", person: "Edson" },
+  edgar: { password: "gymBros$1", person: "Edgar" },
+};
 
-const PEOPLE = ["Omar", "Edson"];
-const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0" };
+const PEOPLE = ["Omar", "Edson", "Edgar"];
+const PERSON_COLOR = { Omar: "#E7B10A", Edson: "#4CC9F0", Edgar: "#C084FC" };
+// No cuentan para "Asistencia del año" (sí aparecen en calendario y gráficas).
+const EXCLUDED_FROM_YEAR_ATTENDANCE = ["Edgar"];
 // Rutina Torso/Pierna en rotación: se hace siempre el siguiente día de ROTATION,
 // sin importar el día de la semana. Los registros viejos (push/pull/legs/full)
 // se conservan en logs y siguen contando para asistencia y progreso.
@@ -231,10 +236,10 @@ const state = {
   saving: false,
   statusMsg: "",
   routine: null,
-  logs: [],
-  sha: null,          // sha del archivo data.json en GitHub, necesario para escribir
+  logs: [],           // sesiones de todas las personas (se leen de logs/*.json)
+  shas: {},           // sha de cada archivo en GitHub, necesario para escribir: { data, Omar, Edson, ... }
   hasLoaded: false,   // se pone true solo cuando la carga inicial terminó de verdad
-  person: "Omar",
+  person: null,       // persona del usuario con sesión iniciada
   date: todayISO(),
   dayKey: "torso1",
   draft: {},
@@ -292,26 +297,44 @@ function getToken() {
   return localStorage.getItem("gh_token") || "";
 }
 
-async function ghReadFile() {
+// Abierta desde un servidor local (python -m http.server), lee los archivos de la
+// carpeta en vez de GitHub y no guarda nada: sirve para probar sin tocar el repo.
+const LOCAL_MODE = ["localhost", "127.0.0.1"].includes(location.hostname);
+
+function logsPath(person) { return `${LOGS_DIR}/${person.toLowerCase()}.json`; }
+
+// Devuelve { data, sha }, o null si el archivo todavía no existe.
+async function ghReadFile(path) {
+  if (LOCAL_MODE) {
+    const res = await fetch(`${path}?_=${Date.now()}`);
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error(`No se pudo leer ${path} (HTTP ${res.status})`);
+    return { data: await res.json(), sha: null };
+  }
   const token = getToken();
   const res = await fetch(
-    `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}&_=${Date.now()}`,
+    `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}&_=${Date.now()}`,
     { headers: token ? { Authorization: `token ${token}`, Accept: "application/vnd.github+json" } : { Accept: "application/vnd.github+json" } }
   );
-  if (!res.ok) throw new Error("No se pudo leer data.json (HTTP " + res.status + ")");
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`No se pudo leer ${path} (HTTP ${res.status})`);
   const json = await res.json();
   const content = decodeURIComponent(escape(atob(json.content.replace(/\n/g, ""))));
   return { data: JSON.parse(content), sha: json.sha };
 }
 
-async function ghWriteFile(dataObj, message) {
+// Escribe el archivo y devuelve su sha nuevo. sha null = crear el archivo.
+async function ghWriteFile(path, dataObj, sha, message) {
+  if (LOCAL_MODE) throw new Error("modo local, solo lectura");
   const token = getToken();
   if (!token) throw new Error("Falta configurar tu GitHub Token para poder guardar.");
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(dataObj, null, 2))));
-  const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}`, {
+  const body = { message, content, branch: GH_BRANCH };
+  if (sha) body.sha = sha;
+  const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`, {
     method: "PUT",
     headers: { Authorization: `token ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-    body: JSON.stringify({ message, content, sha: state.sha, branch: GH_BRANCH }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     if (res.status === 409) throw new Error("conflict"); // alguien más escribió primero
@@ -319,8 +342,7 @@ async function ghWriteFile(dataObj, message) {
     throw new Error(errBody.message || ("No se pudo guardar (HTTP " + res.status + ")"));
   }
   const json = await res.json();
-  state.sha = json.content.sha;
-  return json;
+  return json.content.sha;
 }
 
 /* =========================================================================
@@ -329,15 +351,21 @@ async function ghWriteFile(dataObj, message) {
 async function loadData() {
   state.loading = true; render();
   try {
-    const { data, sha } = await ghReadFile();
-    state.routine = data.routine;
+    const [main, ...personFiles] = await Promise.all([GH_PATH, ...PEOPLE.map(logsPath)].map(ghReadFile));
+    if (!main) throw new Error(`no existe ${GH_PATH}`);
+    state.routine = main.data.routine;
     if (!state.routine.cardio) state.routine.cardio = DEFAULT_CARDIO_EXERCISES;
-    state.logs = data.logs || [];
-    state.ranking = normalizeRanking(data.ranking);
-    state.sha = sha;
+    state.ranking = normalizeRanking(main.data.ranking);
+    state.shas = { data: main.sha };
+    state.logs = [];
+    PEOPLE.forEach((p, i) => {
+      const f = personFiles[i];
+      state.shas[p] = f ? f.sha : null;
+      if (f) state.logs.push(...(f.data.logs || []));
+    });
   } catch (err) {
     console.error(err);
-    state.statusMsg = "No se pudo cargar data.json: " + err.message;
+    state.statusMsg = "No se pudieron cargar los datos: " + err.message;
   }
   state.hasLoaded = true;
   state.loading = false;
@@ -347,9 +375,23 @@ async function loadData() {
 }
 
 // Payload único para data.json: cualquier guardado debe pasar por aquí para no
-// perder ninguna de las claves (routine, logs, ranking).
-function buildPayload(overrides = {}) {
-  return { routine: state.routine, logs: state.logs, ranking: state.ranking, ...overrides };
+// perder ninguna de las claves (routine, ranking). Las sesiones van en logs/*.json.
+function buildPayload() {
+  return { routine: state.routine, ranking: state.ranking };
+}
+
+// Guarda data.json; si alguien escribió antes, relee, deja que mergeFresh tome lo
+// del remoto que no cambiamos aquí, y reintenta una vez.
+async function writeShared(message, mergeFresh) {
+  try {
+    state.shas.data = await ghWriteFile(GH_PATH, buildPayload(), state.shas.data, message);
+  } catch (err) {
+    if (err.message !== "conflict") throw err;
+    const fresh = await ghReadFile(GH_PATH);
+    state.shas.data = fresh.sha;
+    mergeFresh(fresh.data);
+    state.shas.data = await ghWriteFile(GH_PATH, buildPayload(), state.shas.data, message + " [retry]");
+  }
 }
 
 function normalizeRanking(r) {
@@ -412,28 +454,26 @@ async function persist() {
   }));
   const anyDone = exercisesOut.some(e => e.done);
   const newEntry = { id: entryId(), person: state.person, date: state.date, dayKey: state.dayKey, exercises: exercisesOut, anyDone };
-  const others = state.logs.filter(l => l.id !== newEntry.id);
-  const updatedLogs = [...others, newEntry];
-  const payload = buildPayload({ logs: updatedLogs });
+  // cada persona escribe solo su archivo, así no choca con los guardados de los demás
+  const person = state.person;
+  const path = logsPath(person);
+  const message = `Actualiza sesión de ${person} — ${state.date} (${state.dayKey})`;
+  const myLogs = [...state.logs.filter(l => l.person === person && l.id !== newEntry.id), newEntry];
+  const applyMine = logs => { state.logs = [...state.logs.filter(l => l.person !== person), ...logs]; };
 
   try {
-    await ghWriteFile(payload, `Actualiza sesión de ${state.person} — ${state.date} (${state.dayKey})`);
-    state.logs = updatedLogs;
+    state.shas[person] = await ghWriteFile(path, { logs: myLogs }, state.shas[person], message);
+    applyMine(myLogs);
     state.statusMsg = "Guardado en GitHub ✓";
   } catch (err) {
     if (err.message === "conflict") {
-      // alguien más (Edson probablemente) guardó justo antes: releer y reintentar una vez
+      // la misma persona guardó desde otro dispositivo justo antes: releer y reintentar una vez
       try {
-        const fresh = await ghReadFile();
-        state.sha = fresh.sha;
-        const freshOthers = (fresh.data.logs || []).filter(l => l.id !== newEntry.id);
-        const retryLogs = [...freshOthers, newEntry];
-        // el ranking del remoto se conserva, salvo que haya cambios locales sin guardar
-        const retryRanking = state.rankingDirty ? state.ranking : normalizeRanking(fresh.data.ranking);
-        await ghWriteFile({ routine: fresh.data.routine, logs: retryLogs, ranking: retryRanking }, `Actualiza sesión de ${state.person} — ${state.date} (${state.dayKey}) [retry]`);
-        state.routine = fresh.data.routine;
-        state.logs = retryLogs;
-        state.ranking = retryRanking;
+        const fresh = await ghReadFile(path);
+        state.shas[person] = fresh ? fresh.sha : null;
+        const retryLogs = [...((fresh && fresh.data.logs) || []).filter(l => l.id !== newEntry.id), newEntry];
+        state.shas[person] = await ghWriteFile(path, { logs: retryLogs }, state.shas[person], message + " [retry]");
+        applyMine(retryLogs);
         state.statusMsg = "Guardado en GitHub ✓";
       } catch (err2) {
         state.statusMsg = "⚠ No se pudo guardar tras reintentar: " + err2.message;
@@ -457,11 +497,13 @@ function scheduleAutosave() {
    ========================================================================= */
 function handleLogin(ev) {
   ev.preventDefault();
-  const u = document.getElementById("loginUser").value.trim();
+  const u = document.getElementById("loginUser").value.trim().toLowerCase();
   const p = document.getElementById("loginPass").value;
-  if (u === APP_USERNAME && p === APP_PASSWORD) {
+  const user = Object.prototype.hasOwnProperty.call(USERS, u) ? USERS[u] : null;
+  if (user && user.password === p) {
     state.authed = true; state.loginError = "";
-    localStorage.setItem("gym_authed", "1");
+    state.person = user.person;
+    localStorage.setItem("gym_user", u);
     render();
     loadData();
   } else {
@@ -469,16 +511,7 @@ function handleLogin(ev) {
     render();
   }
 }
-function handleLogout(){ state.authed = false; localStorage.removeItem("gym_authed"); render(); }
-
-function selectPerson(p) {
-  state.person = p;
-  if (state.date === todayISO()) {
-    state.dayKey = findActiveDayFor(p, todayISO()) || nextRotationDay(p);
-  }
-  rebuildDraft();
-  render();
-}
+function handleLogout(){ state.authed = false; state.person = null; localStorage.removeItem("gym_user"); render(); }
 function selectDay(d){ state.dayKey = d; rebuildDraft(); render(); }
 function selectSection(s){ state.section = s; render(); }
 function changeDate(v){ state.date = v; rebuildDraft(); render(); }
@@ -597,7 +630,8 @@ function removeExercise(exId) {
 async function saveRoutineNow() {
   state.saving = true; render();
   try {
-    await ghWriteFile(buildPayload(), "Actualiza rutina");
+    // el ranking del remoto se conserva, salvo que haya cambios locales sin guardar
+    await writeShared("Actualiza rutina", fresh => { if (!state.rankingDirty) state.ranking = normalizeRanking(fresh.ranking); });
     state.statusMsg = "Rutina actualizada en GitHub ✓";
   } catch (err) {
     state.statusMsg = "⚠ No se pudo guardar la rutina: " + err.message;
@@ -626,17 +660,8 @@ async function saveRanking() {
   const version = rankingVersion;
   state.saving = true; render();
   try {
-    try {
-      await ghWriteFile(buildPayload(), "Actualiza ranking");
-    } catch (err) {
-      if (err.message !== "conflict") throw err;
-      // alguien guardó antes: releer, quedarnos con su rutina/logs y reponer nuestro ranking
-      const fresh = await ghReadFile();
-      state.sha = fresh.sha;
-      state.routine = fresh.data.routine;
-      state.logs = fresh.data.logs || [];
-      await ghWriteFile(buildPayload(), "Actualiza ranking [retry]");
-    }
+    // si alguien guardó antes: quedarnos con su rutina y reponer nuestro ranking
+    await writeShared("Actualiza ranking", fresh => { state.routine = fresh.routine; });
     if (version === rankingVersion) state.rankingDirty = false;
     state.statusMsg = "Ranking guardado en GitHub ✓";
   } catch (err) {
@@ -859,7 +884,7 @@ function computeYearAttendance() {
 
   const realDates = new Set(
     state.logs
-      .filter(l => l.anyDone && l.date.startsWith(String(year)))
+      .filter(l => l.anyDone && l.date.startsWith(String(year)) && !EXCLUDED_FROM_YEAR_ATTENDANCE.includes(l.person))
       .filter(l => Number(getISOWeekKey(l.date).split("-S")[1]) > HISTORICAL_ATTENDANCE.weeksCovered)
       .map(l => l.date)
   );
@@ -1007,17 +1032,6 @@ function renderMain() {
   const maxWeekly = Math.max(1, ...weekly.flatMap(r => PEOPLE.map(p => r[p])));
 
   const operativaHtml = `
-    <div class="person-switch">
-      ${PEOPLE.map(p => {
-        const active = state.person === p;
-        return `
-        <button class="person-chip" style="background:${active ? "rgba(255,255,255,.1)" : "rgba(255,255,255,.05)"};backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid ${active ? PERSON_COLOR[p] : "rgba(255,255,255,.12)"};color:${active ? "var(--text)" : "#9C9CA1"};" onclick="selectPerson('${p}')">
-          <span class="person-avatar" style="background:${PERSON_COLOR[p]};color:#1B1B1D;">${p.charAt(0)}</span>
-          ${p}
-        </button>`;
-      }).join("")}
-    </div>
-
     <div class="card">
       <div class="row" style="margin-bottom:10px;">
         <span>📅</span>
@@ -1063,15 +1077,14 @@ function renderMain() {
   const indicadoresHtml = `
     <div class="card">
       <h2 class="font-display" style="font-size:20px;margin:0 0 10px;">ASISTENCIA SEMANAL</h2>
-      <div class="row" style="gap:16px;margin-bottom:6px;">
+      <div class="row" style="gap:6px 16px;margin-bottom:6px;flex-wrap:wrap;">
         ${PEOPLE.map(p => `<div class="row"><span>🔥</span><span class="muted">${p}:</span><span class="mono" style="font-weight:700;color:${PERSON_COLOR[p]};">${streaks[p]} ${streaks[p] === 1 ? "semana" : "semanas"}</span></div>`).join("")}
       </div>
       <div class="bar-wrap">
         ${weekly.map(row => `
           <div class="bar-col">
             <div style="display:flex;gap:2px;align-items:flex-end;height:100%;width:100%;">
-              <div class="bar" style="height:${(row.Omar / maxWeekly) * 100}%;background:${PERSON_COLOR.Omar};flex:1;"></div>
-              <div class="bar" style="height:${(row.Edson / maxWeekly) * 100}%;background:${PERSON_COLOR.Edson};flex:1;"></div>
+              ${PEOPLE.map(p => `<div class="bar" style="height:${(row[p] / maxWeekly) * 100}%;background:${PERSON_COLOR[p]};flex:1;"></div>`).join("")}
             </div>
             <div class="barlabel">${row.week}</div>
           </div>
@@ -1117,7 +1130,7 @@ function renderMain() {
         <img src="icon-192.png" alt="" style="width:40px;height:40px;border-radius:10px;flex:none;" />
         <div>
           <h1 class="font-display" style="font-size:28px;line-height:1;margin:0;">GYMBROS.APP</h1>
-          <p class="muted" style="margin:4px 0 0;">Repo compartido · ${state.logs.length === 0 ? "sin historial cargado" : state.logs.length + " sesiones cargadas"}</p>
+          <p class="muted" style="margin:4px 0 0;"><span style="color:${PERSON_COLOR[state.person]};font-weight:700;">${escapeHtml(state.person)}</span> · ${state.logs.length === 0 ? "sin historial cargado" : state.logs.length + " sesiones cargadas"}</p>
         </div>
       </div>
       <div class="row">
@@ -1302,8 +1315,12 @@ function attachMainEvents() { /* todos los handlers están inline vía onclick/o
 /* =========================================================================
    ARRANQUE
    ========================================================================= */
-if (localStorage.getItem("gym_authed") === "1") {
+// sesión de la versión anterior (login único, sin persona): pedir que entren con su usuario
+localStorage.removeItem("gym_authed");
+const savedUser = localStorage.getItem("gym_user");
+if (savedUser && Object.prototype.hasOwnProperty.call(USERS, savedUser)) {
   state.authed = true;
+  state.person = USERS[savedUser].person;
   render();
   loadData();
 } else {

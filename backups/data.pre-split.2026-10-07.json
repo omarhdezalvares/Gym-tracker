@@ -1,0 +1,3080 @@
+{
+  "routine": {
+    "torso1": [
+      {
+        "id": "p1",
+        "name": "Press de banca plano",
+        "sets": 4,
+        "reps": "6-10"
+      },
+      {
+        "id": "l2",
+        "name": "Remo en máquina o barra",
+        "sets": 4,
+        "reps": "8-12"
+      },
+      {
+        "id": "p2",
+        "name": "Press inclinado con mancuerna",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "id": "l1",
+        "name": "Jalón al pecho",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "p4",
+        "name": "Elevaciones laterales",
+        "sets": 3,
+        "reps": "12-20"
+      },
+      {
+        "id": "p6",
+        "name": "Extensión de tríceps en polea",
+        "sets": 3,
+        "reps": "10-15"
+      },
+      {
+        "id": "l5",
+        "name": "Curl de bíceps con barra/mancuerna",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "t1c",
+        "name": "Cardio 20 min.",
+        "sets": "1",
+        "reps": "15-20 min"
+      }
+    ],
+    "pierna1": [
+      {
+        "id": "g1",
+        "name": "Prensa de pierna",
+        "sets": 4,
+        "reps": "8-10"
+      },
+      {
+        "id": "g7",
+        "name": "Peso muerto rumano con mancuernas",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "id": "g2",
+        "name": "Extensión de cuádriceps",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "g3",
+        "name": "Curl femoral",
+        "sets": 3,
+        "reps": "10-14"
+      },
+      {
+        "id": "g6",
+        "name": "Elevación de talones de pie",
+        "sets": 4,
+        "reps": "10-15"
+      },
+      {
+        "id": "f5",
+        "name": "Plancha (core)",
+        "sets": 3,
+        "reps": "45-60s"
+      },
+      {
+        "id": "p1c",
+        "name": "Cardio 20 min.",
+        "sets": "1",
+        "reps": "15-20 min"
+      }
+    ],
+    "torso2": [
+      {
+        "id": "f2",
+        "name": " Dominadas asistidas",
+        "sets": 4,
+        "reps": "6-10"
+      },
+      {
+        "id": "p7",
+        "name": "Press de hombro con mancuerna sentado",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "id": "l3",
+        "name": "Remo bajo en polea",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "f1",
+        "name": "Press de banca declinado",
+        "sets": 3,
+        "reps": "8-12"
+      },
+      {
+        "id": "l4",
+        "name": "Face pull",
+        "sets": 3,
+        "reps": "15-20"
+      },
+      {
+        "id": "p8",
+        "name": "Fondos en máquina",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "l6",
+        "name": "Curl martillo",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "t2c",
+        "name": "Cardio 20 min.",
+        "sets": "1",
+        "reps": "15-20 min"
+      }
+    ],
+    "pierna2": [
+      {
+        "id": "g8",
+        "name": "Hip thrust",
+        "sets": 4,
+        "reps": "8-12"
+      },
+      {
+        "id": "g9",
+        "name": "Prensa de pierna (pies altos)",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
+        "id": "f3",
+        "name": "Patada de gluteo",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "g4",
+        "name": "Abducción ",
+        "sets": 3,
+        "reps": "15-20"
+      },
+      {
+        "id": "g5",
+        "name": "Aducción ",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "f6",
+        "name": "Elevación de piernas / crunch polea",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "p2c",
+        "name": "Cardio 20 min.",
+        "sets": "1",
+        "reps": "15-20 min"
+      }
+    ],
+    "cardio": [
+      {
+        "id": "c1",
+        "name": "Caminadora / trote",
+        "sets": "1",
+        "reps": "20 min"
+      },
+      {
+        "id": "c2",
+        "name": "Bicicleta / eliptica",
+        "sets": "1",
+        "reps": "15 min"
+      },
+      {
+        "id": "c3",
+        "name": "Cuerda / HIIT",
+        "sets": "1",
+        "reps": "10 min"
+      }
+    ]
+  },
+  "logs": [
+    {
+      "id": "Omar__2026-08-21__legs",
+      "person": "Omar",
+      "date": "2026-08-21",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "130",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "50",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "1.75",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-08-21__legs",
+      "person": "Edson",
+      "date": "2026-08-21",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "130",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "50",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "2.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-08-25__pull",
+      "person": "Omar",
+      "date": "2026-08-25",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "23",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "12.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "1.75",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-08-25__pull",
+      "person": "Edson",
+      "date": "2026-08-25",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "23",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "12.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-01__cardio",
+      "person": "Omar",
+      "date": "2026-09-01",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "1.5",
+          "done": true
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-01__cardio",
+      "person": "Edson",
+      "date": "2026-09-01",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "4",
+          "done": true
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-03__pull",
+      "person": "Omar",
+      "date": "2026-09-03",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "23",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "0",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.20",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-08-26__legs",
+      "person": "Edson",
+      "date": "2026-08-26",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "130",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "41",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "1.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-02__push",
+      "person": "Edson",
+      "date": "2026-09-02",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "12",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-03__pull",
+      "person": "Edson",
+      "date": "2026-09-03",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "23",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "0",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.75",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-08-24__push",
+      "person": "Omar",
+      "date": "2026-08-24",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "2.05",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-08-24__push",
+      "person": "Edson",
+      "date": "2026-08-24",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "12",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "2.20",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-02__push",
+      "person": "Omar",
+      "date": "2026-09-02",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-07__push",
+      "person": "Edson",
+      "date": "2026-09-07",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "32",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "9.56",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-07__push",
+      "person": "Omar",
+      "date": "2026-09-07",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "32",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "17",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "9.56",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-09__pull",
+      "person": "Edson",
+      "date": "2026-09-09",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "40",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-09__pull",
+      "person": "Omar",
+      "date": "2026-09-09",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "52",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "40",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-04__legs",
+      "person": "Edson",
+      "date": "2026-09-04",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "65",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "41",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "2",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-04__legs",
+      "person": "Omar",
+      "date": "2026-09-04",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "57",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "41",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "1.5",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": false
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-10__legs",
+      "person": "Edson",
+      "date": "2026-09-10",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "8.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-10__legs",
+      "person": "Omar",
+      "date": "2026-09-10",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "8.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-11__full",
+      "person": "Omar",
+      "date": "2026-09-11",
+      "dayKey": "full",
+      "exercises": [
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "16",
+          "done": true
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "27",
+          "done": true
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "60",
+          "done": true
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "40",
+          "done": true
+        },
+        {
+          "exId": "f7",
+          "name": "Desplantes",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3zb6h5",
+          "name": "Cardio 20 min.",
+          "weight": "1.85",
+          "done": true
+        },
+        {
+          "exId": "exmtryw3sg",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-11__full",
+      "person": "Edson",
+      "date": "2026-09-11",
+      "dayKey": "full",
+      "exercises": [
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "30",
+          "done": true
+        },
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "16",
+          "done": true
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "27",
+          "done": true
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "60",
+          "done": true
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "40",
+          "done": false
+        },
+        {
+          "exId": "f7",
+          "name": "Desplantes",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3zb6h5",
+          "name": "Cardio 20 min.",
+          "weight": "1.85",
+          "done": true
+        },
+        {
+          "exId": "exmtryw3sg",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-12__cardio",
+      "person": "Omar",
+      "date": "2026-09-12",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "3",
+          "done": true
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-14__push",
+      "person": "Edson",
+      "date": "2026-09-14",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-14__push",
+      "person": "Omar",
+      "date": "2026-09-14",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "36",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "19.3",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "6.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-18__pull",
+      "person": "Omar",
+      "date": "2026-09-18",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "59",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.20",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-18__pull",
+      "person": "Edson",
+      "date": "2026-09-18",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "59",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "2.3",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-21__push",
+      "person": "Omar",
+      "date": "2026-09-21",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "35",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "8",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "19.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-21__push",
+      "person": "Edson",
+      "date": "2026-09-21",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "35",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "28",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "8",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "14.7",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-23__pull",
+      "person": "Omar",
+      "date": "2026-09-23",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "59",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-24__legs",
+      "person": "Edson",
+      "date": "2026-09-24",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "42",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "",
+          "done": false
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-24__legs",
+      "person": "Omar",
+      "date": "2026-09-24",
+      "dayKey": "legs",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "131",
+          "done": true
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "45",
+          "done": true
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "70",
+          "done": true
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "43",
+          "done": true
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "122.5",
+          "done": true
+        },
+        {
+          "exId": "exmt3zapgy",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryvlyn",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-25__full",
+      "person": "Omar",
+      "date": "2026-09-25",
+      "dayKey": "full",
+      "exercises": [
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "50",
+          "done": true
+        },
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "16",
+          "done": true
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "17",
+          "done": true
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "60",
+          "done": true
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "50",
+          "done": true
+        },
+        {
+          "exId": "f7",
+          "name": "Desplantes",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmt3zb6h5",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryw3sg",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmuhng2hb",
+          "name": "Escaladora",
+          "weight": "625",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-25__full",
+      "person": "Edson",
+      "date": "2026-09-25",
+      "dayKey": "full",
+      "exercises": [
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "40",
+          "done": true
+        },
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "9",
+          "done": true
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "17",
+          "done": true
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "60",
+          "done": true
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "50",
+          "done": true
+        },
+        {
+          "exId": "f7",
+          "name": "Desplantes",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmt3zb6h5",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryw3sg",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmuhng2hb",
+          "name": "Escaladora",
+          "weight": "700",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-09-30__push",
+      "person": "Omar",
+      "date": "2026-09-30",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "45",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "32",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "16",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "10",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "21.6",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-30__push",
+      "person": "Edson",
+      "date": "2026-09-30",
+      "dayKey": "push",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "45",
+          "done": true
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "32",
+          "done": true
+        },
+        {
+          "exId": "p3",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true
+        },
+        {
+          "exId": "p5",
+          "name": "Fondos en máquina / press francés",
+          "weight": "8",
+          "done": true
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "19.",
+          "done": true
+        },
+        {
+          "exId": "exmt3z9cx6",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryu73t",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-01__pull",
+      "person": "Omar",
+      "date": "2026-10-01",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "66",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "24",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-09-23__pull",
+      "person": "Edson",
+      "date": "2026-09-23",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "59",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-01__pull",
+      "person": "Edson",
+      "date": "2026-10-01",
+      "dayKey": "pull",
+      "exercises": [
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "66",
+          "done": true
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17.5",
+          "done": true
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "25",
+          "done": true
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true
+        },
+        {
+          "exId": "exmt3za6wb",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true
+        },
+        {
+          "exId": "exmtryv650",
+          "name": "Bicicleta / eliptica",
+          "weight": "7.5",
+          "done": true
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-02__cardio",
+      "person": "Omar",
+      "date": "2026-10-02",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "730",
+          "done": true,
+          "repsDone": [
+            "10"
+          ],
+          "target": "1 x 20 min"
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 15 min"
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 10 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-02__pierna1",
+      "person": "Omar",
+      "date": "2026-10-02",
+      "dayKey": "pierna1",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "140",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "4 x 8-10"
+        },
+        {
+          "exId": "g7",
+          "name": "Peso muerto rumano con mancuernas",
+          "weight": "32",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true,
+          "repsDone": [
+            "12",
+            "10",
+            "10"
+          ],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "45",
+          "done": true,
+          "repsDone": [
+            "14",
+            "10",
+            "8"
+          ],
+          "target": "3 x 10-14"
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "40",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "4 x 10-15"
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "0",
+          "done": true,
+          "repsDone": [
+            "60",
+            "60",
+            "60"
+          ],
+          "target": "3 x 45-60s"
+        },
+        {
+          "exId": "p1c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-02__pierna1",
+      "person": "Edson",
+      "date": "2026-10-02",
+      "dayKey": "pierna1",
+      "exercises": [
+        {
+          "exId": "g1",
+          "name": "Prensa de pierna",
+          "weight": "140",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "4 x 8-10"
+        },
+        {
+          "exId": "g7",
+          "name": "Peso muerto rumano con mancuernas",
+          "weight": "32",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "g2",
+          "name": "Extensión de cuádriceps",
+          "weight": "63",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "g3",
+          "name": "Curl femoral",
+          "weight": "42",
+          "done": true,
+          "repsDone": [
+            "10",
+            "13",
+            "8"
+          ],
+          "target": "3 x 10-14"
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "40",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "4 x 10-15"
+        },
+        {
+          "exId": "f5",
+          "name": "Plancha (core)",
+          "weight": "",
+          "done": true,
+          "repsDone": [
+            "60",
+            "60",
+            "60"
+          ],
+          "target": "3 x 45-60s"
+        },
+        {
+          "exId": "p1c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-05__cardio",
+      "person": "Omar",
+      "date": "2026-10-05",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 20 min"
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "5.5",
+          "done": true,
+          "repsDone": [
+            "10"
+          ],
+          "target": "1 x 15 min"
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 10 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-05__cardio",
+      "person": "Edson",
+      "date": "2026-10-05",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 20 min"
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "5.5",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 15 min"
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 10 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-05__torso1",
+      "person": "Omar",
+      "date": "2026-10-05",
+      "dayKey": "torso1",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "50",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "7",
+            "6"
+          ],
+          "target": "4 x 6-10"
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "41",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "4 x 8-12"
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "30",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "45",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "14",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 12-20"
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "21.6",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 10-15"
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "25",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "t1c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-05__torso1",
+      "person": "Edson",
+      "date": "2026-10-05",
+      "dayKey": "torso1",
+      "exercises": [
+        {
+          "exId": "p1",
+          "name": "Press de banca plano",
+          "weight": "40",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10",
+            "7"
+          ],
+          "target": "4 x 6-10"
+        },
+        {
+          "exId": "l2",
+          "name": "Remo en máquina o barra",
+          "weight": "41",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "4 x 8-12"
+        },
+        {
+          "exId": "p2",
+          "name": "Press inclinado con mancuerna",
+          "weight": "30",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "l1",
+          "name": "Jalón al pecho",
+          "weight": "45",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "p4",
+          "name": "Elevaciones laterales",
+          "weight": "5",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 12-20"
+        },
+        {
+          "exId": "p6",
+          "name": "Extensión de tríceps en polea",
+          "weight": "19",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 10-15"
+        },
+        {
+          "exId": "l5",
+          "name": "Curl de bíceps con barra/mancuerna",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "t1c",
+          "name": "Cardio 20 min.",
+          "weight": "0",
+          "done": true,
+          "repsDone": [
+            "0"
+          ],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    }
+  ],
+  "ranking": {
+    "categories": [
+      {
+        "id": "cmu75jeq4qm6",
+        "name": "OVER ALL"
+      },
+      {
+        "id": "cmu75jhdz58b",
+        "name": "Omar"
+      },
+      {
+        "id": "cmu75jpai2yn",
+        "name": "Edson"
+      },
+      {
+        "id": "cmu75jxgdluy",
+        "name": "Bongles"
+      },
+      {
+        "id": "cmu75k0omaie",
+        "name": "Doñas"
+      },
+      {
+        "id": "cmu75kbjtfms",
+        "name": "Sabrosas camarones"
+      },
+      {
+        "id": "cmu75m4zptty",
+        "name": "Mandarinas"
+      },
+      {
+        "id": "cmu78qbpeiz2",
+        "name": "Gustos culposos"
+      },
+      {
+        "id": "cmubz8hhv4th",
+        "name": "Esperanzas de Toulon"
+      },
+      {
+        "id": "cmubzdoqk5gf",
+        "name": "Cara de pendeja"
+      },
+      {
+        "id": "cmuc1a5ohm1f",
+        "name": "Hermosísimas"
+      }
+    ],
+    "people": [
+      {
+        "id": "nmu75lcbfghd",
+        "name": "Mi ruka la guerita"
+      },
+      {
+        "id": "nmu75lkjs8ed",
+        "name": "La de azul mi novia"
+      },
+      {
+        "id": "nmu75mnilfoa",
+        "name": "La number 1"
+      },
+      {
+        "id": "nmu75mwq3gdq",
+        "name": "Bongles number 1"
+      },
+      {
+        "id": "nmu75n9tpb2b",
+        "name": "La chinita"
+      },
+      {
+        "id": "nmu75o62f38j",
+        "name": "La otra chinita"
+      },
+      {
+        "id": "nmu75og4og6g",
+        "name": "Mi novia de los bills"
+      },
+      {
+        "id": "nmu75shjz6tq",
+        "name": "Gremlin"
+      },
+      {
+        "id": "nmu75ssn8qe6",
+        "name": "Twin rango"
+      },
+      {
+        "id": "nmu75t0fct0o",
+        "name": "Twin bonita"
+      },
+      {
+        "id": "nmu79ie4c7a8",
+        "name": "Ya Me Entere Que Eres Un Alien"
+      },
+      {
+        "id": "nmu7ml0hqqd3",
+        "name": "La Mama Del Hijo"
+      },
+      {
+        "id": "nmu7o116cyzn",
+        "name": "Mi Ex"
+      },
+      {
+        "id": "nmu7pi4dmefb",
+        "name": "Bongles Number 2"
+      },
+      {
+        "id": "nmu7prudql71",
+        "name": "Pepa Pig"
+      },
+      {
+        "id": "nmubyrb8g3lg",
+        "name": "Mi señora favorita"
+      },
+      {
+        "id": "nmubzard5kv6",
+        "name": "La Nueva Esperanzas De Tuolon"
+      },
+      {
+        "id": "nmubzgbvfe11",
+        "name": "La Morra De Ten Ching Han"
+      },
+      {
+        "id": "nmuc0d5pf0vk",
+        "name": "Travesaño"
+      },
+      {
+        "id": "nmuetnywqa8i",
+        "name": "Mi Crush De Los Labiotes"
+      },
+      {
+        "id": "nmuev8w46667",
+        "name": "Milf Sabrosa"
+      },
+      {
+        "id": "nmuevepdzdxy",
+        "name": "Güera Audífonos Blancos"
+      },
+      {
+        "id": "nmuewa6jcepy",
+        "name": "Rosita Fresita"
+      },
+      {
+        "id": "nmuho47td8pb",
+        "name": "Chaparrita Del Culote"
+      },
+      {
+        "id": "nmuho5mzlq4g",
+        "name": "Fake Little Water Globes"
+      },
+      {
+        "id": "nmuhoopxa5z6",
+        "name": "Short Azul Bonito"
+      },
+      {
+        "id": "nmuhoth4djhv",
+        "name": "Mandarina Number 1"
+      },
+      {
+        "id": "nmuq9wtnds7e",
+        "name": "Fake Alien"
+      }
+    ],
+    "boards": {
+      "cmu75jeq4qm6": [
+        "nmu75mnilfoa",
+        "nmu75o62f38j",
+        "nmuc0d5pf0vk",
+        "nmu75ssn8qe6"
+      ],
+      "cmu75jhdz58b": [
+        "nmuetnywqa8i",
+        "nmu79ie4c7a8",
+        "nmu75lcbfghd"
+      ],
+      "cmu75jpai2yn": [
+        "nmu75t0fct0o",
+        "nmu75shjz6tq",
+        "nmu75og4og6g",
+        "nmu7o116cyzn"
+      ],
+      "cmu75jxgdluy": [
+        "nmu75mwq3gdq",
+        "nmu7pi4dmefb"
+      ],
+      "cmu75k0omaie": [
+        "nmubyrb8g3lg",
+        "nmu7ml0hqqd3",
+        "nmuev8w46667"
+      ],
+      "cmu75kbjtfms": [
+        "nmu75mwq3gdq",
+        "nmuho47td8pb"
+      ],
+      "cmu75m4zptty": [
+        "nmuhoth4djhv",
+        "nmuevepdzdxy",
+        "nmuhoopxa5z6"
+      ],
+      "cmu78qbpeiz2": [
+        "nmu7prudql71"
+      ],
+      "cmubz8hhv4th": [
+        "nmubzard5kv6",
+        "nmuq9wtnds7e",
+        "nmuho5mzlq4g"
+      ],
+      "cmubzdoqk5gf": [
+        "nmubzgbvfe11"
+      ],
+      "cmuc1a5ohm1f": []
+    }
+  }
+}
