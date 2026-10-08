@@ -1341,7 +1341,7 @@
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "160",
+          "weight": "",
           "done": false,
           "repsDone": [
             ""
