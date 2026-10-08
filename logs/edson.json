@@ -1429,7 +1429,7 @@
           "exId": "c3",
           "name": "Cuerda / HIIT",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "1 x 10 min"
         }
