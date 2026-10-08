@@ -1333,7 +1333,7 @@
           "exId": "g1",
           "name": "Prensa de pierna",
           "weight": "160",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10",
             "10",
@@ -1391,7 +1391,7 @@
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
