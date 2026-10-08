@@ -1477,7 +1477,7 @@
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "56",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 12-15"
         },
