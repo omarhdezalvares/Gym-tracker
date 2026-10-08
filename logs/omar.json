@@ -1424,7 +1424,7 @@
         {
           "exId": "c2",
           "name": "Bicicleta / eliptica",
-          "weight": "",
+          "weight": "5.5",
           "done": false,
           "repsDone": [
             "10"
