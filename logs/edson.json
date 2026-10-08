@@ -1324,6 +1324,41 @@
       "anyDone": true
     },
     {
+      "id": "Edson__2026-10-07__cardio",
+      "person": "Edson",
+      "date": "2026-10-07",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 20 min"
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "5.5",
+          "done": true,
+          "repsDone": [
+            "1"
+          ],
+          "target": "1 x 15 min"
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": true,
+          "repsDone": [],
+          "target": "1 x 10 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
       "id": "Edson__2026-10-07__pierna1",
       "person": "Edson",
       "date": "2026-10-07",
@@ -1394,44 +1429,9 @@
           "exId": "p1c",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "1 x 15-20 min"
-        }
-      ],
-      "anyDone": true
-    },
-    {
-      "id": "Edson__2026-10-07__cardio",
-      "person": "Edson",
-      "date": "2026-10-07",
-      "dayKey": "cardio",
-      "exercises": [
-        {
-          "exId": "c1",
-          "name": "Caminadora / trote",
-          "weight": "",
-          "done": true,
-          "repsDone": [],
-          "target": "1 x 20 min"
-        },
-        {
-          "exId": "c2",
-          "name": "Bicicleta / eliptica",
-          "weight": "5.5",
-          "done": true,
-          "repsDone": [
-            "1"
-          ],
-          "target": "1 x 15 min"
-        },
-        {
-          "exId": "c3",
-          "name": "Cuerda / HIIT",
-          "weight": "",
-          "done": true,
-          "repsDone": [],
-          "target": "1 x 10 min"
         }
       ],
       "anyDone": true
