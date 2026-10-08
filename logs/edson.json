@@ -1432,7 +1432,8 @@
           "weight": "",
           "done": true,
           "repsDone": [
-            "60"
+            "60",
+            "0"
           ],
           "target": "3 x 45-60s"
         },
