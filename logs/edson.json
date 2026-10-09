@@ -1485,7 +1485,9 @@
           "name": "Remo bajo en polea",
           "weight": "36",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 10-12"
         },
         {
