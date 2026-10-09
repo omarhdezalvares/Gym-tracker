@@ -1543,7 +1543,7 @@
           "exId": "f2",
           "name": " Dominadas asistidas",
           "weight": "9",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10",
             "10",
