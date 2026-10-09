@@ -1579,8 +1579,8 @@
         {
           "exId": "f1",
           "name": "Press de banca declinado",
-          "weight": "",
-          "done": false,
+          "weight": "40",
+          "done": true,
           "repsDone": [
             "12"
           ],
