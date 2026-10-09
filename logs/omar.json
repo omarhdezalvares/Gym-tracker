@@ -1580,7 +1580,7 @@
           "exId": "l4",
           "name": "Face pull",
           "weight": "17",
-          "done": false,
+          "done": true,
           "repsDone": [
             "20",
             "20"
