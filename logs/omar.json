@@ -1581,7 +1581,9 @@
           "name": "Press de banca declinado",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 8-12"
         },
         {
