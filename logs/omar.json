@@ -1615,7 +1615,7 @@
         {
           "exId": "l6",
           "name": "Curl martillo",
-          "weight": "",
+          "weight": "2",
           "done": false,
           "repsDone": [
             "10",
