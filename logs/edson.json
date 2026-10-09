@@ -1504,7 +1504,7 @@
           "exId": "p8",
           "name": "Fondos en máquina",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 10-12"
         },
