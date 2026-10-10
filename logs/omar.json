@@ -1744,7 +1744,9 @@
           "name": "Elevación de piernas / crunch polea",
           "weight": "0",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 12-15"
         },
         {
