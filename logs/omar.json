@@ -1648,7 +1648,9 @@
           "name": "Hip thrust",
           "weight": "20",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "4 x 8-12"
         },
         {
