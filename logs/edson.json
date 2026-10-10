@@ -1577,7 +1577,9 @@
           "name": "Prensa de pierna (pies altos)",
           "weight": "100",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 10-12"
         },
         {
