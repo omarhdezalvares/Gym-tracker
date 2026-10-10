@@ -1743,7 +1743,7 @@
           "exId": "f6",
           "name": "Elevación de piernas / crunch polea",
           "weight": "0",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12"
           ],
