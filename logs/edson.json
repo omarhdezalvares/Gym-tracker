@@ -1601,7 +1601,9 @@
           "name": "Abducción ",
           "weight": "70",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 15-20"
         },
         {
