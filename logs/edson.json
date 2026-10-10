@@ -1631,7 +1631,7 @@
         {
           "exId": "p2c",
           "name": "Cardio 20 min.",
-          "weight": "7.5",
+          "weight": "",
           "done": true,
           "repsDone": [
             ""
