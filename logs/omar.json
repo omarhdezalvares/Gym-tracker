@@ -1636,6 +1636,73 @@
         }
       ],
       "anyDone": true
+    },
+    {
+      "id": "Omar__2026-10-09__pierna2",
+      "person": "Omar",
+      "date": "2026-10-09",
+      "dayKey": "pierna2",
+      "exercises": [
+        {
+          "exId": "g8",
+          "name": "Hip thrust",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "4 x 8-12"
+        },
+        {
+          "exId": "g9",
+          "name": "Prensa de pierna (pies altos)",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "f3",
+          "name": "Patada de gluteo",
+          "weight": "",
+          "done": false,
+          "repsDone": [
+            "12"
+          ],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "g4",
+          "name": "Abducción ",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 15-20"
+        },
+        {
+          "exId": "g5",
+          "name": "Aducción ",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "f6",
+          "name": "Elevación de piernas / crunch polea",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "p2c",
+          "name": "Cardio 20 min.",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": false
     }
   ]
 }
