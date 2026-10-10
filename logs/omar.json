@@ -1647,7 +1647,7 @@
           "exId": "g8",
           "name": "Hip thrust",
           "weight": "20",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "4 x 8-12"
         },
