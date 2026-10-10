@@ -1651,7 +1651,7 @@
           "exId": "c1",
           "name": "Caminadora / trote",
           "weight": "",
-          "done": true,
+          "done": false,
           "repsDone": [],
           "target": "1 x 20 min"
         },
