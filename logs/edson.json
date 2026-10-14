@@ -1698,7 +1698,7 @@
         {
           "exId": "l2",
           "name": "Remo en máquina o barra",
-          "weight": "",
+          "weight": "30",
           "done": true,
           "repsDone": [],
           "target": "4 x 8-12"
