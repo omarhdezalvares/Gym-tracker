@@ -1747,7 +1747,7 @@
         {
           "exId": "p6",
           "name": "Extensión de tríceps en polea",
-          "weight": "14",
+          "weight": "1.5",
           "done": false,
           "repsDone": [
             "15",
