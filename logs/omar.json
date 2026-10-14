@@ -1836,7 +1836,8 @@
           "weight": "19.3",
           "done": false,
           "repsDone": [
-            "12"
+            "12",
+            "11"
           ],
           "target": "3 x 10-15"
         },
