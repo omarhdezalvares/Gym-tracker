@@ -368,6 +368,10 @@
       {
         "id": "nmuq9wtnds7e",
         "name": "Fake Alien"
+      },
+      {
+        "id": "nmv7hek1vsmz",
+        "name": "Señora Chiquita"
       }
     ],
     "boards": {
@@ -386,7 +390,8 @@
         "nmu75t0fct0o",
         "nmu75shjz6tq",
         "nmu75og4og6g",
-        "nmu7o116cyzn"
+        "nmu7o116cyzn",
+        "nmv7hek1vsmz"
       ],
       "cmu75jxgdluy": [
         "nmu75mwq3gdq",
