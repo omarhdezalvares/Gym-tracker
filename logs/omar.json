@@ -1937,7 +1937,7 @@
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "57",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12",
             "12"
