@@ -1884,7 +1884,7 @@
         {
           "exId": "c2",
           "name": "Bicicleta / eliptica",
-          "weight": "",
+          "weight": "5",
           "done": true,
           "repsDone": [],
           "target": "1 x 15 min"
