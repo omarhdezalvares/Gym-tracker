@@ -1943,7 +1943,7 @@
           "exId": "g3",
           "name": "Curl femoral",
           "weight": "41",
-          "done": false,
+          "done": true,
           "repsDone": [
             "14",
             "12",
