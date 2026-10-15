@@ -1450,110 +1450,6 @@
       "anyDone": true
     },
     {
-      "id": "Edson__2026-10-08__torso2",
-      "person": "Edson",
-      "date": "2026-10-08",
-      "dayKey": "torso2",
-      "exercises": [
-        {
-          "exId": "f2",
-          "name": " Dominadas asistidas",
-          "weight": "5",
-          "done": true,
-          "repsDone": [
-            "10",
-            "6",
-            "6",
-            "6"
-          ],
-          "target": "4 x 6-10"
-        },
-        {
-          "exId": "p7",
-          "name": "Press militar",
-          "weight": "24",
-          "done": true,
-          "repsDone": [
-            "12",
-            "12",
-            "12"
-          ],
-          "target": "3 x 8-12"
-        },
-        {
-          "exId": "l3",
-          "name": "Remo bajo en polea",
-          "weight": "38.5",
-          "done": true,
-          "repsDone": [
-            "12",
-            "12",
-            "12"
-          ],
-          "target": "3 x 10-12"
-        },
-        {
-          "exId": "f1",
-          "name": "Press de banca declinado",
-          "weight": "40",
-          "done": true,
-          "repsDone": [
-            "12",
-            "12",
-            "12"
-          ],
-          "target": "3 x 8-12"
-        },
-        {
-          "exId": "l4",
-          "name": "Face pull",
-          "weight": "17",
-          "done": true,
-          "repsDone": [
-            "20",
-            "20",
-            "20"
-          ],
-          "target": "3 x 15-20"
-        },
-        {
-          "exId": "p8",
-          "name": "Fondos en máquina",
-          "weight": "",
-          "done": true,
-          "repsDone": [
-            "8",
-            "8",
-            "8"
-          ],
-          "target": "3 x 10-12"
-        },
-        {
-          "exId": "l6",
-          "name": "Curl martillo",
-          "weight": "20",
-          "done": true,
-          "repsDone": [
-            "10",
-            "10",
-            "10"
-          ],
-          "target": "3 x 10-12"
-        },
-        {
-          "exId": "t2c",
-          "name": "Cardio 20 min.",
-          "weight": "20",
-          "done": true,
-          "repsDone": [
-            "2"
-          ],
-          "target": "1 x 15-20 min"
-        }
-      ],
-      "anyDone": true
-    },
-    {
       "id": "Edson__2026-10-09__pierna2",
       "person": "Edson",
       "date": "2026-10-09",
@@ -1855,6 +1751,110 @@
           "done": true,
           "repsDone": [
             "10"
+          ],
+          "target": "1 x 15-20 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
+      "id": "Edson__2026-10-08__torso2",
+      "person": "Edson",
+      "date": "2026-10-08",
+      "dayKey": "torso2",
+      "exercises": [
+        {
+          "exId": "f2",
+          "name": " Dominadas asistidas",
+          "weight": "5",
+          "done": true,
+          "repsDone": [
+            "10",
+            "6",
+            "6",
+            "6"
+          ],
+          "target": "4 x 6-10"
+        },
+        {
+          "exId": "p7",
+          "name": "Press militar",
+          "weight": "24",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "l3",
+          "name": "Remo bajo en polea",
+          "weight": "38.5",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "f1",
+          "name": "Press de banca declinado",
+          "weight": "40",
+          "done": true,
+          "repsDone": [
+            "12",
+            "12",
+            "12"
+          ],
+          "target": "3 x 8-12"
+        },
+        {
+          "exId": "l4",
+          "name": "Face pull",
+          "weight": "17",
+          "done": true,
+          "repsDone": [
+            "20",
+            "20",
+            "20"
+          ],
+          "target": "3 x 15-20"
+        },
+        {
+          "exId": "p8",
+          "name": "Fondos en máquina",
+          "weight": "",
+          "done": true,
+          "repsDone": [
+            "8",
+            "8",
+            "8"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "l6",
+          "name": "Curl martillo",
+          "weight": "20",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
+          "target": "3 x 10-12"
+        },
+        {
+          "exId": "t2c",
+          "name": "Cardio 20 min.",
+          "weight": "20",
+          "done": true,
+          "repsDone": [
+            "20"
           ],
           "target": "1 x 15-20 min"
         }
