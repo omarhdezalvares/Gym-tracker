@@ -1790,7 +1790,7 @@
         {
           "exId": "g1",
           "name": "Prensa de pierna",
-          "weight": "10",
+          "weight": "180",
           "done": false,
           "repsDone": [],
           "target": "4 x 8-10"
