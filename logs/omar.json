@@ -2010,7 +2010,7 @@
         {
           "exId": "l2",
           "name": "Remo en máquina o barra",
-          "weight": "",
+          "weight": "40",
           "done": false,
           "repsDone": [
             "12"
