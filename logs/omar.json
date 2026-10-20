@@ -2000,7 +2000,9 @@
           "name": "Press de banca plano",
           "weight": "48",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "8"
+          ],
           "target": "4 x 6-10"
         },
         {
