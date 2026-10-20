@@ -2017,7 +2017,8 @@
           "weight": "",
           "done": false,
           "repsDone": [
-            "10"
+            "10",
+            "1"
           ],
           "target": "3 x 8-12"
         },
