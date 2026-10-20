@@ -2015,7 +2015,7 @@
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
           "weight": "40",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10",
             "10",
@@ -2064,7 +2064,7 @@
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
