@@ -1880,8 +1880,10 @@
           "exId": "p1",
           "name": "Press de banca plano",
           "weight": "40",
-          "done": false,
-          "repsDone": [],
+          "done": true,
+          "repsDone": [
+            "10"
+          ],
           "target": "4 x 6-10"
         },
         {
