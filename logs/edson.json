@@ -1936,7 +1936,7 @@
           "weight": "25",
           "done": false,
           "repsDone": [
-            "",
+            "5",
             "10"
           ],
           "target": "3 x 10-15"
