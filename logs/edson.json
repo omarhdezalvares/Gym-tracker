@@ -2038,7 +2038,7 @@
           "exId": "f5",
           "name": "Plancha (core)",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 45-60s"
         },
@@ -2046,7 +2046,7 @@
           "exId": "p1c",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "1 x 15-20 min"
         }
