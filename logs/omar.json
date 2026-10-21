@@ -2133,7 +2133,7 @@
           "exId": "g1",
           "name": "Prensa de pierna",
           "weight": "145",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10"
           ],
