@@ -1989,7 +1989,7 @@
           "exId": "g7",
           "name": "Peso muerto rumano con mancuernas",
           "weight": "40",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12"
           ],
