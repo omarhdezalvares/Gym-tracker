@@ -2068,7 +2068,9 @@
           "name": " Dominadas asistidas",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "4 x 6-10"
         },
         {
