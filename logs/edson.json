@@ -2113,7 +2113,9 @@
           "name": "Face pull",
           "weight": "19.3",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 15-20"
         },
         {
