@@ -2128,7 +2128,7 @@
           "exId": "l6",
           "name": "Curl martillo",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 10-12"
         },
