@@ -2067,7 +2067,7 @@
           "exId": "f2",
           "name": " Dominadas asistidas",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [
             "10"
           ],
