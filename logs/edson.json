@@ -2200,7 +2200,8 @@
           "done": true,
           "repsDone": [
             "15",
-            "16"
+            "16",
+            "15"
           ],
           "target": "3 x 15-20"
         },
@@ -2208,7 +2209,7 @@
           "exId": "g5",
           "name": "Aducción ",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 12-15"
         },
