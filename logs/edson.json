@@ -2185,7 +2185,7 @@
           "exId": "f3",
           "name": "Patada de gluteo",
           "weight": "32",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12",
             "12",
@@ -2196,9 +2196,12 @@
         {
           "exId": "g4",
           "name": "Abducción ",
-          "weight": "",
+          "weight": "70",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15",
+            "16"
+          ],
           "target": "3 x 15-20"
         },
         {
@@ -2226,7 +2229,7 @@
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
