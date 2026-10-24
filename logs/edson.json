@@ -2212,7 +2212,7 @@
         {
           "exId": "g5",
           "name": "Aducción ",
-          "weight": "0",
+          "weight": "",
           "done": true,
           "repsDone": [
             "0",
