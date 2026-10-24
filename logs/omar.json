@@ -2465,7 +2465,7 @@
           "exId": "g5",
           "name": "Aducción ",
           "weight": "43",
-          "done": true,
+          "done": false,
           "repsDone": [],
           "target": "3 x 12-15"
         },
