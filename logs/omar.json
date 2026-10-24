@@ -2453,11 +2453,11 @@
           "exId": "g4",
           "name": "Abducción ",
           "weight": "70",
-          "done": false,
+          "done": true,
           "repsDone": [
             "15",
             "15",
-            "1"
+            "15"
           ],
           "target": "3 x 15-20"
         },
