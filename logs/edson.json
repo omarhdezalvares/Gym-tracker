@@ -2208,9 +2208,10 @@
         {
           "exId": "g5",
           "name": "Aducción ",
-          "weight": "",
+          "weight": "0",
           "done": true,
           "repsDone": [
+            "0",
             "0",
             "0"
           ],
