@@ -2177,7 +2177,7 @@
           "exId": "g9",
           "name": "Prensa de pierna (pies altos)",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 10-12"
         },
