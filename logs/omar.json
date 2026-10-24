@@ -2452,7 +2452,7 @@
         {
           "exId": "g4",
           "name": "Abducción ",
-          "weight": "",
+          "weight": "1",
           "done": false,
           "repsDone": [],
           "target": "3 x 15-20"
