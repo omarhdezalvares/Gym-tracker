@@ -2578,7 +2578,9 @@
           "name": "Curl de bíceps con barra/mancuerna",
           "weight": "20",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 10-12"
         },
         {
