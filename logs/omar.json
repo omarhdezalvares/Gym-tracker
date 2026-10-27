@@ -2525,7 +2525,9 @@
           "name": "Remo en máquina o barra",
           "weight": "40",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "4 x 8-12"
         },
         {
