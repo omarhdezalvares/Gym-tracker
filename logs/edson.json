@@ -2270,15 +2270,19 @@
           "name": "Remo en máquina o barra",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "4 x 8-12"
         },
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "",
+          "weight": "35",
           "done": true,
           "repsDone": [
+            "10",
+            "10",
             "10"
           ],
           "target": "3 x 8-12"
