@@ -2570,7 +2570,9 @@
           "name": "Extensión de tríceps en polea",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 10-15"
         },
         {
