@@ -2367,8 +2367,8 @@
         {
           "exId": "g7",
           "name": "Peso muerto rumano con mancuernas",
-          "weight": "4",
-          "done": false,
+          "weight": "44",
+          "done": true,
           "repsDone": [
             "10",
             "10",
