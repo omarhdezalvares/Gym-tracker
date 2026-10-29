@@ -2660,6 +2660,7 @@
           "weight": "30",
           "done": true,
           "repsDone": [
+            "15",
             "15"
           ],
           "target": "4 x 10-15"
