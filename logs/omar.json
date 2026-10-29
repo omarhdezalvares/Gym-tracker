@@ -2661,14 +2661,14 @@
           "exId": "p1c",
           "name": "Cardio 20 min.",
           "weight": "1.3",
-          "done": false,
+          "done": true,
           "repsDone": [
             "15"
           ],
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
