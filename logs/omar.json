@@ -2652,7 +2652,7 @@
           "weight": "41",
           "done": true,
           "repsDone": [
-            "1"
+            "14"
           ],
           "target": "3 x 10-14"
         },
@@ -2673,7 +2673,7 @@
           "exId": "f5",
           "name": "Plancha (core)",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 45-60s"
         },
