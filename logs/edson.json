@@ -2453,7 +2453,7 @@
           "exId": "l3",
           "name": "Remo bajo en polea",
           "weight": "43",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 10-12"
         },
@@ -2498,7 +2498,7 @@
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
