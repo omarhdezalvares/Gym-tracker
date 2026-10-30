@@ -2445,7 +2445,7 @@
           "exId": "p7",
           "name": "Press militar",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [
             "8",
             "10",
