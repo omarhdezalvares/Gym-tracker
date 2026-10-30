@@ -2750,7 +2750,8 @@
           "weight": "",
           "done": false,
           "repsDone": [
-            "20"
+            "20",
+            "15"
           ],
           "target": "3 x 15-20"
         },
