@@ -2497,14 +2497,14 @@
           "repsDone": [
             "10",
             "10",
-            "1"
+            "10"
           ],
           "target": "3 x 10-12"
         },
         {
           "exId": "l6",
           "name": "Curl martillo",
-          "weight": "",
+          "weight": "20",
           "done": false,
           "repsDone": [],
           "target": "3 x 10-12"
