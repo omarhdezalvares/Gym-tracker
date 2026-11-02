@@ -2571,7 +2571,7 @@
         {
           "exId": "l1",
           "name": "Jalón al pecho",
-          "weight": "5",
+          "weight": "",
           "done": false,
           "repsDone": [
             "15"
