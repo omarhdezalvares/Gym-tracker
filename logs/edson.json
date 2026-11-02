@@ -2606,7 +2606,7 @@
         {
           "exId": "l5",
           "name": "Curl de bíceps con barra/mancuerna",
-          "weight": "",
+          "weight": "2",
           "done": false,
           "repsDone": [
             "12",
