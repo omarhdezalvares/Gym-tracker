@@ -2573,7 +2573,9 @@
           "name": "Jalón al pecho",
           "weight": "5",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 10-12"
         },
         {
