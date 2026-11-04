@@ -47,7 +47,9 @@
           "name": "Aducción ",
           "weight": "63",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 12-15"
         },
         {
