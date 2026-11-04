@@ -33,7 +33,7 @@
         {
           "exId": "g4",
           "name": "Abducción ",
-          "weight": "",
+          "weight": "6",
           "done": true,
           "repsDone": [
             "15",
