@@ -2951,7 +2951,9 @@
           "name": "Cardio 20 min.",
           "weight": "",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "1 x 15-20 min"
         }
       ],
