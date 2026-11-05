@@ -2893,6 +2893,41 @@
       "anyDone": true
     },
     {
+      "id": "Omar__2026-11-04__cardio",
+      "person": "Omar",
+      "date": "2026-11-04",
+      "dayKey": "cardio",
+      "exercises": [
+        {
+          "exId": "c1",
+          "name": "Caminadora / trote",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 20 min"
+        },
+        {
+          "exId": "c2",
+          "name": "Bicicleta / eliptica",
+          "weight": "3",
+          "done": true,
+          "repsDone": [
+            "10"
+          ],
+          "target": "1 x 15 min"
+        },
+        {
+          "exId": "c3",
+          "name": "Cuerda / HIIT",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 10 min"
+        }
+      ],
+      "anyDone": true
+    },
+    {
       "id": "Omar__2026-11-04__pierna1",
       "person": "Omar",
       "date": "2026-11-04",
@@ -2931,7 +2966,9 @@
           "name": "Curl femoral",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 10-14"
         },
         {
@@ -2959,41 +2996,6 @@
             ""
           ],
           "target": "1 x 15-20 min"
-        }
-      ],
-      "anyDone": true
-    },
-    {
-      "id": "Omar__2026-11-04__cardio",
-      "person": "Omar",
-      "date": "2026-11-04",
-      "dayKey": "cardio",
-      "exercises": [
-        {
-          "exId": "c1",
-          "name": "Caminadora / trote",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "1 x 20 min"
-        },
-        {
-          "exId": "c2",
-          "name": "Bicicleta / eliptica",
-          "weight": "3",
-          "done": true,
-          "repsDone": [
-            "10"
-          ],
-          "target": "1 x 15 min"
-        },
-        {
-          "exId": "c3",
-          "name": "Cuerda / HIIT",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "1 x 10 min"
         }
       ],
       "anyDone": true
