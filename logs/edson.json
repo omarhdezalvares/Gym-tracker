@@ -2682,7 +2682,7 @@
         {
           "exId": "g6",
           "name": "Elevación de talones de pie",
-          "weight": "",
+          "weight": "11",
           "done": true,
           "repsDone": [],
           "target": "4 x 10-15"
