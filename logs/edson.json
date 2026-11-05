@@ -2687,6 +2687,7 @@
           "repsDone": [
             "15",
             "15",
+            "15",
             "15"
           ],
           "target": "4 x 10-15"
@@ -2695,7 +2696,7 @@
           "exId": "f5",
           "name": "Plancha (core)",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 45-60s"
         },
