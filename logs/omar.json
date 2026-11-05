@@ -2949,7 +2949,7 @@
         {
           "exId": "p1c",
           "name": "Cardio 20 min.",
-          "weight": "",
+          "weight": "0",
           "done": true,
           "repsDone": [
             "10"
