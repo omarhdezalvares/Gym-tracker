@@ -2980,7 +2980,7 @@
         {
           "exId": "c2",
           "name": "Bicicleta / eliptica",
-          "weight": "",
+          "weight": "1",
           "done": true,
           "repsDone": [
             "10"
