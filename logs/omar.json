@@ -3049,7 +3049,8 @@
           "done": true,
           "repsDone": [
             "20",
-            "20"
+            "20",
+            "15"
           ],
           "target": "3 x 15-20"
         },
@@ -3073,7 +3074,7 @@
           "exId": "p2c",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "1 x 15-20 min"
         }
