@@ -3046,7 +3046,7 @@
           "exId": "g4",
           "name": "Abducción ",
           "weight": "70",
-          "done": false,
+          "done": true,
           "repsDone": [
             "20",
             "20"
@@ -3078,7 +3078,7 @@
           "target": "1 x 15-20 min"
         }
       ],
-      "anyDone": false
+      "anyDone": true
     }
   ]
 }
