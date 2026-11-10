@@ -2802,7 +2802,7 @@
           "exId": "p1",
           "name": "Press de banca plano",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "4 x 6-10"
         },
@@ -2864,7 +2864,7 @@
           "weight": "1",
           "done": false,
           "repsDone": [
-            ""
+            "20"
           ],
           "target": "1 x 15-20 min"
         }
