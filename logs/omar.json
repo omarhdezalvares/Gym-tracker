@@ -3152,7 +3152,7 @@
           "exId": "p4",
           "name": "Elevaciones laterales",
           "weight": "10",
-          "done": false,
+          "done": true,
           "repsDone": [
             "20"
           ],
