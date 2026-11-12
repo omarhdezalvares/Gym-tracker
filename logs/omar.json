@@ -3202,7 +3202,7 @@
           "exId": "g7",
           "name": "Peso muerto rumano con mancuernas",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 8-12"
         },
@@ -3216,67 +3216,59 @@
             "45",
             "45"
           ],
-          "target": "3 x 45"
-        },
-        {
-          "exId": "p1c",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true,
-          "repsDone": [
-            ""
-          ],
-          "target": "1 x 15-20 min"
-        },
-        {
-          "exId": "exmwcvejcn",
-          "name": "Abducción ",
-          "weight": "70",
-          "done": true,
-          "repsDone": [
-            "15",
-            "15"
-          ],
           "target": "3 x 12-15"
         },
         {
-          "exId": "exmwcvew4f",
-          "name": "Aducción ",
-          "weight": "50",
-          "done": true,
-          "repsDone": [
-            "15",
-            "15"
-          ],
-          "target": "3 x 12-15"
-        },
-        {
-          "exId": "exmwcvkl94",
-          "name": "Desplante fijo",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 12-15"
-        },
-        {
-          "exId": "exmwcvkvoj",
-          "name": "Patada de gluteo",
-          "weight": "32",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 12-15"
-        },
-        {
-          "exId": "exmwcvpus0",
+          "exId": "g3",
           "name": "Curl femoral",
           "weight": "",
           "done": false,
           "repsDone": [],
+          "target": "3 x 10-14"
+        },
+        {
+          "exId": "g6",
+          "name": "Elevación de talones de pie",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "4 x 10-15"
+        },
+        {
+          "exId": "exmwcvt8wc",
+          "name": "Abducción ",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
           "target": "3 x 12-15"
         },
         {
-          "exId": "exmwcvq6t7",
-          "name": "Pantorrilla",
+          "exId": "exmwcvtikm",
+          "name": "Aducción ",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "exmwcvtx0f",
+          "name": "Patada de gluteo",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12-15"
+        },
+        {
+          "exId": "exmwcw7ro5",
+          "name": "Escaladora",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "1 x 300"
+        },
+        {
+          "exId": "exmwcw9g7m",
+          "name": "Desplantes",
           "weight": "",
           "done": false,
           "repsDone": [],
