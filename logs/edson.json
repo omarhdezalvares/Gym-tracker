@@ -2982,7 +2982,7 @@
         {
           "exId": "exmwcw7ro5",
           "name": "Escaladora",
-          "weight": "",
+          "weight": "undefined5",
           "done": false,
           "repsDone": [
             "1"
