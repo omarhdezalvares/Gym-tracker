@@ -3253,7 +3253,7 @@
         {
           "exId": "exmwcvtikm",
           "name": "Aducción ",
-          "weight": "",
+          "weight": "50",
           "done": true,
           "repsDone": [
             "50",
