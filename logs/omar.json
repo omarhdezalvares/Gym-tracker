@@ -3279,7 +3279,9 @@
           "name": "Escaladora",
           "weight": "350",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "5"
+          ],
           "target": "1 x 300"
         },
         {
