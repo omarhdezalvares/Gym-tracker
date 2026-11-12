@@ -52,12 +52,6 @@
     ],
     "pierna1": [
       {
-        "id": "g1",
-        "name": "Prensa de pierna",
-        "sets": 4,
-        "reps": "8-10"
-      },
-      {
         "id": "g7",
         "name": "Peso muerto rumano con mancuernas",
         "sets": 3,
@@ -98,6 +92,18 @@
         "name": "Patada de gluteo",
         "sets": 3,
         "reps": "12-15"
+      },
+      {
+        "id": "exmwcvpus0",
+        "name": "Curl leg",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "exmwcvq6t7",
+        "name": "Pantorrilla",
+        "sets": 3,
+        "reps": "12"
       }
     ],
     "torso2": [
