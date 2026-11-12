@@ -2975,7 +2975,7 @@
           "exId": "exmwcvtikm",
           "name": "Aducción ",
           "weight": "29",
-          "done": false,
+          "done": true,
           "repsDone": [
             "20",
             "20",
