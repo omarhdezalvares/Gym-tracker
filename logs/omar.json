@@ -3266,7 +3266,7 @@
           "exId": "exmwcvtx0f",
           "name": "Patada de gluteo",
           "weight": "32",
-          "done": false,
+          "done": true,
           "repsDone": [
             "15",
             "15",
