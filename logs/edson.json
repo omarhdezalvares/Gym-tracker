@@ -2969,7 +2969,7 @@
         },
         {
           "exId": "exmwcvtx0f",
-          "name": "Patada de glúteo ",
+          "name": "Patada de gluteo",
           "weight": "32",
           "done": true,
           "repsDone": [
@@ -2985,9 +2985,17 @@
           "weight": "700",
           "done": true,
           "repsDone": [
-            ""
+            "1"
           ],
           "target": "1 x 5"
+        },
+        {
+          "exId": "exmwcw9g7m",
+          "name": "Desplantes",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12"
         }
       ],
       "anyDone": true
