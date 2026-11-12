@@ -48,18 +48,6 @@
         "name": "Cardio 20 min.",
         "sets": "1",
         "reps": "15-20 min"
-      },
-      {
-        "id": "exmwcvcro9",
-        "name": "Aducción ",
-        "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "exmwcvdc7l",
-        "name": "Abducción ",
-        "sets": 3,
-        "reps": "12-15"
       }
     ],
     "pierna1": [
@@ -79,31 +67,25 @@
         "id": "g2",
         "name": "Extensión de cuádriceps",
         "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "g3",
-        "name": "Curl femoral",
-        "sets": 3,
-        "reps": "10-14"
-      },
-      {
-        "id": "g6",
-        "name": "Elevación de talones de pie",
-        "sets": 4,
-        "reps": "10-15"
-      },
-      {
-        "id": "f5",
-        "name": "Plancha (core)",
-        "sets": 3,
-        "reps": "45-60s"
+        "reps": "45"
       },
       {
         "id": "p1c",
         "name": "Cardio 20 min.",
         "sets": "1",
         "reps": "15-20 min"
+      },
+      {
+        "id": "exmwcvejcn",
+        "name": "Abduccion",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "exmwcvew4f",
+        "name": "Aduccion",
+        "sets": 3,
+        "reps": "12"
       }
     ],
     "torso2": [
