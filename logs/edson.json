@@ -2924,7 +2924,9 @@
           "name": "Curl femoral",
           "weight": "32",
           "done": true,
-          "repsDone": [],
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 10-14"
         },
         {
