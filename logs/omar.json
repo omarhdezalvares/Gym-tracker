@@ -3267,7 +3267,9 @@
           "name": "Patada de gluteo",
           "weight": "32",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "15"
+          ],
           "target": "3 x 12-15"
         },
         {
