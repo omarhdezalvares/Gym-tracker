@@ -32,18 +32,6 @@
         "reps": "12-20"
       },
       {
-        "id": "p6",
-        "name": "Extensión de tríceps en polea",
-        "sets": 3,
-        "reps": "10-15"
-      },
-      {
-        "id": "l5",
-        "name": "Curl de bíceps con barra/mancuerna",
-        "sets": 3,
-        "reps": "10-12"
-      },
-      {
         "id": "t1c",
         "name": "Cardio 20 min.",
         "sets": "1",
@@ -51,6 +39,12 @@
       }
     ],
     "pierna1": [
+      {
+        "id": "g1",
+        "name": "Prensa de pierna",
+        "sets": 4,
+        "reps": "8-10"
+      },
       {
         "id": "g7",
         "name": "Peso muerto rumano con mancuernas",
@@ -61,7 +55,25 @@
         "id": "g2",
         "name": "Extensión de cuádriceps",
         "sets": 3,
-        "reps": "45"
+        "reps": "12-15"
+      },
+      {
+        "id": "g3",
+        "name": "Curl femoral",
+        "sets": 3,
+        "reps": "10-14"
+      },
+      {
+        "id": "g6",
+        "name": "Elevación de talones de pie",
+        "sets": 4,
+        "reps": "10-15"
+      },
+      {
+        "id": "f5",
+        "name": "Plancha (core)",
+        "sets": 3,
+        "reps": "45-60s"
       },
       {
         "id": "p1c",
@@ -70,40 +82,22 @@
         "reps": "15-20 min"
       },
       {
-        "id": "exmwcvejcn",
+        "id": "exmwcvt8wc",
         "name": "Abducción ",
         "sets": 3,
         "reps": "12-15"
       },
       {
-        "id": "exmwcvew4f",
+        "id": "exmwcvtikm",
         "name": "Aducción ",
         "sets": 3,
         "reps": "12-15"
       },
       {
-        "id": "exmwcvkl94",
-        "name": "Desplante fijo",
+        "id": "exmwcvtx0f",
+        "name": "Patada de glúteo ",
         "sets": 3,
         "reps": "12-15"
-      },
-      {
-        "id": "exmwcvkvoj",
-        "name": "Patada de gluteo",
-        "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "exmwcvpus0",
-        "name": "Curl femoral",
-        "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "exmwcvq6t7",
-        "name": "Pantorrilla",
-        "sets": 3,
-        "reps": "12"
       }
     ],
     "torso2": [
