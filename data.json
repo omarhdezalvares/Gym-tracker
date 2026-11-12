@@ -70,6 +70,18 @@
         "reps": "10-15"
       },
       {
+        "id": "f5",
+        "name": "Plancha (core)",
+        "sets": 3,
+        "reps": "45-60s"
+      },
+      {
+        "id": "p1c",
+        "name": "Cardio 20 min.",
+        "sets": "1",
+        "reps": "15-20 min"
+      },
+      {
         "id": "exmwcvt8wc",
         "name": "Abducción ",
         "sets": 3,
@@ -86,18 +98,6 @@
         "name": "Patada de gluteo",
         "sets": 3,
         "reps": "12-15"
-      },
-      {
-        "id": "exmwcw7ro5",
-        "name": "Escaladora",
-        "sets": "1",
-        "reps": "5"
-      },
-      {
-        "id": "exmwcw9g7m",
-        "name": "Desplantes",
-        "sets": 3,
-        "reps": "12"
       }
     ],
     "torso2": [
