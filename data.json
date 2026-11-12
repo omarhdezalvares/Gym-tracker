@@ -32,6 +32,18 @@
         "reps": "12-20"
       },
       {
+        "id": "p6",
+        "name": "Extensión de tríceps en polea",
+        "sets": 3,
+        "reps": "10-15"
+      },
+      {
+        "id": "l5",
+        "name": "Curl de bíceps con barra/mancuerna",
+        "sets": 3,
+        "reps": "10-12"
+      },
+      {
         "id": "t1c",
         "name": "Cardio 20 min.",
         "sets": "1",
@@ -55,31 +67,37 @@
         "id": "g2",
         "name": "Extensión de cuádriceps",
         "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "g3",
-        "name": "Curl femoral",
-        "sets": 3,
-        "reps": "10-14"
-      },
-      {
-        "id": "g6",
-        "name": "Elevación de talones de pie",
-        "sets": 4,
-        "reps": "10-15"
-      },
-      {
-        "id": "f5",
-        "name": "Plancha (core)",
-        "sets": 3,
-        "reps": "45-60s"
+        "reps": "45"
       },
       {
         "id": "p1c",
         "name": "Cardio 20 min.",
         "sets": "1",
         "reps": "15-20 min"
+      },
+      {
+        "id": "exmwcvejcn",
+        "name": "Abducción ",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "exmwcvew4f",
+        "name": "Aducción ",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "exmwcvkl94",
+        "name": "Desplante fijo",
+        "sets": 3,
+        "reps": "12-15"
+      },
+      {
+        "id": "exmwcvkvoj",
+        "name": "Patada de gluteo",
+        "sets": 3,
+        "reps": "12-15"
       }
     ],
     "torso2": [
