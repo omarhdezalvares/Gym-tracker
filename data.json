@@ -40,12 +40,6 @@
     ],
     "pierna1": [
       {
-        "id": "g1",
-        "name": "Prensa de pierna",
-        "sets": 4,
-        "reps": "8-10"
-      },
-      {
         "id": "g7",
         "name": "Peso muerto rumano con mancuernas",
         "sets": 3,
