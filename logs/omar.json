@@ -3222,7 +3222,7 @@
           "exId": "g3",
           "name": "Curl femoral",
           "weight": "36",
-          "done": false,
+          "done": true,
           "repsDone": [
             "35",
             "35",
@@ -3234,7 +3234,7 @@
           "exId": "g6",
           "name": "Elevación de talones de pie",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "4 x 10-15"
         },
