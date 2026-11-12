@@ -3255,7 +3255,9 @@
           "name": "Aducción ",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "50"
+          ],
           "target": "3 x 12-15"
         },
         {
