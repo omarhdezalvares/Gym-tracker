@@ -2989,7 +2989,7 @@
           "exId": "exmwcw9g7m",
           "name": "Desplantes",
           "weight": "20",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12",
             "12",
