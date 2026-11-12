@@ -3219,7 +3219,10 @@
           "name": "Extensión de cuádriceps",
           "weight": "36",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "45",
+            "45"
+          ],
           "target": "3 x 45"
         },
         {
