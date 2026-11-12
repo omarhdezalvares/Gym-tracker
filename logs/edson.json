@@ -2963,8 +2963,9 @@
           "exId": "exmwcvt8wc",
           "name": "Abducción ",
           "weight": "70",
-          "done": false,
+          "done": true,
           "repsDone": [
+            "15",
             "15",
             "15"
           ],
