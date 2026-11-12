@@ -2900,18 +2900,10 @@
       "dayKey": "pierna1",
       "exercises": [
         {
-          "exId": "g1",
-          "name": "Prensa de pierna",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "4 x 8-10"
-        },
-        {
           "exId": "g7",
           "name": "Peso muerto rumano con mancuernas",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "3 x 8-12"
         },
@@ -2987,7 +2979,7 @@
           "repsDone": [
             "1"
           ],
-          "target": "1 x 5"
+          "target": "1 x 300"
         },
         {
           "exId": "exmwcw9g7m",
