@@ -3277,7 +3277,7 @@
         {
           "exId": "exmwcw7ro5",
           "name": "Escaladora",
-          "weight": "",
+          "weight": "37",
           "done": false,
           "repsDone": [],
           "target": "1 x 300"
