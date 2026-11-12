@@ -83,7 +83,7 @@
       },
       {
         "id": "exmwcvtx0f",
-        "name": "Patada de glúteo ",
+        "name": "Patada de gluteo",
         "sets": 3,
         "reps": "12-15"
       },
@@ -92,6 +92,12 @@
         "name": "Escaladora",
         "sets": "1",
         "reps": "5"
+      },
+      {
+        "id": "exmwcw9g7m",
+        "name": "Desplantes",
+        "sets": 3,
+        "reps": "12"
       }
     ],
     "torso2": [
