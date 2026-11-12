@@ -2944,22 +2944,6 @@
           "target": "4 x 10-15"
         },
         {
-          "exId": "f5",
-          "name": "Plancha (core)",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 45-60s"
-        },
-        {
-          "exId": "p1c",
-          "name": "Cardio 20 min.",
-          "weight": "",
-          "done": true,
-          "repsDone": [],
-          "target": "1 x 15-20 min"
-        },
-        {
           "exId": "exmwcvt8wc",
           "name": "Abducción ",
           "weight": "70",
@@ -2994,6 +2978,16 @@
             "12"
           ],
           "target": "3 x 12-15"
+        },
+        {
+          "exId": "exmwcw7ro5",
+          "name": "Escaladora",
+          "weight": "",
+          "done": false,
+          "repsDone": [
+            "1"
+          ],
+          "target": "1 x 5"
         }
       ],
       "anyDone": true
