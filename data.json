@@ -386,6 +386,10 @@
       {
         "id": "nmvhht7nm57e",
         "name": "La Mamada De 4 Años"
+      },
+      {
+        "id": "nmwcvwn8q6oz",
+        "name": "Ms Smart Fit"
       }
     ],
     "boards": {
@@ -394,7 +398,8 @@
         "nmu75lcbfghd",
         "nmu75o62f38j",
         "nmuc0d5pf0vk",
-        "nmu75ssn8qe6"
+        "nmu75ssn8qe6",
+        "nmwcvwn8q6oz"
       ],
       "cmu75jhdz58b": [
         "nmu79ie4c7a8",
