@@ -3320,11 +3320,11 @@
         },
         {
           "exId": "l2",
-          "name": "Remo en máquina o barra",
+          "name": "Press de banca declinado",
           "weight": "",
           "done": false,
           "repsDone": [],
-          "target": "4 x 8-12"
+          "target": "3 x 8-12"
         },
         {
           "exId": "p2",
@@ -3339,19 +3339,13 @@
           "target": "3 x 8-12"
         },
         {
-          "exId": "l1",
-          "name": "Jalón al pecho",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 10-12"
-        },
-        {
           "exId": "p4",
-          "name": "Elevaciones laterales",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
+          "name": "Pec Fly",
+          "weight": "29",
+          "done": true,
+          "repsDone": [
+            "10"
+          ],
           "target": "3 x 12-20"
         },
         {
@@ -3363,6 +3357,14 @@
             "15"
           ],
           "target": "1 x 15-20 min"
+        },
+        {
+          "exId": "exmwmx40l9",
+          "name": "Extensión de tríceps en polea",
+          "weight": "",
+          "done": false,
+          "repsDone": [],
+          "target": "3 x 12"
         }
       ],
       "anyDone": true
