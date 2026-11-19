@@ -3329,7 +3329,7 @@
         {
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
-          "weight": "",
+          "weight": "40",
           "done": true,
           "repsDone": [
             "10"
@@ -3356,7 +3356,7 @@
           "exId": "t1c",
           "name": "Cardio 20 min.",
           "weight": "",
-          "done": false,
+          "done": true,
           "repsDone": [],
           "target": "1 x 15-20 min"
         }
