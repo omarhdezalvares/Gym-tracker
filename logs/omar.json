@@ -3321,9 +3321,13 @@
         {
           "exId": "l2",
           "name": "Press de banca declinado",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
+          "weight": "40",
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
           "target": "3 x 8-12"
         },
         {
@@ -3344,6 +3348,8 @@
           "weight": "29",
           "done": true,
           "repsDone": [
+            "10",
+            "10",
             "10"
           ],
           "target": "3 x 12-20"
@@ -3361,7 +3367,7 @@
         {
           "exId": "exmwmx40l9",
           "name": "Extensión de tríceps en polea",
-          "weight": "",
+          "weight": "14.5",
           "done": false,
           "repsDone": [],
           "target": "3 x 12"
