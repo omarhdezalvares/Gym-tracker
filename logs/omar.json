@@ -3308,7 +3308,7 @@
         {
           "exId": "p1",
           "name": "Press de banca plano",
-          "weight": "50",
+          "weight": "",
           "done": true,
           "repsDone": [
             "8",
@@ -3330,7 +3330,7 @@
           "exId": "p2",
           "name": "Press inclinado con mancuerna",
           "weight": "",
-          "done": true,
+          "done": false,
           "repsDone": [],
           "target": "3 x 8-12"
         },
