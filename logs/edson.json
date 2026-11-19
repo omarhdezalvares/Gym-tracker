@@ -3032,7 +3032,9 @@
           "name": "Press inclinado con mancuerna",
           "weight": "40",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "40"
+          ],
           "target": "3 x 8-12"
         },
         {
