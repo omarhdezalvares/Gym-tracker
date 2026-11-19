@@ -3023,8 +3023,12 @@
           "exId": "l2",
           "name": "Press de banca declinado",
           "weight": "40",
-          "done": false,
-          "repsDone": [],
+          "done": true,
+          "repsDone": [
+            "10",
+            "10",
+            "10"
+          ],
           "target": "3 x 8-12"
         },
         {
