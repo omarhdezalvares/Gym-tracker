@@ -3025,6 +3025,8 @@
           "weight": "40",
           "done": true,
           "repsDone": [
+            "10",
+            "10",
             "10"
           ],
           "target": "3 x 8-12"
@@ -3044,9 +3046,11 @@
         {
           "exId": "p4",
           "name": "Pec Fly",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
+          "weight": "29",
+          "done": true,
+          "repsDone": [
+            "1"
+          ],
           "target": "3 x 12-20"
         },
         {
