@@ -3135,7 +3135,9 @@
           "name": "Curl de biceps con barra",
           "weight": "20",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "2"
+          ],
           "target": "3 x 10-12"
         },
         {
