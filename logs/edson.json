@@ -3133,7 +3133,7 @@
         {
           "exId": "p8",
           "name": "Curl de biceps con barra",
-          "weight": "",
+          "weight": "20",
           "done": false,
           "repsDone": [],
           "target": "3 x 10-12"
