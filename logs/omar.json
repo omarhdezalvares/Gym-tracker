@@ -3398,7 +3398,9 @@
           "name": "Press militar",
           "weight": "23",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "3 x 8-12"
         },
         {
