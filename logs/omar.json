@@ -3440,7 +3440,7 @@
         {
           "exId": "l6",
           "name": "Curl martillo",
-          "weight": "",
+          "weight": "28",
           "done": false,
           "repsDone": [
             "10"
