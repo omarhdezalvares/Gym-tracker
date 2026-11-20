@@ -108,12 +108,6 @@
         "reps": "8-12"
       },
       {
-        "id": "l3",
-        "name": "Remo bajo en polea",
-        "sets": 3,
-        "reps": "10-12"
-      },
-      {
         "id": "f1",
         "name": "Remo en máquina o barra",
         "sets": 3,
@@ -127,13 +121,13 @@
       },
       {
         "id": "p8",
-        "name": "Fondos en máquina",
+        "name": "Curl de biceps con barra",
         "sets": 3,
         "reps": "10-12"
       },
       {
         "id": "l6",
-        "name": "Curl martillo",
+        "name": "Curl de biceps martillo",
         "sets": 3,
         "reps": "10-12"
       },
