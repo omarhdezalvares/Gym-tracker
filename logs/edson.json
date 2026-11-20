@@ -3101,7 +3101,7 @@
         {
           "exId": "p7",
           "name": "Press militar",
-          "weight": "",
+          "weight": "29",
           "done": false,
           "repsDone": [
             "8"
