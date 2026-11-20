@@ -3442,7 +3442,9 @@
           "name": "Curl martillo",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "10"
+          ],
           "target": "3 x 10-12"
         },
         {
