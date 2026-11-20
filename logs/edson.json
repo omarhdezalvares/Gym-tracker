@@ -3157,7 +3157,7 @@
         {
           "exId": "t2c",
           "name": "Cardio 20 min.",
-          "weight": "",
+          "weight": "2",
           "done": true,
           "repsDone": [
             "15"
