@@ -3413,7 +3413,7 @@
           "exId": "f1",
           "name": "Remo en máquina o barra",
           "weight": "45",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12",
             "10",
@@ -3450,7 +3450,9 @@
           "name": "Cardio 20 min.",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "1"
+          ],
           "target": "1 x 15-20 min"
         }
       ],
