@@ -98,7 +98,7 @@
       {
         "id": "f2",
         "name": "Jalón al pecho",
-        "sets": 4,
+        "sets": "3",
         "reps": "6-10"
       },
       {
@@ -115,7 +115,7 @@
       },
       {
         "id": "f1",
-        "name": "Press de banca declinado",
+        "name": "Remo con barra",
         "sets": 3,
         "reps": "8-12"
       },
