@@ -3433,7 +3433,7 @@
           "exId": "p8",
           "name": "Curl de bíceps con barra/mancuerna",
           "weight": "20",
-          "done": false,
+          "done": true,
           "repsDone": [
             "12"
           ],
