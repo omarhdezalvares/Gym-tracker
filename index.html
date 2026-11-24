@@ -316,10 +316,15 @@ async function ghReadFile(path) {
     return { data: await res.json(), sha: null };
   }
   const token = getToken();
-  const res = await fetch(
-    `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}&_=${Date.now()}`,
+  const url = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}?ref=${GH_BRANCH}&_=${Date.now()}`;
+  let res = await fetch(url,
     { headers: token ? { Authorization: `token ${token}`, Accept: "application/vnd.github+json" } : { Accept: "application/vnd.github+json" } }
   );
+  // Token caducado o revocado: el repo es público, así que se puede leer sin él.
+  if (res.status === 401 && token) {
+    state.tokenInvalid = true;
+    res = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+  }
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`No se pudo leer ${path} (HTTP ${res.status})`);
   const json = await res.json();
@@ -353,7 +358,7 @@ async function ghWriteFile(path, dataObj, sha, message) {
    CARGA INICIAL
    ========================================================================= */
 async function loadData() {
-  state.loading = true; render();
+  state.loading = true; state.loadError = ""; state.tokenInvalid = false; render();
   try {
     const [main, ...personFiles] = await Promise.all([GH_PATH, ...PEOPLE.map(logsPath)].map(ghReadFile));
     if (!main) throw new Error(`no existe ${GH_PATH}`);
@@ -369,10 +374,12 @@ async function loadData() {
     });
   } catch (err) {
     console.error(err);
-    state.statusMsg = "No se pudieron cargar los datos: " + err.message;
+    state.loadError = err.message;
   }
-  state.hasLoaded = true;
   state.loading = false;
+  if (!state.routine) { render(); return; } // muestra el error en vez de quedarse cargando
+  state.hasLoaded = true;
+  if (state.tokenInvalid) state.statusMsg = "⚠ Tu token de GitHub caducó: toca 🔑 y pega uno nuevo para poder guardar.";
   state.dayKey = findActiveDayFor(state.person, todayISO()) || nextRotationDay(state.person);
   rebuildDraft();
   render();
@@ -982,6 +989,7 @@ function render() {
   const scrollY = window.scrollY;
 
   if (!state.authed) { app.innerHTML = renderLogin(); attachLoginEvents(); return; }
+  if (!state.loading && !state.routine) { app.innerHTML = renderLoadError(); attachLoadErrorEvents(); return; }
   if (state.loading || !state.routine) { app.innerHTML = renderLoading(); return; }
   app.innerHTML = renderMain();
   attachMainEvents();
@@ -1003,6 +1011,20 @@ function render() {
 
 function renderLoading() {
   return `<div id="loadingScreen"><div class="spinner"></div></div>`;
+}
+
+function renderLoadError() {
+  return `<div id="loadingScreen"><div style="max-width:340px;padding:24px;text-align:center;">
+    <p style="font-weight:600;margin-bottom:8px;">No se pudieron cargar los datos</p>
+    <p class="muted" style="margin-bottom:16px;word-break:break-word;">${escapeHtml(state.loadError || "Error desconocido")}</p>
+    <button id="retryLoadBtn" style="padding:10px 18px;margin:4px;">Reintentar</button>
+    <button id="tokenLoadBtn" style="padding:10px 18px;margin:4px;">🔑 Cambiar token</button>
+  </div></div>`;
+}
+
+function attachLoadErrorEvents() {
+  document.getElementById("retryLoadBtn").onclick = () => loadData();
+  document.getElementById("tokenLoadBtn").onclick = () => { saveTokenPrompt(); loadData(); };
 }
 
 function renderLogin() {
