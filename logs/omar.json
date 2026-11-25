@@ -3588,8 +3588,10 @@
           "exId": "l4",
           "name": "Face pull",
           "weight": "19.5",
-          "done": false,
-          "repsDone": [],
+          "done": true,
+          "repsDone": [
+            "12"
+          ],
           "target": "3 x 15-20"
         },
         {
