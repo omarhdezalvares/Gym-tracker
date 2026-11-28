@@ -40,12 +40,6 @@
     ],
     "pierna1": [
       {
-        "id": "g7",
-        "name": "Peso muerto rumano con mancuernas",
-        "sets": 3,
-        "reps": "8-12"
-      },
-      {
         "id": "g2",
         "name": "Extensión de cuádriceps",
         "sets": 3,
@@ -72,12 +66,6 @@
       {
         "id": "exmwcvtikm",
         "name": "Aducción ",
-        "sets": 3,
-        "reps": "12-15"
-      },
-      {
-        "id": "exmwcvtx0f",
-        "name": "Patada de gluteo",
         "sets": 3,
         "reps": "12-15"
       },
