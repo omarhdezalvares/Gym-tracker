@@ -3640,19 +3640,13 @@
       "dayKey": "pierna1",
       "exercises": [
         {
-          "exId": "g7",
-          "name": "Peso muerto rumano con mancuernas",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 8-12"
-        },
-        {
           "exId": "g2",
           "name": "Extensión de cuádriceps",
           "weight": "",
           "done": false,
-          "repsDone": [],
+          "repsDone": [
+            "40"
+          ],
           "target": "3 x 12-15"
         },
         {
@@ -3682,14 +3676,6 @@
         {
           "exId": "exmwcvtikm",
           "name": "Aducción ",
-          "weight": "",
-          "done": false,
-          "repsDone": [],
-          "target": "3 x 12-15"
-        },
-        {
-          "exId": "exmwcvtx0f",
-          "name": "Patada de gluteo",
           "weight": "",
           "done": false,
           "repsDone": [],
